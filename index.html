@@ -55,12 +55,21 @@
 				<h1> My HTML Page Design</h1>
 				<div class="pagelink">
 					<ul>
-						<li><a href="sidebar-menu.html"> Menu Sidebar </a></li>
-						<li><a href="" target="_blank"> Menu Sidebar </a></li>
-						<li><a href="" target="_blank"> Menu Sidebar </a></li>
+						<li class="preview"><a href="sidebar-menu.html"> Menu Sidebar </a></li>
+						<li class="preview"><a href="spiner-js.html"> Text & Background color change </a></li>
+						
 					</ul>
 				</div>
 			</div>
 		</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<link href="image-preview-for-link.css" rel="stylesheet">     
+		<script type="text/javascript">
+			$(function() {
+				$('.preview a').miniPreview({ prefetch: 'pageload' });
+			});
+		</script> 
+		<script src="image-preview-for-link.js"></script>
 	</body>
 </html>
