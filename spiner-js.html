@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <title>Text and Background Change using spiner</title>
+	
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: monospace;  
+		}
+		section {
+			width: 100%;
+			height: 100vh;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container {
+			min-width: 100%;
+			padding-left: 150px;
+			padding-right: 150px;
+			margin: 0;
+		}
+		.container  h2{
+			font-size: 3rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			line-height: 3.4rem;
+		}
+		.container  h3{
+			font-size: 2rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			line-height: 3.4rem;
+		}
+		.container  p{
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.6;
+			text-align: justify;
+		}
+
+		.color-container {
+			position: absolute;
+			top: 50%;
+			left: -250px;
+			transform: translateY(-50%);
+			cursor: pointer;
+			transition: 0.5s linear;
+			width: 250px;
+			background: #262626;
+			color: #fff;
+		}
+		.color-container.active {
+			left: 0;
+		}
+		.color-container h2{
+			font-size: 2rem;
+			line-height: 2;
+			font-weight: 800;
+			text-transform: uppercase;
+			color: #fff;
+			text-align: center;
+		}
+		.box {
+			width: 100%;
+			min-height: 120px;
+			border-top: 1px solid #ccc;
+			padding: 5px 0;
+		}
+		.box p{
+			font-size: 1.5rem;
+			font-weight: 600;
+			text-transform: uppercase;	
+			color: yellow;
+			text-align: center;
+		}
+		.box ul{
+			width: 100%;
+			min-height: 150px;
+			list-style-type: none;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			flex-wrap: wrap;	
+		}
+		.box ul li{
+			width: 50px;
+			height: 50px;
+			margin: 5px;
+			/* border: 1px solid #fff; */
+			text-align: center;
+			line-height: 50px;
+			text-transform: uppercase;
+			color: Crimson;
+		}
+		.color_nav {
+			position: absolute;
+			padding: 10px;
+			top: 0;
+			left: 100%;
+			background: #262626;
+			color: #fff;	
+		}
+	</style>
+  </head>
+  <body class="">
+	
+		<section>
+			<div class="container">
+				<h2>Change Color Text and Background on Click</h2>
+				<h3> Section One small Text Scroll Out Right</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac dolor tempus velit cursus suscipit. Proin at ligula sollicitudin, scelerisque purus aliquam, semper ipsum. Suspendisse in ligula sed diam condimentum aliquam. In dictum eros erat, accumsan auctor magna rhoncus eu. Phasellus lectus quam, tristique at erat ut, tincidunt ultrices eros. Nam in hendrerit ex. Nullam commodo dolor nunc. Vivamus congue aliquet bibendum. In vitae nulla interdum, sagittis nisl a, suscipit quam. Pellentesque porttitor, leo id ullamcorper accumsan, dui dolor finibus arcu, sed blandit lorem mauris fermentum sapien. Vestibulum vel porta dolor.</p>
+				<p>Etiam lobortis leo quis tellus cursus mollis. Nullam venenatis molestie arcu ut facilisis. Donec suscipit sit amet arcu ac rutrum. Cras hendrerit eget sapien at gravida. Etiam nulla quam, mattis eget auctor eget, viverra in sapien. Quisque ultrices risus arcu, vel maximus libero vulputate vel. Donec fermentum porttitor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt neque vitae tortor porta aliquet. Mauris sit amet dolor consectetur, volutpat dui ut, pretium nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+				<p>Morbi viverra fermentum orci sit amet convallis. Sed id lectus vel ipsum ultrices pulvinar. Nullam sit amet ornare mauris. Cras ultrices, urna a posuere ultrices, nibh nisi semper ex, et auctor lacus augue volutpat lorem. Nam fringilla urna eu massa luctus, vitae mollis lectus dictum. Vestibulum feugiat mi orci, et scelerisque enim blandit vel. Cras lacus odio, finibus eget libero sit amet, elementum luctus risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut urna lectus. Suspendisse potenti. Curabitur ut nisl id mi accumsan commodo sed et massa. Praesent malesuada hendrerit aliquet. Mauris nisi diam, feugiat at sollicitudin eget, ultricies sodales arcu.</p>			
+				<a href="https://github.com/scroll-out/scroll-out">Read More</a>
+			</div>
+			
+			<div class="color-container">
+				<h2> Setting</h2>
+				<div class="box">
+					<p>Color Text</p>
+					<ul>
+						<li data-color="Red"></li>
+						<li data-color="Crimson"></li>
+						<li data-color="Green"></li>
+						<li data-color="Orange"></li>
+						<li data-color="Blue"></li>
+						<li data-color="Brown"></li>
+						<li data-color="Pink"></li>
+						<li data-color="Tomato"></li>
+						
+					</ul>					
+				</div>
+				<div class="box">
+					<p> Drak / Light mode</p>
+					<ul>
+						<li data-color="white">Light </li>
+						<li data-color="black">Black </li>
+					</ul>
+				</div>
+				<div class="color_nav">
+					<i class="fa fa-cog fa-spin fa-lg"></i>
+				</div>
+			</div>
+		</section>
+		
+		
+		
+		
+	
+
+	<script>
+		const nav = document.querySelector('.color_nav');
+		const colorContainer = document.querySelector('.color-container');
+		nav.addEventListener('click', ()=>{
+			colorContainer.classList.toggle('active');
+		});
+		const box = document.querySelectorAll('li');
+		for(let i=0; i<box.length; i++){
+			const color = box[i].getAttribute('data-color');
+			box[i].style.background = color;
+			box[i].addEventListener('click', ()=>{
+				document.body.style.color = color;
+				if(color === "white") {
+					document.body.style.color = "black";
+					document.body.style.background = "white";
+				}
+				if(color === "black") {
+					document.body.style.color = "white";
+					document.body.style.background = "black";
+				}
+			})
+		}		
+	</script>
+  </body>
+</html>
