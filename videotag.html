@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title> Video Popup </title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			position: relative;
+			font-family: 'Poppins', sans-serif;
+		}
+		.banner {
+			position: relative;
+			width: 100%;
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.banner .content {
+			max-width: 400px;
+			background: #fff;
+			border: 1px solid #fff;
+			box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+			margin:10px 20px;
+		}
+		.banner .content img{
+			max-width: 100%;
+			margin-bottom: 15px;
+		}
+		.banner .content h2 {
+			color: #000;
+			font-weight: 600;
+			font-size: 1.5em;
+			padding: 0px 20px;
+			text-align: center;
+		}
+		.banner .content p {
+			font-size: 14px;
+			font-weight: 400;
+			color: #000;
+			margin: 15px 0 25px;
+			padding: 0px 35px;
+			text-align: center;
+		}
+		.banner .content a {
+			position: relative;
+			text-transform: uppercase;
+			font-weight: 500;
+			letter-spacing: 2px;
+			text-decoration: none;
+			display: block;
+			padding: 10px 15px;
+			color: #fff;
+			background: #005ea9;
+			left: 0;
+			right: 0;
+			text-align: center;
+			width: max-content;
+			margin: 10px auto;
+			border-radius: 4px;
+		}
+		.trailer {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 10000;
+			background: rgba(0,0,0,0.95);
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			visibility: hidden;
+			opacity: 0;
+		}
+		.trailer.active{
+			visibility: visible;
+			opacity: 1;
+		}
+		.trailer video{
+			position: relative;
+			max-width: 900px;
+			outline: none;
+		}
+		.close{
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			max-width: 20px;
+			max-height: 20px;
+			cursor: pointer;
+		}
+		@media (max-width: 991px){
+			.trailer video{
+				max-width: 90%;
+			}
+		}
+		@media (max-width: 767px){
+			.banner {
+				flex-direction: column;
+			}
+			.trailer video{
+				max-width: 90%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<div class="content">
+			<img src="bg.jpg">
+			<h2> Video Popup Onclick</h2>
+			<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+			<a href="#" onclick="toggle();">Watch Trailer</a>
+			
+			<div class="trailer">
+				<video src="tnpscbooks.mp4" autoplay controls="true">
+				</video>
+				<img src="cancel.png" class="close" onclick="toggle();">
+			</div>
+		</div>
+		
+		<div class="content">
+			<img src="bg.jpg">
+			<h2> Video Popup Onclick</h2>
+			<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+			<a href="#" onclick="toggle();">Watch Trailer</a>
+			
+			<div class="trailer">
+				<video src="tnpscbooks.mp4" autoplay controls="true">
+				</video>
+				<img src="cancel.png" class="close" onclick="toggle();">
+			</div>
+		</div>
+		
+		<div class="content">
+			<img src="bg.jpg">
+			<h2> Video Popup Onclick</h2>
+			<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+			<a href="#" onclick="toggle();">Watch Trailer</a>
+			
+			<div class="trailer">
+				<video src="tnpscbooks.mp4" autoplay controls="true">
+				</video>
+				<img src="cancel.png" class="close" onclick="toggle();">
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		function toggle(){
+			var trailer = document.querySelector('.trailer');
+			var video = document.querySelector('video').play();
+				trailer.classList.toggle('active');
+				video.pause();
+				video.currentTime = 0;
+		}
+	</script>
+</body>
+</html>
