@@ -119,41 +119,27 @@
 			<img src="bg.jpg">
 			<h2> Video Popup Onclick</h2>
 			<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-			<a href="#" onclick="showVideo('6uhdFCWAMjI?start=1')">Watch Trailer</a>
-			
-			<div class="trailer">
-				 <div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item videoIframe"  width="900" height="506" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<img src="cancel.png" class="close" onclick="toggle();">
-			</div>
+			<a href="#" onclick="showVideo('6uhdFCWAMjI?start=1')">Watch Trailer</a>			
 		</div>
 		<div class="content">
 			<img src="bg.jpg">
 			<h2> Video Popup Onclick</h2>
 			<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-			<a href="#" onclick="showVideo('Cwe2B5KnrYM?start=3')">Watch Trailer</a>
-			
-			<div class="trailer">
-				 <div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item videoIframe"  width="900" height="506" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<img src="cancel.png" class="close" onclick="toggle();">
-			</div>
+			<a href="#" onclick="showVideo('Cwe2B5KnrYM?start=3')">Watch Trailer</a>			
 		</div>
 		<div class="content">
 			<img src="bg.jpg">
 			<h2> Video Popup Onclick</h2>
 			<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 			<a href="#" onclick="showVideo('QzyE23ik2uA')" onclick="toggle();">Watch Trailer</a>			
-			<div class="trailer">
-				 <div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item videoIframe"  width="900" height="506" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-				</div>
-				<img src="cancel.png" class="close" onclick="toggle();">
-			</div>
 		</div>
-		
+		<!--video ifame show here-->
+		<div class="trailer">
+			 <div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item videoIframe"  width="900" height="506" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+			</div>
+			<img src="cancel.png" class="close">
+		</div>
 		
 		
 	</div>
@@ -161,7 +147,8 @@
 		function showVideo(youtubeID){ //iframe video id
 			var trailer = document.querySelector('.trailer');
 			var close = document.querySelector('.close');
-			var url = 'https://www.youtube.com/embed/' + youtubeID; 
+			var autoplay = '&autoplay=1&loop=1';
+			var url = 'https://www.youtube.com/embed/' + youtubeID + autoplay;
 				document.querySelector('.videoIframe').src = url;
 				trailer.classList.toggle('active');				
 				//alert(url);
