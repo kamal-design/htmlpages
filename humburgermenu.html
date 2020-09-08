@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humburger Menu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap');
+        body{
+            width: 100%;
+            background: #fafafa;
+            font-family: 'Heebo', sans-serif;
+            overflow: hidden;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2em;
+            text-align: center;
+        }
+        p{
+            font-size: 1em;
+            text-align: justify;
+        }
+        .text {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: block;
+            text-align: left;
+            margin-top: 5rem;
+        }
+        .text p{
+            width: 100%;
+        }
+        .button {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            margin: 2rem;
+            right: 0;
+            top: 0;
+            cursor: pointer; 
+            z-index: 9999;            
+        }
+        .button .line {
+            width: 100%;
+            height: 4px;
+            background: #0e0e0e;
+            position: relative;
+            transition: 1s ease;
+        }
+        .button .line:nth-of-type(2){
+            margin: 0.25rem 0;
+        }
+        .button .line-1{
+            transform: rotate(45deg);
+            top: 13px;
+            position: absolute;
+            background: #fff;
+        }
+        .button .line-2{
+           display: none;
+        }
+        .button .line-3{
+            transform: rotate(135deg);
+            top: 13px;
+            position: absolute;
+            background: #fff;
+        }
+        .mobile-menu{
+            display: none;
+            width: 350px;
+            height: 100vh;
+            top: 0;
+            right: -150px;
+            background: linear-gradient(35deg, #803ab7, #3F51B5);
+            position: absolute;
+            z-index: 999;            
+            transition: 0.6s ease;
+            opacity: 0;
+        }
+        .mobile-menu ul{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0;
+        }
+        .mobile-menu ul li{
+            list-style: none;
+        }
+        .mobile-menu ul li a {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: block;
+            text-decoration: none;
+            color: #e8e8e8;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            overflow: hidden;
+            position: relative;
+            padding: 10px 20px;
+        }
+        .mobile-menu ul li a:after{
+            content: '';
+            background: linear-gradient(90deg, #03A9F4, #3F51B5);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            right: -150%;
+            top: 0;
+            z-index: -1;
+            transition: 0.4s ease;
+        }
+        .mobile-menu ul li a:hover{
+            color: #ffffff;
+        }
+        .mobile-menu ul li a:hover:after{
+            right: 0;
+        }
+        .open{
+            display: block;
+            right:0;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="button">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="text">
+            <h1> Humburger Menu</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sequi eum voluptate atque maxime autem hic, vero blanditiis ipsam, quos exercitationem vel consequatur ad magni cumque, neque odit doloremque eius ut cupiditate esse illum doloribus debitis. Unde amet commodi in totam omnis quisquam, veritatis placeat sequi quas sint quidem eum dolor quo reprehenderit ratione eos dolore nobis tempore animi! Debitis, unde molestias in quae beatae cupiditate! Accusantium accusamus qui, placeat blanditiis animi vero omnis fugit dolore est non ipsa, ex inventore eius aspernatur. Laudantium rem deleniti perspiciatis provident tempore aliquid unde praesentium expedita ipsa quas, reiciendis eaque quam necessitatibus ab sed assumenda commodi libero nam illo alias at iusto porro exercitationem. Qui, neque. Quibusdam magni, laudantium ratione, eum explicabo accusamus quae animi</p>
+           
+           <p> consectetur dolore ipsam repellendus. Praesentium suscipit iusto itaque facilis ea veniam amet consectetur, similique architecto ipsa placeat voluptatum explicabo laborum quas mollitia provident modi molestias laboriosam deserunt? Excepturi temporibus a sint labore minus aliquid in? Veritatis molestias tenetur harum? Laborum fuga vero voluptatem neque ullam esse illo voluptatum, quaerat eum. Error reiciendis numquam quos beatae culpa id obcaecati natus praesentium reprehenderit voluptates dignissimos possimus nulla amet, laudantium laborum sed exercitationem libero unde adipisci ea minima perferendis nobis repellendus?</p>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function(){            
+            $('.button').on('click', function(){
+                //alert('hi');
+                $(".button .line:nth-of-type(1)").toggleClass("line-1");
+                $(".button .line:nth-of-type(2)").toggleClass("line-2");
+                $(".button .line:nth-of-type(3)").toggleClass("line-3");
+
+                $('.mobile-menu').toggleClass('open');
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
