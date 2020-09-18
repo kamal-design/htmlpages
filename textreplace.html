@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Top</title>
+    
+</head>
+<body>
+    <div>
+        <p id="changetext">1.0 ACCEPTANCE I, acting for and on behalf of and by the order and direction of TANGEDCO accept the price quoted for the Estimate for labour cost towards attending lt cable fault 4x240, 4x120sqmm, service cable fault 4x25sqmm & 2x16sqmm & pillar maintenance & HT maintenance & DT maintenance for 1 month from FEBRUARY -2020 as per the rates of piece work labour contract approved for the year 2019-20 executed under k2 agreement in respect of AE/SS/KALADIPET. under the terms and conditions set forth herein. </p>
+    </div>
+
+   <div style="text-align: center">
+        <input type="text" id="gettextfield">
+        <input type="text" id="settextfield">
+        <button onclick="textChange()">Change Text All</button>
+    </div>	
+    
+    <script>
+       function textChange() {
+          var str = document.getElementById("changetext").innerHTML; //body text change id 
+          var gettext = document.getElementById('gettextfield'); 
+              gettext = gettext.value;
+          var settext = document.getElementById('settextfield');
+              settext = settext.value;
+          var res = str.replace(gettext, settext);
+          document.getElementById("changetext").innerHTML = res;
+        }		
+    </script>
+</body>
+
+</html>
