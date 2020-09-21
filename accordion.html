@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion in javascript</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Heebo', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #bedfe8;
+        }
+        .accordion {
+            max-width: 800px;
+        }
+        .accordion .contentBx{
+            position: relative;
+            margin: 10px 20px;
+        }
+        .accordion .contentBx .label{
+            position: relative;
+            padding: 10px;
+            background: #2694af;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 700;
+        }
+        .accordion .contentBx .label::before{
+            content: '+';
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+        }
+        .accordion .contentBx.active .label::before{
+            content: '-';
+        }
+        .accordion .contentBx .content{
+            position: relative;
+            background: #fff;
+            height: 0;
+            overflow: hidden;
+            overflow-y: auto;
+            transition: 0.5s ;
+        }
+        .accordion .contentBx.active  .content{
+            height: 150px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="accordion">
+        <div class="contentBx">
+            <div class="label">List One </div>
+            <div class="content">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam inventore cumque impedit sapiente nisi, itaque ad ea fuga voluptate nostrum alias quaerat. Debitis et corporis laborum ducimus nisi commodi, sapiente temporibus in aliquam! Autem, rem! Repellat, sapiente quo id reiciendis totam quod blanditiis labore ad hic, expedita illum perspiciatis iusto, nihil at culpa ex molestiae dolores assumenda architecto temporibus quaerat atque. Rerum optio in cum doloremque ipsam dolorem nemo deserunt molestias facere molestiae voluptatem et, modi cupiditate soluta. Aspernatur ipsam quasi cum nesciunt officiis eum voluptas velit sit reiciendis facilis eius, esse laboriosam totam culpa adipisci iure dolores maxime!</p>
+            </div>
+        </div>
+        <div class="contentBx">
+            <div class="label">List Two </div>
+            <div class="content">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam inventore cumque impedit sapiente nisi, itaque ad ea fuga voluptate nostrum alias quaerat. Debitis et corporis laborum ducimus nisi commodi, sapiente temporibus in aliquam! Autem, rem! Repellat, sapiente quo id reiciendis totam quod blanditiis labore ad hic, expedita illum perspiciatis iusto, nihil at culpa ex molestiae dolores assumenda architecto temporibus quaerat atque. Rerum optio in cum doloremque ipsam dolorem nemo deserunt molestias facere molestiae voluptatem et, modi cupiditate soluta. Aspernatur ipsam quasi cum nesciunt officiis eum voluptas velit sit reiciendis facilis eius, esse laboriosam totam culpa adipisci iure dolores maxime!</p>
+            </div>
+        </div>
+        <div class="contentBx">
+            <div class="label">List Three </div>
+            <div class="content">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam inventore cumque impedit sapiente nisi, itaque ad ea fuga voluptate nostrum alias quaerat. Debitis et corporis laborum ducimus nisi commodi, sapiente temporibus in aliquam! Autem, rem! Repellat, sapiente quo id reiciendis totam quod blanditiis labore ad hic, expedita illum perspiciatis iusto, nihil at culpa ex molestiae dolores assumenda architecto temporibus quaerat atque. Rerum optio in cum doloremque ipsam dolorem nemo deserunt molestias facere molestiae voluptatem et, modi cupiditate soluta. Aspernatur ipsam quasi cum nesciunt officiis eum voluptas velit sit reiciendis facilis eius, esse laboriosam totam culpa adipisci iure dolores maxime!</p>
+            </div>
+        </div>
+        <div class="contentBx">
+            <div class="label">List Four </div>
+            <div class="content">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam inventore cumque impedit sapiente nisi, itaque ad ea fuga voluptate nostrum alias quaerat. Debitis et corporis laborum ducimus nisi commodi, sapiente temporibus in aliquam! Autem, rem! Repellat, sapiente quo id reiciendis totam quod blanditiis labore ad hic, expedita illum perspiciatis iusto, nihil at culpa ex molestiae dolores assumenda architecto temporibus quaerat atque. Rerum optio in cum doloremque ipsam dolorem nemo deserunt molestias facere molestiae voluptatem et, modi cupiditate soluta. Aspernatur ipsam quasi cum nesciunt officiis eum voluptas velit sit reiciendis facilis eius, esse laboriosam totam culpa adipisci iure dolores maxime!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const accordion = document.getElementsByClassName('contentBx');
+        for (i = 0; i < accordion.length; i++) {
+            accordion[i].addEventListener('click', function(){
+                this.classList.toggle('active');
+            })
+            
+        }
+    </script>
+</body>
+</html>
