@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animating Blob Effects</title>
+
+    <style>
+        *{
+            margin: 0;            
+        }
+        html,body {
+            z-index: 0;
+            position: absolute;
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(41, 157, 213, 0.84), rgba(5, 123, 123, 0.92)),url(nature.jpg);
+            background-size: cover;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-items: center;
+            overflow: hidden;
+        }
+        .content {
+            grid-column: 3/span 8;
+            position: relative;
+            z-index: 0;
+            min-width: 60%;
+            margin: 0 10%;
+            height: 60vh;
+            display: grid;
+            grid-template-columns: 5fr 3fr;
+            grid-template-rows: 3fr 1fr;
+        }
+        h1,h2 {
+            text-transform: uppercase;
+            font-family: sans-serif;
+            letter-spacing: 0.5em;
+        }
+        h1{
+            font-size: 6vw;
+            -webkit-text-stroke: 2px black;
+        }
+        h2{
+            font-size: 1.6vw;
+            color: deeppink;            
+        }
+        p {
+            color: gray;
+            font-style: inherit;
+            font-size: 0.8em;
+            line-height: 1.5em;
+        }
+        .intro {
+            padding: 5em 3em 2em 1em;
+            background: white;
+            grid-column: 0;
+            width: 46%;
+        }
+        button{
+            display: block;
+            margin-top: 20px;
+            border-radius: 50px;
+            width: 140px;
+            height: 40px;
+            border: none;
+            background-color: deeppink;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .orbitPathCentered{
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+        .circle01{
+            right: 8%;
+            top: 3vh;
+            width: 18vh;
+            padding-top: 18vh;
+            transform-origin: 40% 50%;
+            background: linear-gradient(#f439d6, #f42b71);
+            animation: rotate 7s linear infinite;
+        }
+        .orbiting-circle01{
+            width: 3.5vw;
+            padding-top: 3.5vw;
+            margin-top: 4vw;
+            background: linear-gradient(#f536d0, #ab02f3);
+        }
+        .border-plus {
+            border: 1px solid #4fe3ff;
+            z-index: -1;
+        }
+        .orbitPath01-border{
+            top: 70vh;
+            left: 45%;
+            width: 24vw;
+            height: 24vw;
+            animation: rotatePath 50s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="content">
+        <div class="intro">
+            <h2>Our New Blog</h2>
+            <h1>Blob</h1>
+            <p> Id perferendis ab quam voluptatibus illum sapiente voluptatum deleniti voluptates fugit iure numquam, natus placeat exercitationem officiis dolorum mollitia aliquid laudantium atque minima ex voluptas aperiam.</p>
+            <button> Read More</button>
+        </div>
+    </div>
+
+    <div class="circle circle01">
+        <div class="circle orbiting-circle01"></div>
+    </div>
+
+    <div class="circle orbitPathCentered border-plus orbitPath01-border">
+    </div>
+    <div class="circle orbitPathCentered orbitPath01"></div>
+
+    <div class="circle orbitPathCentered border-plus orbitPath02-border">
+    </div>
+    <div class="circle orbitPathCentered orbitPath02"></div>
+    <div class="circle circle02"></div>
+
+    <div class="circle border-orange circle03"></div>
+    <div class="circle circle04"></div>
+</body>
+</html>
