@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Grid Item for Social Icons </title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+		<style>
+                .grid-box {
+					top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, 50%);
+                    position: relative;
+                    background: #e7272d;
+                    width: 800px;
+                    height: 300px;
+                    display: grid;
+                    grid-template-columns: repeat(4, 200px);
+                    grid-template-rows: repeat(4, 150px);
+                }
+                .grid-box .grid-item {
+                    border: 1px solid #e40007;
+                    display: grid;
+                }
+                .grid-box .grid-item:hover {
+                    background: red;
+                }
+                .grid-box .grid-item a{
+                    margin: 0;
+                    padding: 20px;                    
+                    justify-self: center;
+                    align-self: center;
+                    text-align: center;
+                    color: #fff;
+					text-decoration: none;
+                }
+                .grid-box .grid-item a i{
+                    font-size: 3rem;
+                }
+                .grid-box .grid-item a span{
+                    display: block;
+                    font-size: 22px;
+                    font-weight: 700;
+                    margin-top: 6px;
+                }                
+            </style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="grid-box">                                
+				<div class="grid-item">
+					<a href="https://www.facebook.com/smcateringserviceschennai/" target="_blank"><i class="fa fa-facebook-square"></i> <span> Facebook</span></a>
+				</div>
+				<div class="grid-item">
+					<a href="https://twitter.com/CateringShubha" target="_blank"><i class="fa fa-twitter-square"></i> <span> Twitter</span></a>
+				</div>
+				<div class="grid-item">
+					<a href="https://wa.me/919940421373" target="_blank"><i class="fa fa-whatsapp"></i> <span> Whatsapp</span></a>
+				</div>
+				<div class="grid-item">
+					<a href="https://www.youtube.com/channel/UCPrdvQGtysVT9bSyFsVIqQQ?" target="_blank"><i class="fa fa-youtube"></i> <span> Youtube</span></a>
+				</div>
+				<div class="grid-item">
+					<a href="tel:917200700373"><i class="fa fa-phone"></i> <span> Call-1</span></a>
+				</div>
+				<div class="grid-item">
+					<a href="tel:919841166473"><i class="fa fa-phone"></i> <span> Call-2</span></a>
+				</div>
+				<div class="grid-item">
+					<a href="mailto:smcateringuma@gmail.com"><i class="fa fa-envelope"></i> <span> Email</span></a>
+				</div>
+				<div class="grid-item">
+					<a href="http://www.shubhamangalamcatering.com/"><i class="fa fa-globe"></i> <span> Website</span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
