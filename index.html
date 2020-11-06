@@ -58,6 +58,17 @@
 	<body>
 		<div class="container">	
 			<div class="contentbox">
+				<!-- notification -->
+				<audio src="notification.mp3" id="audio" controls style="display:none;"></audio>
+				<button type="button" onclick="playAudio();"> Click </button>
+				<script>
+					function playAudio(){
+						document.getElementById("audio").play();
+					}	
+				</script>
+				<!-- notification -->
+				
+				
 				<h1> My HTML Page Design</h1>
 				<div class="pagelink">
 					<ul>
