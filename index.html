@@ -70,7 +70,8 @@
 				
 				
 				<h1> My HTML Page Design</h1>
-				<div class="pagelink">
+				<h2>Desing Pages <span id="designpages">0</span></h2>
+                  		<div class="pagelink">
 					<ul>
 						<li class="preview"><a href="sidebar-menu.html"> Menu Sidebar </a></li>
 						<li class="preview"><a href="spiner-js.html"> Text & Background color change </a></li>
@@ -105,6 +106,12 @@
 			jQuery(document).ready(function ($) {
 				$('.preview a').miniPreview({ prefetch: 'pageload' });
 			});
+			 $(document).ready(function (){        
+				var num = $(".pagelink ul").find("li").length;
+				  if (num > 1) {
+				    $('#designpages').html(num);
+				  }
+			  });
 		</script> 
 		
 	</body>
