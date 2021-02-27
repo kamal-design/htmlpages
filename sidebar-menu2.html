@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Scroll </title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <style>
+         * {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  } 
+		html {
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        section {
+            padding: 100px 100px;
+        }
+
+
+
+        
+  #sidebar {
+      position: fixed; 
+      height: 100%;     
+      background-color: #666;
+      transition: all 500ms linear;
+  }
+  #sidebar.active {
+    left: 0px;
+  }
+  #sidebar .toggle-btn {
+    position: absolute;
+    left: 220px;
+    top: 15px;
+    border: 1px solid #666;
+    padding: 6px;
+    border-radius: 5px;
+    background: #fff;
+  }
+  #sidebar .toggle-btn span{
+    display: block;  
+    width: 25px;
+    height: 4px;
+    background: #151719;
+    margin: 3px 0px;
+  }
+  
+  .header{
+      position: absolute;
+      height: 44px;
+      width: 100%;
+      background-color: #151719;
+      z-index: 5;
+  }
+  .header a {
+    line-height: 44px;
+    font-size: 1.25rem;
+    padding-left: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .side-nav{
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      
+      padding-top: 44px;
+      z-index: 3;
+  }
+  .side-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.side-nav ul li{
+    padding: 15px 10px;
+    border-bottom: 1px solid #777;
+}
+.side-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.side-nav ul li i {
+    color: #fff;
+    text-decoration: none;
+}
+.main-content {
+    padding-top: 44px;
+}
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px){
+    #sidebar {
+        width: 50px;
+        left: -50px;  
+    }
+    #sidebar .toggle-btn {
+        position: absolute;
+        left: 60px;
+        top: 12px;
+        border: 1px solid #666;
+        padding: 6px;
+        border-radius: 5px;
+        background: #fff;
+     }
+    .side-nav {
+        width: 50px;
+    }
+    .side-nav ul li {
+        text-align: center;
+    }
+    .side-nav ul li span:nth-child(2) {
+        display: none;
+    }
+    .side-nav ul li i {
+        font-size: 24px;
+    }
+    .main-content {
+        margin-left: 52px;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px){
+    #sidebar {
+        width: 50px;
+        left: -50px;  
+    }
+    #sidebar .toggle-btn {
+        position: absolute;
+        left: 60px;
+        top: 12px;
+        border: 1px solid #666;
+        padding: 6px;
+        border-radius: 5px;
+        background: #fff;
+     }
+    .side-nav {
+        width: 50px;
+    }
+    .side-nav ul li {
+        text-align: center;
+    }
+    .side-nav ul li span:nth-child(2) {
+        display: none;
+    }
+    .side-nav ul li i {
+        font-size: 24px;
+    }
+    .main-content {
+        margin-left: 52px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px){
+    #sidebar {
+        width: 50px;
+        left: -50px;  
+    }
+    #sidebar .toggle-btn {
+        position: absolute;
+        left: 60px;
+        top: 12px;
+        border: 1px solid #666;
+        padding: 6px;
+        border-radius: 5px;
+        background: #fff;
+     }
+    .side-nav {
+        width: 50px;
+    }
+    .side-nav ul li {
+        text-align: center;
+    }
+    .side-nav ul li span:nth-child(2) {
+        display: none;
+    }
+    .side-nav ul li i {
+        font-size: 24px;
+    }
+    .main-content {
+        margin-left: 60px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px){
+    #sidebar {
+        width: 200px;
+        left: -200px;
+    }
+    #sidebar .toggle-btn {
+        position: absolute;
+        left: 210px;
+        top: 12px;
+        border: 1px solid #666;
+        padding: 6px;
+        border-radius: 5px;
+        background: #fff;
+     }
+     .side-nav {
+        width: 200px;
+    }
+    .side-nav ul li {
+        text-align: left;
+    }
+    .side-nav ul li span:nth-child(2) {
+        display: inline-block;
+    }
+    .side-nav ul li i {
+        font-size: 14px;
+    }
+    .main-content {
+        margin-left: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px){
+    #sidebar .toggle-btn {
+        position: absolute;
+        left: 220px;
+        top: 15px;
+        border: 1px solid #666;
+        padding: 6px;
+        border-radius: 5px;
+        background: #fff;
+    }
+    .side-nav {
+        width: 200px;
+    }
+    .side-nav ul li {
+        text-align: left;
+    }
+    .side-nav ul li span:nth-child(2) {
+        display: inline-block;
+    }
+    .side-nav ul li i {
+        font-size: 14px;
+    }
+    .main-content {
+        margin-left: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
+  .footer_sec {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    background-color: #000;
+    padding: 10px 0px;
+    z-index: 5;
+  }
+  .footer_sec a {
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+  }
+	</style>
+</head>
+<body>
+
+    <header>
+        <div class="header">
+            <a href="#" class="nav-trigger"><span> Company Logo</span></a>
+        </div>
+        <div class="side-nav">
+            <nav id="sidebar">
+                <div class="toggle-btn" onclick="toggleSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                   <li><a href="#"><span><i class="fa fa-user"></i> </span> <span>User </span></a></li>
+                   <li><a href="#"><span><i class="fa fa-envelope-o"></i> </span> <span>Message </span></a></li>
+                   <li><a href="#"><span><i class="fa fa-bar-chart"></i> </span> <span>Analytics </span></a></li>
+                   <li><a href="#"><span><i class="fa fa-credit-card-alt"></i> </span> <span>Payments </span></a></li>        
+                </ul>            
+            </nav>
+        </div>
+        
+	</header>
+    <div class="main-content">
+            <section>
+                    <div class="container">
+                        <div class="row">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eum reiciendis illum sint neque labore quis hic nam debitis aliquid tenetur et earum assumenda corrupti quibusdam, ipsam consequatur ullam delectus minima maxime! Nisi quos maxime ad eveniet. Porro eius minima eos repellat doloremque ex necessitatibus soluta minus officiis quasi vel tempore libero dicta molestiae pariatur ducimus exercitationem fugiat, debitis sint. Aspernatur sint atque obcaecati, repellat sequi perferendis quam id molestiae tempore suscipit iure amet cumque fuga dolores natus debitis officia quo, magni quod voluptatibus ipsum culpa! Ipsa saepe facere laudantium, quo hic optio neque quia deserunt repudiandae, magni architecto placeat beatae. Explicabo culpa, eum distinctio odit alias, recusandae nesciunt rem, sequi fugiat expedita accusamus quibusdam facilis labore modi nostrum eos tempore nisi amet! Rerum atque distinctio odit nisi dolorem quidem error numquam! Accusantium voluptatibus temporibus, quaerat aliquid numquam similique nihil! At eaque deleniti ipsa consectetur fuga expedita. Repellendus ut perspiciatis exercitationem autem itaque impedit similique ducimus. Corrupti quasi consequuntur minus explicabo adipisci? Maxime, provident similique recusandae consectetur labore accusamus. Tempora nisi deleniti, asperiores facilis earum voluptas accusamus, quia voluptatem eligendi maxime architecto fuga ipsam numquam. Rerum tenetur necessitatibus animi consequuntur, impedit excepturi ab et qui, praesentium, nisi possimus iusto magni?</p>	
+                            
+                            <br>
+                            <br>
+                            <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eum reiciendis illum sint neque labore quis hic nam debitis aliquid tenetur et earum assumenda corrupti quibusdam, ipsam consequatur ullam delectus minima maxime! Nisi quos maxime ad eveniet. Porro eius minima eos repellat doloremque ex necessitatibus soluta minus officiis quasi vel tempore libero dicta molestiae pariatur ducimus exercitationem fugiat, debitis sint. Aspernatur sint atque obcaecati, repellat sequi perferendis quam id molestiae tempore suscipit iure amet cumque fuga dolores natus debitis officia quo, magni quod voluptatibus ipsum culpa! Ipsa saepe facere laudantium, quo hic optio neque quia deserunt repudiandae, magni architecto placeat beatae. Explicabo culpa, eum distinctio odit alias, recusandae nesciunt rem, sequi fugiat expedita accusamus quibusdam facilis labore modi nostrum eos tempore nisi amet! Rerum atque distinctio odit nisi dolorem quidem error numquam! Accusantium voluptatibus temporibus, quaerat aliquid numquam similique nihil! At eaque deleniti ipsa consectetur fuga expedita. Repellendus ut perspiciatis exercitationem autem itaque impedit similique ducimus. Corrupti quasi consequuntur minus explicabo adipisci? Maxime, provident similique recusandae consectetur labore accusamus. Tempora nisi deleniti, asperiores facilis earum voluptas accusamus, quia voluptatem eligendi maxime architecto fuga ipsam numquam. Rerum tenetur necessitatibus animi consequuntur, impedit excepturi ab et qui, praesentium, nisi possimus iusto magni?</p>	
+                        </div>
+                    </div>
+                </section>
+    </div>
+		
+		
+		
+        <footer class="footer_sec text-center">
+            <a href="">2019 &copy; copyright Kamal. All rights reserved</a>
+        </footer>        
+        <script>
+            function toggleSidebar(){
+                document.getElementById("sidebar").classList.toggle('active');
+            }
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll Parallax Effect </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            color: #ecf0f1;            
+        }
+        ul {
+            list-style: none;
+        }
+        ul li {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px auto;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+        nav a:hover {
+            background-color: yellow;
+            color: #333;
+        }
+        nav a.active{
+            background: yellow;
+        }
+        #main-menu {
+            position: fixed;
+            text-align: center;
+        }
+        section {
+            width: 100%;
+            margin: 0;
+            padding: 100px;
+        }
+        p {
+            width: 50%;
+        }
+        #section1 {
+            background-image: url(./assets/images/slider-1.jpg);
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #section2 {
+            background-image: url(./assets/images/slider-2.jpg);
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #section3 {
+            background-image: url(./assets/images/slider-3.jpg);
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #section4 {
+            background-image: url(./assets/images/slider-4.jpg);
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #section5 {
+            background-image: url(./assets/images/slider-5.jpeg);
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav id="main-menu">
+       <ul>
+        <li><a data-scroll href="#section1" class="obss-scroller"> Home</a></li>
+        <li><a data-scroll href="#section2" class="obss-scroller"> About us</a></li>
+        <li><a data-scroll href="#section3" class="obss-scroller"> Service</a></li>
+        <li><a data-scroll href="#section4" class="obss-scroller"> Gallery</a></li>
+        <li><a data-scroll href="#section5" class="obss-scroller"> Contact</a></li>
+       </ul>
+    </nav>
+
+    <section id="section1">
+        <h1> Smooth Scroll Home </h1>
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam vitae tenetur magni neque. Quo tenetur tempore doloribus eligendi quasi neque, modi, harum enim, minus dolore laudantium saepe magnam? Ea, rem. Fugiat commodi sint, facilis expedita quos ea, atque aliquid velit nesciunt vero ullam, temporibus nemo itaque ut consequatur inventore adipisci excepturi magni totam? Atque quo soluta, natus fugit nihil veniam voluptatum inventore totam eligendi autem alias voluptatibus aperiam enim voluptas cumque corrupti, unde dolores consectetur necessitatibus doloremque sunt eum assumenda amet aliquid. Facilis numquam tenetur at cumque, eum consequuntur autem nobis unde quo sequi ratione, molestiae, sint expedita. Officia voluptatem consectetur rem assumenda dolores mollitia itaque iste, sunt, similique modi rerum, asperiores natus praesentium! Placeat animi fugiat ab aut esse dolorem fugit vero pariatur mollitia suscipit consequatur obcaecati quae molestias, hic illo error culpa reprehenderit temporibus, velit architecto eius provident doloribus? Quis eaque veniam molestiae ex suscipit similique doloribus cupiditate modi, recusandae facilis amet, consequatur ullam veritatis voluptas vero sapiente voluptates? At molestias debitis consectetur in, quisquam delectus ducimus voluptatem. Adipisci et a, eius incidunt aliquam officia mollitia possimus placeat odio id sit fuga dolor debitis facilis corrupti ipsa ea hic omnis aliquid assumenda doloribus explicabo voluptate nulla dignissimos! Deserunt.</p>
+    </section>
+
+    <section id="section2">
+        <h1> Smooth Scroll About </h1>
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam vitae tenetur magni neque. Quo tenetur tempore doloribus eligendi quasi neque, modi, harum enim, minus dolore laudantium saepe magnam? Ea, rem. Fugiat commodi sint, facilis expedita quos ea, atque aliquid velit nesciunt vero ullam, temporibus nemo itaque ut consequatur inventore adipisci excepturi magni totam? Atque quo soluta, natus fugit nihil veniam voluptatum inventore totam eligendi autem alias voluptatibus aperiam enim voluptas cumque corrupti, unde dolores consectetur necessitatibus doloremque sunt eum assumenda amet aliquid. Facilis numquam tenetur at cumque, eum consequuntur autem nobis unde quo sequi ratione, molestiae, sint expedita. Officia voluptatem consectetur rem assumenda dolores mollitia itaque iste, sunt, similique modi rerum, asperiores natus praesentium! Placeat animi fugiat ab aut esse dolorem fugit vero pariatur mollitia suscipit consequatur obcaecati quae molestias, hic illo error culpa reprehenderit temporibus, velit architecto eius provident doloribus? Quis eaque veniam molestiae ex suscipit similique doloribus cupiditate modi, recusandae facilis amet, consequatur ullam veritatis voluptas vero sapiente voluptates? At molestias debitis consectetur in, quisquam delectus ducimus voluptatem. Adipisci et a, eius incidunt aliquam officia mollitia possimus placeat odio id sit fuga dolor debitis facilis corrupti ipsa ea hic omnis aliquid assumenda doloribus explicabo voluptate nulla dignissimos! Deserunt.</p>
+    </section>
+    <section id="section3">
+        <h1> Smooth Scroll Services </h1>
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam vitae tenetur magni neque. Quo tenetur tempore doloribus eligendi quasi neque, modi, harum enim, minus dolore laudantium saepe magnam? Ea, rem. Fugiat commodi sint, facilis expedita quos ea, atque aliquid velit nesciunt vero ullam, temporibus nemo itaque ut consequatur inventore adipisci excepturi magni totam? Atque quo soluta, natus fugit nihil veniam voluptatum inventore totam eligendi autem alias voluptatibus aperiam enim voluptas cumque corrupti, unde dolores consectetur necessitatibus doloremque sunt eum assumenda amet aliquid. Facilis numquam tenetur at cumque, eum consequuntur autem nobis unde quo sequi ratione, molestiae, sint expedita. Officia voluptatem consectetur rem assumenda dolores mollitia itaque iste, sunt, similique modi rerum, asperiores natus praesentium! Placeat animi fugiat ab aut esse dolorem fugit vero pariatur mollitia suscipit consequatur obcaecati quae molestias, hic illo error culpa reprehenderit temporibus, velit architecto eius provident doloribus? Quis eaque veniam molestiae ex suscipit similique doloribus cupiditate modi, recusandae facilis amet, consequatur ullam veritatis voluptas vero sapiente voluptates? At molestias debitis consectetur in, quisquam delectus ducimus voluptatem. Adipisci et a, eius incidunt aliquam officia mollitia possimus placeat odio id sit fuga dolor debitis facilis corrupti ipsa ea hic omnis aliquid assumenda doloribus explicabo voluptate nulla dignissimos! Deserunt.</p>
+    </section>
+    <section id="section4">
+        <h1> Smooth Scroll Gallery </h1>
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam vitae tenetur magni neque. Quo tenetur tempore doloribus eligendi quasi neque, modi, harum enim, minus dolore laudantium saepe magnam? Ea, rem. Fugiat commodi sint, facilis expedita quos ea, atque aliquid velit nesciunt vero ullam, temporibus nemo itaque ut consequatur inventore adipisci excepturi magni totam? Atque quo soluta, natus fugit nihil veniam voluptatum inventore totam eligendi autem alias voluptatibus aperiam enim voluptas cumque corrupti, unde dolores consectetur necessitatibus doloremque sunt eum assumenda amet aliquid. Facilis numquam tenetur at cumque, eum consequuntur autem nobis unde quo sequi ratione, molestiae, sint expedita. Officia voluptatem consectetur rem assumenda dolores mollitia itaque iste, sunt, similique modi rerum, asperiores natus praesentium! Placeat animi fugiat ab aut esse dolorem fugit vero pariatur mollitia suscipit consequatur obcaecati quae molestias, hic illo error culpa reprehenderit temporibus, velit architecto eius provident doloribus? Quis eaque veniam molestiae ex suscipit similique doloribus cupiditate modi, recusandae facilis amet, consequatur ullam veritatis voluptas vero sapiente voluptates? At molestias debitis consectetur in, quisquam delectus ducimus voluptatem. Adipisci et a, eius incidunt aliquam officia mollitia possimus placeat odio id sit fuga dolor debitis facilis corrupti ipsa ea hic omnis aliquid assumenda doloribus explicabo voluptate nulla dignissimos! Deserunt.</p>
+    </section>
+    <section id="section5">
+        <h1> Smooth Scroll Contact </h1>
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam vitae tenetur magni neque. Quo tenetur tempore doloribus eligendi quasi neque, modi, harum enim, minus dolore laudantium saepe magnam? Ea, rem. Fugiat commodi sint, facilis expedita quos ea, atque aliquid velit nesciunt vero ullam, temporibus nemo itaque ut consequatur inventore adipisci excepturi magni totam? Atque quo soluta, natus fugit nihil veniam voluptatum inventore totam eligendi autem alias voluptatibus aperiam enim voluptas cumque corrupti, unde dolores consectetur necessitatibus doloremque sunt eum assumenda amet aliquid. Facilis numquam tenetur at cumque, eum consequuntur autem nobis unde quo sequi ratione, molestiae, sint expedita. Officia voluptatem consectetur rem assumenda dolores mollitia itaque iste, sunt, similique modi rerum, asperiores natus praesentium! Placeat animi fugiat ab aut esse dolorem fugit vero pariatur mollitia suscipit consequatur obcaecati quae molestias, hic illo error culpa reprehenderit temporibus, velit architecto eius provident doloribus? Quis eaque veniam molestiae ex suscipit similique doloribus cupiditate modi, recusandae facilis amet, consequatur ullam veritatis voluptas vero sapiente voluptates? At molestias debitis consectetur in, quisquam delectus ducimus voluptatem. Adipisci et a, eius incidunt aliquam officia mollitia possimus placeat odio id sit fuga dolor debitis facilis corrupti ipsa ea hic omnis aliquid assumenda doloribus explicabo voluptate nulla dignissimos! Deserunt.</p>
+    </section>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script   script src="./assets/js/smooth-scroller.js"></script> 
+    
+    <script>
+        $(document).ready(function(){
+            var scroll = new SmoothScroll('a[href*="#"]', {
+                speed: 300,
+                speedAsDuration: true
+            });
+
+            $("section").height($(window).height());
+            onWindowResize();
+            
+            $(".obbs-scroller").smoothScroller({
+                duration: 1000,
+                activeClass: "active"
+            });
+        });
+
+        var onWindowResize = function(){
+            $(window).resize(function(evt){
+                $("section").height($(window).height());
+            });
+        }
+    </script>
+
+    <!-- https://github.com/cferdinandi/smooth-scroll -->
+</body>
+</html>

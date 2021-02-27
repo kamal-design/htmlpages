@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<style>
+        body
+        {
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+            background: #262626;
+        }
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 400px;
+            background: #000;
+        }        
+        .about {
+            padding: 50px;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);	
+        }
+
+        .about h2 {
+            padding: 0;
+            margin: 0;
+            font-size: 1.6rem;
+            color: yellow;
+            text-transform: uppercase;
+        }
+        /* tob to bottom START */
+        .figure {
+            width: 100%;
+            height: 100%;
+        }
+        .figure:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: url(./assets/images/ilayaraga.jpg);
+            transform-origin: bottom;
+            transition: 0.5s;
+            background-size: 600px;
+        }
+        .box:hover .figure:before {
+            transform: rotateX(90deg) translateY(50%);
+        }
+        .figure:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url(./assets/images/ilayaraga.jpg);
+            transform-origin: top;
+            transition: 0.5s;
+            background-size: 600px;
+            background-position: 300px;
+        }
+        .box:hover .figure:after {
+            transform: rotateX(90deg) translateY(-50%);
+        }
+
+        /* tob to bottom END */   
+       
+    </style>
+
+    <title>Image Splite Top To Bottom</title>
+  </head>
+  <body>
+
+	<div class="box">
+		<div class="about">
+			<h2>Image Splite Top To Bottom</h2>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac dolor tempus velit cursus suscipit. Proin at ligula sollicitudin, scelerisque purus aliquam, semper ipsum. Suspendisse in ligula sed diam condimentum aliquam. In dictum eros erat, accumsan auctor magna rhoncus eu. Phasellus lectus quam, tristique at erat ut, tincidunt ultrices eros.</p>
+		</div>
+		<div class="figure"></div>
+	</div>
+</body>
+</html>

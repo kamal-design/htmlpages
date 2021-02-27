@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Infinite Stack card animation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html, body {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background: #fffdb3;
+		}
+		.stack_crad {
+			position: relative;
+			width: 300px;
+			height: 400px;
+			transform-style: preserve-3d;
+		}
+		.stack_crad::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+		}
+		.stack_crad::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 50%;
+			background: #45abc4;
+		}
+		.stack_crad div {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			transform-style: preserve-3d;
+			overflow: hidden;
+			animation: animate 4s linear infinite;
+			animation-delay: calc(0.5s * var(--i));
+		}
+		@keyframes animate{
+			0%{
+				transform: perspective(500px) translate3d(0,0,0);
+				opacity: 1;
+				box-shadow: 5px 5px 15px rgba(0,0,0,0);
+			}
+			25%{
+				transform: perspective(500px) translate3d(-50px, -50px, 50px);
+				opacity: 1;
+				box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+			}
+			35%,100%{
+				transform: perspective(500px) translate3d(-600px, -50px, 100px);
+				opacity: 0;
+			}			
+		}		
+		.stack_crad div span {
+			position: absolute;
+			/* top: 0; */
+			width: 100%;
+			height: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 8em;
+			color: #fff;
+			background: #45abc4;
+			font-weight: 600;
+		}
+		.stack_crad div span:nth-child(2)
+		{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 50%;
+			overflow: hidden;
+			background: url(bg.jpg);
+		} 
+	</style>
+  </head>
+  <body>
+	<section>
+		<div class="stack_crad">
+			<div style="--i:1;">
+				<span>L</span>
+				<span></span>
+			</div>
+			<div style="--i:2;">
+				<span>O</span>
+				<span></span>
+			</div>
+			<div style="--i:3;">
+				<span>A</span>
+				<span></span>
+			</div>
+			<div style="--i:4;">
+				<span>D</span>
+				<span></span>
+			</div>
+			<div style="--i:5;">
+				<span>I</span>
+				<span></span>
+			</div>
+			<div style="--i:6;">
+				<span>N</span>
+				<span></span>
+			</div>
+			<div style="--i:7;">
+				<span>G</span>
+				<span></span>
+			</div>
+			<div style="--i:8;">
+				<span>....</span>
+				<span></span>
+			</div>
+			
+		</div>
+	</section>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+  </body>
+</html>
+

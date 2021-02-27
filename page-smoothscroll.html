@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pull page Scroll</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+.container .section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+}
+.container .section:nth-child(1){
+    background: #f00 url(./assets/images/slider-1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container .section:nth-child(2){
+    background: #f00 url(./assets/images/slider-2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container .section:nth-child(3){
+    background: rgb(22, 25, 156) url(./assets/images/slider-3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container .section:nth-child(4){
+    background: rgb(17, 168, 12) url(./assets/images/slider-4.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container .section:nth-child(5){
+    background: rgb(141, 0, 99) url(./assets/images/slider-5.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.section .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    padding: 2rem 2rem;
+    border-radius: 4px;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="section">
+            <div class="content">
+                <h1>Section One Title</h1>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed qui ea vel mollitia natus debitis corporis ducimus dolore aperiam! Rem alias quasi voluptate vel ducimus velit sint iure voluptates expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur dignissimos sunt earum, neque quidem recusandae unde at temporibus nulla eum veritatis consectetur impedit error molestiae eaque obcaecati qui rem nesciunt, mollitia quae optio beatae! Asperiores blanditiis quia ipsum eos reiciendis reprehenderit quod? Voluptate assumenda sunt suscipit dignissimos cum tenetur vero, porro, tempore accusantium, blanditiis dolorem odit expedita itaque autem. Assumenda amet quis nulla laboriosam accusantium, cumque, incidunt unde praesentium vero quas obcaecati maxime beatae exercitationem sint? Aperiam tempore earum fuga modi aliquam doloribus perspiciatis alias provident ea, inventore tempora ipsum, dolorum quaerat quas quos rem pariatur dignissimos. Tempore, ducimus.</p>
+            </div>
+        </div>
+   
+        <div class="section">
+            <div class="content">
+                <h1>Section Two Title</h1>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed qui ea vel mollitia natus debitis corporis ducimus dolore aperiam! Rem alias quasi voluptate vel ducimus velit sint iure voluptates expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur dignissimos sunt earum, neque quidem recusandae unde at temporibus nulla eum veritatis consectetur impedit error molestiae eaque obcaecati qui rem nesciunt, mollitia quae optio beatae! Asperiores blanditiis quia ipsum eos reiciendis reprehenderit quod? Voluptate assumenda sunt suscipit dignissimos cum tenetur vero, porro, tempore accusantium, blanditiis dolorem odit expedita itaque autem. Assumenda amet quis nulla laboriosam accusantium, cumque, incidunt unde praesentium vero quas obcaecati maxime beatae exercitationem sint? Aperiam tempore earum fuga modi aliquam doloribus perspiciatis alias provident ea, inventore tempora ipsum, dolorum quaerat quas quos rem pariatur dignissimos. Tempore, ducimus.</p>
+            </div>
+        </div>
+   
+        <div class="section">
+            <div class="content">
+                <h1>Section Three Title</h1>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed qui ea vel mollitia natus debitis corporis ducimus dolore aperiam! Rem alias quasi voluptate vel ducimus velit sint iure voluptates expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur dignissimos sunt earum, neque quidem recusandae unde at temporibus nulla eum veritatis consectetur impedit error molestiae eaque obcaecati qui rem nesciunt, mollitia quae optio beatae! Asperiores blanditiis quia ipsum eos reiciendis reprehenderit quod? Voluptate assumenda sunt suscipit dignissimos cum tenetur vero, porro, tempore accusantium, blanditiis dolorem odit expedita itaque autem. Assumenda amet quis nulla laboriosam accusantium, cumque, incidunt unde praesentium vero quas obcaecati maxime beatae exercitationem sint? Aperiam tempore earum fuga modi aliquam doloribus perspiciatis alias provident ea, inventore tempora ipsum, dolorum quaerat quas quos rem pariatur dignissimos. Tempore, ducimus.</p>
+            </div>
+        </div>
+    
+        <div class="section">
+            <div class="content">
+                <h1>Section Four Title</h1>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed qui ea vel mollitia natus debitis corporis ducimus dolore aperiam! Rem alias quasi voluptate vel ducimus velit sint iure voluptates expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur dignissimos sunt earum, neque quidem recusandae unde at temporibus nulla eum veritatis consectetur impedit error molestiae eaque obcaecati qui rem nesciunt, mollitia quae optio beatae! Asperiores blanditiis quia ipsum eos reiciendis reprehenderit quod? Voluptate assumenda sunt suscipit dignissimos cum tenetur vero, porro, tempore accusantium, blanditiis dolorem odit expedita itaque autem. Assumenda amet quis nulla laboriosam accusantium, cumque, incidunt unde praesentium vero quas obcaecati maxime beatae exercitationem sint? Aperiam tempore earum fuga modi aliquam doloribus perspiciatis alias provident ea, inventore tempora ipsum, dolorum quaerat quas quos rem pariatur dignissimos. Tempore, ducimus.</p>
+            </div>
+        </div>
+    
+        <div class="section">
+            <div class="content">
+                <h1>Section Five Title</h1>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed qui ea vel mollitia natus debitis corporis ducimus dolore aperiam! Rem alias quasi voluptate vel ducimus velit sint iure voluptates expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur dignissimos sunt earum, neque quidem recusandae unde at temporibus nulla eum veritatis consectetur impedit error molestiae eaque obcaecati qui rem nesciunt, mollitia quae optio beatae! Asperiores blanditiis quia ipsum eos reiciendis reprehenderit quod? Voluptate assumenda sunt suscipit dignissimos cum tenetur vero, porro, tempore accusantium, blanditiis dolorem odit expedita itaque autem. Assumenda amet quis nulla laboriosam accusantium, cumque, incidunt unde praesentium vero quas obcaecati maxime beatae exercitationem sint? Aperiam tempore earum fuga modi aliquam doloribus perspiciatis alias provident ea, inventore tempora ipsum, dolorum quaerat quas quos rem pariatur dignissimos. Tempore, ducimus.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

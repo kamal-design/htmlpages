@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Whatsapp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+	.whatsapp-input {
+		text-align: left;
+		display: flex;
+	}
+	.input-wrapper label {
+		position: absolute;
+		left: 25px;
+		top: 10px;
+		color: rgba(0, 0, 0, 0.6);
+		font-size: 13px;
+	}
+	.whatsapp-input input {
+		-webkit-appearance: none;
+		background-color: rgb(249 249 249 / 90%);
+		padding: 10px;
+		outline: none;
+		font-size: 12px;
+		width: 100%;
+		color: rgba(0, 0, 0, 0.6);
+		padding-left: 40px;
+		border: 1px solid #ebebeb;
+		border-radius: 0;
+	}
+	.whatsapp-button {
+		-webkit-appearance: none;
+		padding: 10px;
+		font-size: 13px;
+		background-color: #51B14D;
+		opacity: 0.9;
+		color: #fff;
+		border: none;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 251, 251, 0.1) inset;
+		margin-top: 10px;
+		display: flex;
+		align-items: center;
+	}
+	.whatsapp-button i {
+		font-size: 16px;
+		margin-right: 10px;
+	}
+	
+  </style>
+  
+  
+</head>
+<body>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4">
+				<h4> User sharing 1 (javascript)</h4>
+				<form>
+					<div class="whatsapp-input">
+						<div class="input-wrapper">
+							<label> +91 </label>
+							<input id="whatsapp-input" class="input" placeholder="Enter mobile number" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+							<a class="whatsapp-button" target="_blank" href="javascript:;" onclick="handleWhatsappShare(this, '91')">
+								<i class="fa fa-whatsapp"></i> Share on Whatsapp
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div class="col-lg-4 col-md-4">
+				<h4> User Sharing 2 (jquery)</h4>				
+				<div class="form-group">
+					<label>Mobile Number</label>
+					<input type="number" name="whatsapp" id="whatsapp" class="form-control" placeholder="Enter mobile number" oninput="this.value=this.value.replace(/[^0-9]/g,'');">					
+				</div>
+				<div class="form-group">
+					<a href="" title="+918939727079" target="_blank" id="whatsappurl" class="btn btn-primary"><i class="fa fa-whatsapp"></i> Whatsapp Chat</a>				
+				</div>
+			</div>
+			
+			<!-- <div class="col-lg-4 col-md-4">
+				
+			<div id="shareModal" class="modal share-modal" style="display: flex;">
+            <div class="share-form fadeInUpBig">
+                <div class="share-form-header">
+                    <h3 class="share-form-header-text">Share Profile</h3>
+                    <span class="close" id="shareModalClose">×</span>
+                </div>
+                <div class="share-form-buttons-container">
+                    <p>Share my Digital vCard in your network.</p>
+                    <div class="share-buttons-heading">
+                        <img src="./templates/template3/tild-arrow.svg" class="share-buttons-arrow">
+                        <div class="share-buttons-heading-text">Share my Digital vCard</div>
+                    </div>
+                    <ul class="share-buttons">
+					<li class="share-button">
+						<a href="javascript:;" onclick="handleDirectWhatsappShare(this)">
+							<i class="share-button-whatsapp fa fa-whatsapp"></i>
+						</a>
+					</li>
+					<li class="share-button">
+						<a target="_blank" href="sms:?body=https://mycard.aamdealgroup.com/FITNESH PLUS">
+							<i class="share-button-sms fa fa-comment-dots"></i>
+						</a>
+					</li>
+					<li class="share-button">
+						<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mycard.aamdealgroup.com/FITNESH PLUS&src=sdkpreparse" class="fb-xfbml-parse-ignore">
+							<i class="share-button-facebook fa fa-facebook-f"></i>
+						</a>
+					</li>
+					<li class="share-button">
+						<a target="_blank" href="https://twitter.com/intent/tweet?text=https://mycard.aamdealgroup.com/FITNESH PLUS" data-size="large">
+							<i class="share-button-twitter fa fa-twitter"></i>
+						</a>
+					</li>
+				</ul>
+                </div>
+            </div>
+        </div>
+				
+				
+				
+			</div> -->
+		</div>
+	</div>
+	
+		
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		function handleWhatsappShare(e, cc) {
+			const {
+				value
+			} = document.getElementById('whatsapp-input');
+			if (value.length > 10) {        
+				return false;
+			}
+			e.href = `https://wa.me/`+cc+`${document.getElementById('whatsapp-input').value}?text=${window.location.href}`;
+		}
+
+	</script>
+	
+	<script>
+		$(document).ready(function() {
+			$(document).on('blur', '#whatsapp', function(){
+				var mobileno = $(this).val();
+				//alert(mobileno);
+				
+				var x = "https://api.whatsapp.com/send?phone=+91"
+				var y = mobileno;
+
+				var result = x + y;
+				//alert(result);
+				$('#whatsappurl').attr('href', result);
+			
+			});
+		});
+	</script>
+	
+	<script>
+		// Get the <span> element that closes the modal
+		const shareModalClose = document.getElementById('shareModalClose');
+
+		// When the user clicks on <span> (x), close the modal
+		shareModalClose.onclick = function() {
+			shareModal.style.display = 'none';
+		};
+	</script>
+	
+</body>
+</html>

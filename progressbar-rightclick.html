@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Progress Bar & Right Click Disabled</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+       
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #58fc87;
+        }
+        .inner {
+            width: 0px;
+            height: 40px;
+            position: relative;
+            background: #22438c;
+        }
+        .outer {
+            border: 1px solid #000;
+            width: 800px;
+            background: #fff;
+        }
+        .value {
+            position: absolute;
+            right: 0;
+            top: 25%;
+            color: #fff;
+            font-size: 14px;
+            z-index: 9999;            
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="outer">
+        <div class="inner">
+            <span class="value"> </span>
+        </div>
+    </div>
+    
+    
+    <script>  
+        $(document).ready(function(){
+            $(".inner").animate(
+                {  width: "100%" },
+                { duration: 4000,
+                    step: function(){
+                         let width = $(this).width() / $('.inner').parent().width() * 100;                         
+                         width = Math.ceil(width) + "%";
+                         $(".value").text(width);
+                    }, 
+                    complete: function(){
+                        $(".value").text("");
+                    }
+                }
+            );
+        }); 
+
+        //right click disabled
+        document.addEventListener("contextmenu", function(event){
+            event.preventDefault();
+            alert('Right Click is Disabled');
+        }, false);
+    </script>
+</body>
+</html>
