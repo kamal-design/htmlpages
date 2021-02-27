@@ -22,10 +22,10 @@
     <div class="container">
 
     </div>
-    <script src="three.js"></script>
+    <script src="./assets/js/three.js"></script>
     <script type="text/javascript">
         var scene = new THREE.Scene();
-        scene.background = new THREE.TextureLoader().load('redg-scaled.jpg');
+        scene.background = new THREE.TextureLoader().load('./assets/images/background-bg.jpg');
         var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
         var renderer = new THREE.WebGLRenderer();
@@ -33,7 +33,7 @@
         document.body.appendChild( renderer.domElement );
 
         var geometry = new THREE.BoxGeometry();
-        var texture = new THREE.TextureLoader().load('dsa-logo.svg');
+        var texture = new THREE.TextureLoader().load('./assets/images/dsa-logo.svg');
         var material = new THREE.MeshBasicMaterial( { map: texture } );
         var cube = new THREE.Mesh( geometry, material );
         scene.add( cube );
