@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Info Box Hover</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f7fcff;
+        }
+        .container {
+            position: relative;
+            width: 1100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .container .box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-right: 30px;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.09);
+            overflow: hidden;
+        }
+        .container .box .imgbox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            transform: scale(1) translateY(0);
+        }
+        .container .box:hover .imgbox { 
+            transform: scale(1) translateY(-100%);
+        }
+        .container .box .imgbox img{
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .container .box .content {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            background: #ff3579;
+            transition: 0.5s;
+            transform: scale(1) translateY(calc(100% - 5px));
+        }
+        .container .box:hover .content {
+            transform: scale(1);
+        }
+
+        .container .box:nth-child(2) .content {
+            background: #2ba1ff;
+        }
+        .container .box:nth-child(3) .content {
+            background: #c630e0;
+        }
+        .container .box .content .icon img {
+            max-width: 80px;
+            filter: invert(1);
+        }
+        .container .box .content h3 {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .container .box .content h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box">
+            <div class="imgbox">
+                <img src="./assets/images/phone.png" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <img src="./assets/images/phone.png" alt="">
+                </div>
+                <h3> Phone No</h3>
+                <h4> +91 82585 85225</h4>
+                <h4> +91 82585 85225</h4>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgbox">
+                <img src="./assets/images/email.png" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <img src="./assets/images/email.png" alt="">
+                </div>
+                <h3> Email</h3>
+                <h4> info@gmail.com</h4>
+                <h4> support@gmail.com</h4>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgbox">
+                <img src="./assets/images/map.png" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <img src="./assets/images/map.png" alt="">
+                </div>
+                <h3> Location</h3>
+                <h4> No:15, Ganthi Road,</h4>
+                <h4> Chennai - 600 025</h4>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

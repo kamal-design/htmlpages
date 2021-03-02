@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .sky {
+            position: relative;
+            width: 100%;
+            height: 40%;
+            background-color: skyblue;
+        }
+        
+        .green {
+            position: relative;
+            width: 100%;
+            height: 20%;
+            background-color: green;
+        }
+        .road {
+            position: relative;
+            width: 100%;
+            height: 40%;
+            background-color: dimgray;
+            border-top: 10px solid gray;
+            border-bottom: 10px solid gray;
+        }
+        .lines {
+            position: absolute;
+            border: 4px dashed white;
+            width: 100%;
+            top: 45%;
+        }
+        .road img{            
+            max-width: 100%;
+            max-height: 100px;
+            object-fit: contain;                                                                       ;
+        }
+
+       
+        /* animation-fill-mode: both;  both backwards forwards alternate */
+        /*animation-iteration-count: infinite; 10 timesonly,  infinite  to refet*/
+        /*animation-direction: none; reverse alternate, alternate-reverse  */            
+     
+        /* .mario {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            animation-name: drive;
+            animation-duration: 5s;
+            animation-fill-mode: both;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: none;
+            animation-timing-function: ease-in-out;
+            animation-play-state: running; 
+        } */
+        /* short css */
+        .mario {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            animation: drive 3s both infinite linear,
+                       jump 0.3s 1.2s ease; 
+        }  
+        .cycle2 {
+            position: absolute;
+            bottom:20px;
+            left: 0;
+            animation-name: drive;
+            animation-duration: 5s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0,0.77,1,.28);
+
+            animation-direction: normal;
+        }        
+        @keyframes drive {
+            from {
+                transform: translateX(-100px);
+            }
+            to {
+                transform: translateX(1400px);
+            }
+        }
+        @keyframes jump {
+            0% {
+                top: 30px; /* cycle one top  */
+            }
+            50% {
+                top: -30px;
+            }
+            100% {
+                top: 30px
+            }
+        }
+
+        /* animation short */
+        .clouds {
+            position: absolute;
+        }
+        .clouds:nth-child(1){
+            width: 200px;
+            top: 120px;
+            opacity: 0.5;
+            animation: wind 80s linear infinite reverse;
+        }
+        .clouds:nth-child(2){
+            width: 300px;
+            top: 0;
+            animation: wind 50s linear infinite reverse;
+        }
+        @keyframes wind {
+            from {
+                left: -300px;
+            }
+            to {
+                left: 100%;
+            }
+        }
+        .twocloud {
+            position: absolute;
+        }
+        .twocloud:nth-child(3){
+            width: 125px;
+            top: 20px;
+            opacity: 0.5;
+            animation: wind2 50s linear infinite reverse;
+        }
+        .twocloud:nth-child(4){
+            width: 175px;
+            top: 120px;
+            left: 150px;
+            animation: wind2 80s linear infinite reverse,
+                       wind 60s linear infinite forwards;
+        }
+        @keyframes wind2 {
+            from {
+                right: -300px;
+            }
+            to {
+                right: 100%;
+            }
+        }
+        
+       
+    </style>
+</head>
+<body>
+    
+    <div class="sky">
+        <img src="./assets/images/cloud.png" class="clouds" alt="">
+        <img src="./assets/images/cloud.png" class="clouds" alt="">
+
+        <img src="./assets/images/cloud.png" class="twocloud" alt="">
+        <img src="./assets/images/cloud.png" class="twocloud" alt="">
+    </div>
+    <div class="green"></div>
+    <div class="road">
+        <div class="lines"></div>
+        <img src="./assets/images/cycle.png" class="mario" alt="">
+        <img src="./assets/images/cycle2.png" class="cycle2" alt="">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Animation</title>
+    <style>
+		* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: block;    
+    text-align: center;
+    background: rgb(51, 33, 33);
+}
+#pop-up {
+    position: relative;
+    top: 200px;
+    width: 400px;
+    height: 220px;
+    background: #feffba;
+    border-radius: 4px;
+    padding: 40px 40px;
+    margin: 0 auto;
+}
+#pop-up .close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background: #585555;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.close img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    
+}
+.close:hover img {
+    transform: rotate(180deg);
+    transition: all 0.5s ease;
+}
+
+/* popup animation End */
+#pop-up {
+    top: -400px;
+    transform-origin: 10px 10px;
+    animation: drop 0.5s ease forwards,
+               swing 2s 3s ease;
+}
+@keyframes drop{
+    0% {
+        opacity: 0;
+    }
+    70% {
+        transform:  translateY(700px);
+    }
+    100% {
+        transform:  translateY(650px);
+        opacity: 1;
+    }
+}
+@keyframes swing {
+    0% {
+        transform: translateY(650px) rotateZ(0deg);
+    }
+    40% {
+        transform: translateY(650px) rotateZ(90deg);
+    }
+    70% {
+        transform: translateY(650px) rotateZ(70deg);
+    }
+    100% {
+        transform: translateY(650px) rotateZ(75deg);
+    }
+}
+
+/* popup animation End */
+
+
+
+.container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.container p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+form {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+form input {
+    outline: none;
+    border: none;
+    width: 213px;
+    height: 40px;
+    padding: 10px 10px;
+}
+form button {
+    outline: none;
+    border: none;
+    margin-left: -5px;
+    background: rgb(51, 33, 33);
+    color: #fff;
+    line-height: 40px;
+    width: 100px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+	</style>
+</head>
+<body>
+    
+        <div id="pop-up">
+            <div class="close">
+                <img src="./assets/images/close.png"  alt="">
+            </div>
+            <div class="container">
+                <h2> Learn your skills</h2>
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, corrupti?</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required >
+                    <button type="button"> Submit</button>
+                </form>           
+            </div>
+        </div>
+</body>
+</html>

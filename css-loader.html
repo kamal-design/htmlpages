@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+section {
+    padding: 100px;
+}
+section h2 {
+    font-size: 4em;
+    color: #4b656d;
+    font-weight: 600;
+}
+section h2 span {
+    display: block;
+    font-size: 0.5em;
+    color: #ff4983;
+    font-weight: 600;
+}
+section p{
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #070707;
+    z-index: 10000000;
+}
+.preloader:before {
+    content: 'Loading';
+    position: absolute;
+    font-size: 12em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+}
+.preloader.active {
+    transform: translateY(-100vh);
+    transition: ease-in-out 2s;
+    transition-delay: 1s;
+}
+.counter {
+    position: relative;
+    color: #fff;
+    font-size: 16em;
+    font-weight: 700;
+    z-index: 1;
+}
+.counter:after {
+    content: '%';
+    font-size: 0.5em;
+}
+.counterhide {
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+}
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="counter">0</div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <h2> Welcome Back to All <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. </span></h2>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque veritatis est nesciunt! Maxime quidem provident at mollitia officia amet fugiat eaque repellat fugit, dolor neque optio aut reiciendis explicabo.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam culpa. Ad distinctio, officiis vel unde delectus consequuntur, quis suscipit eos saepe fugit, id facere quo optio aspernatur dolore ex.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed quod, harum nulla distinctio saepe neque eveniet doloribus, officia cupiditate quae vero nostrum, illum dolore natus iste voluptatibus est in laboriosam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis consectetur corporis aliquam mollitia numquam, voluptatum non aliquid totam dolores tenetur nobis a, quasi nostrum sequi doloremque facilis veritatis! Tempora quae voluptatibus vitae ea et natus non corporis, nulla quidem sunt perferendis! Esse, nisi voluptatibus veniam ea nemo velit quas officiis facilis et reiciendis rerum dolor recusandae veritatis eveniet nulla eos, ducimus deserunt tempore adipisci quisquam. Inventore maxime, sed aliquam id, praesentium voluptas, molestias omnis non temporibus eos recusandae! Dignissimos in laborum cupiditate pariatur ipsum fugiat ratione molestiae, soluta cum nobis praesentium laudantium labore nesciunt sequi distinctio! Sequi dolorum placeat veniam illo minima asperiores, est earum nisi consequatur sit iste ab cumque doloremque rem eos animi ex a odit obcaecati provident. Accusamus quaerat recusandae quos earum maxime quam, aspernatur temporibus enim maiores praesentium, laboriosam eaque consectetur dolorum. Nemo eligendi, sunt cupiditate numquam veritatis, est, reiciendis aliquam rem nostrum nisi at adipisci. Rerum quas, non beatae nihil id minima ut magnam voluptates ducimus laudantium illo sapiente ipsam optio placeat et vero eum eius! Dignissimos, nam. Veniam sint eveniet accusantium esse animi totam dolores distinctio sapiente ipsam fuga eligendi quo natus dignissimos, similique illum sit quaerat. Expedita consectetur cumque nemo, veniam doloribus, tenetur pariatur iste iure, omnis impedit quasi placeat! Culpa, iste possimus. Id, hic iusto explicabo laudantium eum recusandae libero temporibus vitae natus, facilis labore ipsam aspernatur molestias ullam illo vel, est perferendis? Sed, voluptate perferendis. Reiciendis sed natus saepe vel, incidunt quae, aperiam unde labore, nam mollitia laboriosam! Quae, alias explicabo.</p>
+            </div>
+        </div>
+    </section>
+<script>
+    function counter(){
+        var count = setInterval(function(){
+            var c = parseInt($('.counter').text());
+            $('.counter').text((++c).toString());
+            if(c==60){
+                clearInterval(count);
+                $('.counter').addClass('hide')
+                $('.preloader').addClass('active')
+            }
+        },60)
+    } counter()
+
+</script>
+
+</body>
+</html>

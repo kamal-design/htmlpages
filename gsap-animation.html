@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Web Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+        integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+        integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing;
+            border-box;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to left top, #9c9c9c, #ffffff);
+            z-index: -3;
+            width: 100%;
+            height: 100vh;
+        }
+
+        nav {
+            width: 100%;
+            height: 10vh;
+            position: relative;
+            display: grid;
+            grid-template-columns: 10% 1fr 1fr 10%;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 5px solid #e8e8e8;
+        }
+
+        .logo {
+            grid-column: 2/3;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .logo a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .hamburger {
+            justify-self: end;
+        }
+
+        section {
+            width: 100%;
+            height: 80vh;
+            position: relative;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero {
+            position: relative;
+            width: 80%;
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .hero:after {
+            content: '';
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 100px;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider_caption {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            z-index: 3;
+        }
+
+        .slider_caption h1 {
+            font-size: 40px;
+            font-weight: 800;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="">Logo</a>
+            </div>
+            <div class="hamburger">
+                <i class="fa fa-bars fa-lg"></i>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="hero">
+            <img src="./assets/images/background.jpg" alt="">
+            <div class="slider_caption">
+                <h1 id="colorize">Slider Caption Here </h1>
+            </div>
+        </div>
+    </section>
+    <div class="slider"></div>
+
+
+    <!--Animation -->
+    <script>
+        var tl = new TimelineMax({
+            paused: true,
+        });
+
+        tl.add('step0')
+            .fromTo('#colorize', 2, {
+                color: '#FDF404',
+            }, {
+                color: '#FF0096',
+            }, 'step0')
+            .to('#colorize', 0.5, {
+                color: '#f0f0f0',
+            }, '-=0.5')
+            .add('step1');
+
+        setTimeout(function () {
+            tl.tweenFromTo('step0', 'step1');
+        }, 1000);
+
+        setTimeout(function () {
+            tl.tweenFromTo('step0', 'step1');
+        }, 4000);
+
+
+        const hero = document.querySelector('.hero');
+        const slider = document.querySelector('.slider');
+        const slider_caption = document.querySelector('.slider_caption');
+        const logo = document.querySelector('.logo');
+        const hamburger = document.querySelector('.hamburger');
+
+        const t1 = new TimelineMax();
+        t1.fromTo(hero, 1, { height: "0%" }, { height: "80%", ease: Power2.easeInOut })
+            .fromTo(hero, 1.2, { width: "100%" }, { width: "80%", ease: Power2.easeInOut })
+            .fromTo(slider, 1.2, { x: "-100%" }, { x: "0%", ease: Power2.easeInOut }, "-=1.2")
+            .fromTo(logo, 0.5, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, "-=1.5")
+            .fromTo(hamburger, 0.5, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, "-=1.5")
+            .fromTo(headline, 0.5, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, "-=1.5");
+</script>
+</body>
+
+</html>
