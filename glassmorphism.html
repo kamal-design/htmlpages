@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glassmorphism Card Effect</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background: url(./assets/images/glassmorphism-bg.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        .cards {
+            position: relative;
+            width: 100%;
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            margin: 0 auto;
+        }
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+        }
+        .wrapper .box {
+            position: relative;
+            width: 325px;
+            height: 425px;
+            color:  #fff;
+            text-align: center;
+            border-radius: 15px;            
+            padding: 1rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(30px);
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: transform 500ms ease-out;
+            overflow: hidden;
+        }
+        .wrapper .box::before {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: -125%;
+            background: rgba(255,255,255,0.3);
+            width: 60%;
+            height: 100%;            
+            transform: skew(45deg);
+            animation-direction: left;
+            transition-duration: 500ms;
+        }
+        .wrapper .box:hover::before {
+            left: 150%;
+        }       
+        .wrapper .box:hover {
+            transform: translateY(-5%);
+        }
+        
+
+        .wrapper .box-two {
+            position: relative;
+            width: 325px;
+            height: 425px;
+            color:  #fff;
+            text-align: center;
+            border-radius: 15px;            
+            padding: 1rem; 
+            background: inherit;                     
+            transition: transform 500ms ease-out;
+            overflow: hidden;
+        }
+        .wrapper .box-two::before {
+            content: '';
+            width: 350px;
+            height: 450px;
+            background: inherit; 
+            position: absolute;
+            left: -25px;
+            top: -25px;
+            right: 0;
+            bottom: 0;
+            box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+            filter: blur(20px);
+        }
+
+        .wrapper .box-three {
+            position: relative;            
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 350px;
+            height: 450px;
+            padding: 1rem; 
+            text-align: center;
+        }
+
+
+        .wrapper .box-four {
+            width: 350px;
+            height: 450px;
+            border-radius: 30px;
+            padding: 30px;
+            backdrop-filter: blur(15px);
+            box-shadow: 10px 10px 70px rgb(0 0 0 / 20%);
+            border: solid 1px aqua;
+            border-right-width: 3px;
+            border-top-width: 4px;
+        }
+
+        .cards:nth-child(4) {
+            background: linear-gradient(45deg, rgb(69 89 111) 0%, rgb(222 232 243) 50%, rgb(79 100 124) 100%);
+        }
+
+        .box h2, .box-two  h2, .box-three h2  {
+            font-size: 2rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+        }
+        .box p, .box-two p, .box-three p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+        }
+        .box a, .box-two a, .box-three a {
+            display: inline-block;
+            margin-top: 20px;
+            border: none;
+            background: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 15px 50px;
+            border-radius: 50px;            
+        }
+
+
+        
+        /* 3d box */
+.glass-bg {
+  height: 100vh;
+  background-color: rgba(107, 133, 143, 0.5);
+  background-image: linear-gradient( rgba(255, 255, 255, 0.5) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective: 200px;
+  transform: scale(0.96);
+}
+
+.glassbox {
+  background: transparent;
+  width: 400px;
+  height: 180px;
+  transform: rotate3d(1, 0, 0, 60deg);
+  border: 1px solid white;
+}
+.glassbox::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px -30px 80px -20px #8fd1d17e;
+  background: radial-gradient(
+    at 54% 112px,
+    transparent 22%,
+    rgb(218, 218, 218) 23%,
+    40%,
+    rgba(221, 221, 221, 0.876) 100%
+  );
+}
+
+.glassbox::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  width: 130px;
+  height: 130px;
+  background: none;
+  border-radius: 50%;
+  transform: rotate3d(1, 0, 0, 60deg);
+  box-shadow: inset 0px 70px 1px 0px #87c8c1, 0px -5px 1px 5px #8ebeba;
+}
+
+.border {
+  display: block;
+  position: absolute;
+  transform: translateY(82px);
+  align-items: center;
+  justify-content: center;
+  width: 655px;
+  height: 20px;
+  border-top: 2px solid #ffffff;
+  background: linear-gradient(to bottom, #80cec5 60%, 70%, #4ba29a);
+}
+
+.cards span {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    font-size: 10rem;
+    font-weight: bold;
+    color: rgba(255,255,255,0.2);
+}
+        
+    </style>
+</head>
+<body>
+
+   
+    
+<div class="cards">
+    <span> 01 </span>
+    <div class="wrapper">
+        <div class="box">
+            <h2>Web Design  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores?</p>
+                <a href=""> Read More</a>
+        </div>
+        <div class="box">
+            <h2> Digital Marketing  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores?</p>
+                <a href=""> Read More</a>
+        </div>
+        <div class="box">
+            <h2> Graphics Design  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores? </p>
+                <a href=""> Read More</a>
+        </div>
+    </div>
+</div>
+
+<div class="cards">
+    <span> 02 </span>
+    <div class="wrapper">
+        <div class="box-two">
+            <h2>Web Design  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores? Sit deleniti quasi quas soluta praesentium alias nostrum aliquid molestiae esse quia.</p>
+                <a href=""> Read More</a>
+        </div>
+        <div class="box-two">
+            <h2> Digital Marketing  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores? Sit deleniti quasi quas soluta praesentium alias nostrum aliquid molestiae esse quia.</p>
+                <a href=""> Read More</a>
+        </div>
+        <div class="box-two">
+            <h2> Graphics Design  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores? Sit deleniti quasi quas soluta praesentium alias nostrum aliquid molestiae esse quia.</p>
+                <a href=""> Read More</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="cards">
+    <span> 03 </span>
+    <div class="wrapper">
+        <div class="box-three">
+            <h2>Web Design  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores? Sit deleniti quasi quas soluta praesentium alias nostrum aliquid molestiae esse quia.</p>
+                <a href=""> Read More</a>
+        </div>
+        <div class="box-three">
+            <h2> Digital Marketing  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores? Sit deleniti quasi quas soluta praesentium alias nostrum aliquid molestiae esse quia.</p>
+                <a href=""> Read More</a>
+        </div>
+        <div class="box-three">
+            <h2> Graphics Design  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores? Sit deleniti quasi quas soluta praesentium alias nostrum aliquid molestiae esse quia.</p>
+                <a href=""> Read More</a>
+        </div>
+    </div>
+</div>
+
+<div class="cards">
+    <span> 04 </span>
+    <div class="wrapper">
+        <div class="box-four">
+            <h2>Web Design  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores?</p>
+                <a href=""> Read More</a>
+        </div>
+        <div class="box-four">
+            <h2> Digital Marketing  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores?</p>
+                <a href=""> Read More</a>
+        </div>
+        <div class="box-four">
+            <h2> Graphics Design  </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui porro maxime vel quia. Corrupti excepturi fugit impedit, incidunt modi unde labore inventore vero non. Amet veritatis eum, error provident nostrum perspiciatis, repudiandae corrupti quasi suscipit doloremque asperiores? </p>
+                <a href=""> Read More</a>
+        </div>
+    </div>
+</div>
+
+
+<section>
+    <div class="glass-bg">
+        <div class="container">
+            <div class="glassbox"></div>
+            <div class="border"></div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

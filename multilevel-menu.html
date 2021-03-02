@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	
+    <title>Multilevel Menu Design</title>
+
+
+    <style>
+        *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: sans-serif;
+}
+section {
+	background: url(./assets/images/bg.jpg) no-repeat center;
+	background-size: cover;
+	height: calc(100vh - 80px);
+}
+
+header {
+	width: 100%;
+	min-height: 50px;
+	background: #111;
+	position: relative;
+}
+.bars {
+	color: #fff;
+	font-size: 2rem;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	transition: 0.5s linear;
+	display: none;
+}
+.bars.rotate{
+	transform: translateY(-50%) rotate(180deg);
+}
+.logo{
+	float: left;
+	margin-left: 100px;
+	line-height: 50px;
+}
+.logo h1{
+	color: crimson;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+#navbar{
+	float: right;
+	margin-right: 100px;
+	background: #111;
+}
+#navbar > li {
+	list-style: none;
+	display: inline-block;
+	line-height: 50px;
+}
+#navbar > li:hover {
+	background: crimson;
+}
+header a {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 10px 20px;
+}
+.menu-one {
+	position: absolute;
+	width: 100%;
+	/* left: 0; */
+	left: -100%;
+	background: whitesmoke;
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0 0 3px #000;
+}
+.drop-one:hover > .menu-one {
+	left: 0;
+}
+.menu-one ul{
+	flex: 1;
+	text-align: center;
+	list-style: none;
+	padding: 10px;
+}
+.menu-one ul h4{
+	font-size: 20px;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: teal;
+}
+.menu-one ul a{
+	color: #000;
+}
+.menu-one ul img {
+	width: 100%;
+	display: block;
+	object-fit: cover;
+}
+.drop-two {
+	position: relative;
+}
+.menu-two {
+	position: absolute;
+	list-style: none;
+	background: #555;
+	left: 0;
+	display: none;
+}
+.menu-two li:hover{
+	background: orange;
+}
+.drop-two:hover > .menu-two {
+	display: block;
+}
+span{
+	display: inline-block;
+	margin-left: 10px;
+	transition: 0.3s;
+}
+.drop-one:hover span,
+.drop-two:hover span {
+	transform: rotate(-180deg);
+}
+@media(max-width: 1100px){
+	.logo, #navbar{
+		margin: 0;
+		width: 100%;
+		text-align: center;
+	}
+}
+@media(max-width: 950px){
+	#navbar{
+		position: absolute;
+		top: 50px;
+		/* left: 0; */
+		left: -100%;
+		text-align: left;
+		transition: 0.5s linear;
+	}
+	#navbar li {
+		display: block;
+	}
+	.menu-one{
+		position: relative;
+		box-shadow: none;
+		display: none;
+	}
+	.drop-one:hover > .menu-one {
+		display: block;
+	}
+	.menu-one ul {
+		text-align: left;
+	}
+	.menu-two {
+		position: relative;
+	}
+	.bars{
+		display: block;
+	}
+	#navbar.active {
+		left: 0;
+	}
+}
+    </style>
+  </head>
+  <body>
+		<header>
+			<nav>
+				<div class="bars"> &#11166;</div>
+				<div class="logo">
+					<h1>Multilevel</h1>
+				</div>
+				<ul id="navbar"> 
+					<li><a class="active" href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li class="drop-one"><a href="#">Service <span>&#11167; </span></a>
+						<div class="menu-one">
+							<ul>
+								<li><h4> Our Company</h4></li>
+								<li><img src="assets/images/slider-1.jpg" alt=""></li>
+							</ul>
+							<ul>
+								<li><h4> Our Skills</h4></li>
+								<li><a href="#">HTML</a></li>
+								<li><a href="#">CSS</a></li>
+								<li><a href="#">Jquery</a></li>
+								<li><a href="#">Javascript</a></li>
+							</ul>
+							<ul>
+								<li><h4> Our Skills</h4></li>
+								<li><a href="#">PHP</a></li>
+								<li><a href="#">MYSQL</a></li>
+								<li><a href="#">Photoshop</a></li>
+								<li><a href="#">Illustrator</a></li>
+							</ul>
+							<ul>
+								<li><h4> Our Works</h4></li>
+								<li><a href="#">Invitaion</a></li>
+								<li><a href="#">SEO</a></li>
+								<li><a href="#">Website Frontend</a></li>
+								<li><a href="#">Website Backend</a></li>
+							</ul>
+							<ul>
+								<li><h4>News</h4></li>
+								<li><a href="#">Photoshop works</a></li>
+								<li><a href="#">SEO</a></li>
+								<li><a href="#">Website Frontend</a></li>
+								<li><a href="#">Website Backend</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Team</a></li>
+					<li class="drop-two"><a href="#">Social <span>&#11167;</span></a>
+						<ul class="menu-two">
+							<li><a href="#">Facebook</a></li>
+							<li><a href="#">Youtube</a></li>
+							<li><a href="#">Twitter</a></li>
+							<li><a href="#">Linkedin</a></li>
+						</ul>
+					</li>
+				</ul>	
+			</nav>
+		</header>
+		<section>
+			<div class="container">
+				
+			</div>
+		</section>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script type="text/javascript">
+			const bars = document.querySelector('.bars');
+			const navbar = document.querySelector('#navbar');
+			bars.addEventListener('click', ()=>{
+				navbar.classList.toggle('active');
+				bars.classList.toggle('rotate');
+			});
+		</script> 
+  </body>
+</html>
+

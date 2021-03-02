@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curtain Layer Responsive Menu</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+        }
+        #curtain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        #curtain span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            display: block;
+            transform-origin: bottom left;
+            transition: 0.5s ease-in-out;
+            transform: rotate(-90deg);
+        }
+        #curtain span:nth-child(1){
+            background: #ff1f6b;
+            transform: rotate(-90deg);
+            transition-delay: 0.2s;
+        }
+        #curtain span:nth-child(2){
+            background: #219dff;
+            transform: rotate(-90deg);
+            transition-delay: 0.1s;
+        }
+        #curtain span:nth-child(3){
+            background: #111;
+            transform: rotate(-90deg);
+            transition-delay: 0s;
+        }
+        #curtain.active  span:nth-child(1) {
+            z-index: 1;
+            transition-delay: 0s;
+            transform: rotate(0deg);
+        }  
+        #curtain.active  span:nth-child(2) {
+            z-index: 2;
+            transition-delay: 0.1s;
+            transform: rotate(0deg);
+        } 
+        #curtain.active  span:nth-child(3) {
+            z-index: 3;
+            transition-delay: 0.2s;
+            transform: rotate(0deg);
+        } 
+        .toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #fff url(./assets/images/menu.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 5px;
+            z-index: 1000;
+            cursor: pointer;
+            transition: 0.5s;
+        } 
+        #curtain.active .toggle {
+            background: #eee url(./assets/images/close.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            filter: invert(1);
+        }  
+        ul {
+            position: relative;
+            z-index: 100;
+            transition: 0.5s;
+            transition-delay: 0s;
+            visibility: hidden;
+            opacity: 0;
+
+        }  
+        #curtain.active ul {
+            visibility: visible;
+            opacity: 1;
+            transition-delay: 0.7s;
+        }
+        #curtain ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+        #curtain ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+            display: block;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh; 
+            display: flex;           
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 45px 50px;
+        }
+        h2 {
+            font-size: 2em; 
+            margin-bottom: 1rem;           
+        }
+        p {
+            font-size: 1em; 
+            line-height: 1.5;  
+            text-align: justify;         
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="curtain">
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul>
+            <li><a href="#"> Home</a></li>
+            <li><a href="#"> About us</a></li>
+            <li><a href="#"> Services</a></li>
+            <li><a href="#"> Gallery</a></li>
+            <li><a href="#"> Contact us</a></li>
+        </ul>
+        <div class="toggle" onclick="toggle()"></div>
+    </div>
+
+    <section>
+        <div class="container">
+            <h2> Lorem ipsum dolor sit amet.</h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam et doloremque alias. Autem aliquam a totam officia quos at consequuntur distinctio culpa eveniet minima veritatis voluptatum tempora officiis et optio commodi alias, mollitia omnis? Ipsam deleniti tempore beatae, non odio fugit? Laudantium suscipit, quidem corrupti iusto dolorum quae, veritatis nemo enim vitae ullam dolorem, officia culpa maxime deleniti eos porro libero ducimus sapiente neque tenetur laboriosam cupiditate magni. Unde quae, quis accusantium assumenda animi harum impedit! Provident maiores reprehenderit aut magni? Accusantium rerum, magnam earum corporis at consequuntur reprehenderit deserunt rem cumque eveniet repellat obcaecati atque voluptatem reiciendis commodi ea modi provident optio suscipit accusamus. Quidem quibusdam beatae, sequi, quia hic odio non ipsam nam aspernatur doloribus obcaecati eaque. At fugiat vero doloremque culpa obcaecati, ad nesciunt numquam ullam quam soluta deserunt assumenda asperiores quae minus mollitia reiciendis saepe et facere ipsa cupiditate iusto dolorem voluptatibus ex aspernatur. Quaerat, dolorem.</p>
+        </div>
+    </section>
+
+    <script>
+        function toggle(){
+            var curtain = document.getElementById('curtain');
+                curtain.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

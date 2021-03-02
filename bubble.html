@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble particles effect</title>
+
+    <style>
+        #canvasbg, #canvas {
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            background: transparent;
+        }
+
+       
+        h1 {
+            text-align: center;
+            margin-top: 10%;
+            font-family: sans-serif;
+        }
+        p {
+            font-family: sans-serif;
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 22px;
+        }
+        a.btn {
+            text-align: center;
+            top: 55%;
+            left: 44%;
+            position: absolute;
+            font-family: sans-serif;
+            text-decoration: none;
+            padding: 15px 30px;
+            border: 2px solid black;
+            color: black;
+            cursor: pointer;
+            z-index: 99999;
+            border-radius: 50px;
+            -webkit-transition: background 2s;
+            transition: background 2s;
+        }
+        a.btn:hover {
+            background: #ff0018;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <h1> Modern Bubble particles</h1>
+        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur atque, neque harum placeat tempora aperiam temporibus, doloremque a nam nemo soluta rem commodi. Eveniet rerum ad temporibus laudantium dolorum consequatur aliquid cumque vitae ullam quae ab dolores aspernatur, maiores repudiandae excepturi fuga dicta quos, et reprehenderit nemo. Nam nostrum dolor eos iste dolores quasi ratione esse fugit consequuntur voluptatibus unde voluptate quisquam illum sint incidunt, similique non, repudiandae alias id.</p>
+        <a href="#" class="btn"> Read More</a>
+
+        <canvas id="canvasbg"></canvas>
+        <canvas id="canvas"></canvas>
+
+        <script src="./assets/js/bubble.js"></script>
+    </section>
+</body> 
+</html>

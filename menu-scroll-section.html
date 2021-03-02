@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Scroll </title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        html {
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+        }       
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        .footer_sec {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #000;
+            padding: 10px 0px;
+        }
+        .footer_sec a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            text-transform: none;
+            color: #fff;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .box {
+            width: 1080px;
+            padding: 75px 75px;
+            margin: 50px 20px;
+            background: #fff;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: justify;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        .box h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+            text-align: center;
+            z-index: 1;
+        }
+
+        nav a {
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.6em;
+            display: inline-block;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 6em;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        section#one:hover~nav a[href="#one"],
+        section#two:hover~nav a[href="#two"],
+        section#three:hover~nav a[href="#three"],
+        section#four:hover~nav a[href="#four"],
+        section#five:hover~nav a[href="#five"] {
+            background: #fff;
+            color: #000
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!--<nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#narbar">
+						<span class="sr-only"> Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.php"> Kamal</a>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#one">Home</a></li>
+						<li><a href="#two">About</a></li>
+						<li><a href="#three">Service</a></li>
+						<li><a href="#four">Gallery</a></li>
+						<li><a href="#five">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav> -->
+
+    </header>
+
+
+    <section id="one">
+        <div class="box">
+            <h1>Home </h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quam corrupti laudantium est quia enim,
+                qui consequuntur voluptatibus aliquam, molestias cum, ducimus voluptatum dolores quisquam quo quas
+                placeat. Earum ex nesciunt sint nostrum id laborum assumenda facilis recusandae aut maiores delectus
+                magni perspiciatis corporis ad qui, minima suscipit saepe commodi ab ullam quisquam a quas officia.
+                Totam quam, magnam nulla nihil rem ad eligendi cumque aspernatur, ipsam ratione tenetur voluptatem
+                perspiciatis laborum eum porro voluptate hic id est quae! Ea accusamus laborum blanditiis fugiat dolor
+                quas corrupti obcaecati! Earum, quis culpa. Aliquid cum numquam ipsa quibusdam inventore qui facere rem
+                nostrum perferendis. Quod iste tempora eveniet consequatur placeat id accusantium qui asperiores, ea
+                eius optio quasi eum officia quos necessitatibus sapiente! Repudiandae numquam nesciunt asperiores modi
+                debitis eos quod labore inventore recusandae natus iste earum libero sunt, sint enim accusamus pariatur
+                dolorum commodi. Reprehenderit neque exercitationem doloremque libero, perferendis, temporibus aliquam,
+                veritatis qui a sunt laudantium quae esse aspernatur debitis accusamus corrupti consequatur dolore
+                expedita ex deserunt distinctio ut. Iure ullam quaerat cupiditate rem, laborum unde deleniti, tempore
+                reiciendis temporibus dolorem quidem. Officiis debitis rem quae? Magnam ad dicta nostrum? Quisquam quo
+                amet esse nesciunt vel sunt praesentium magnam voluptatem!</p>
+        </div>
+    </section>
+    <section id="two">
+        <div class="box">
+            <h1>About </h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quam corrupti laudantium est quia enim,
+                qui consequuntur voluptatibus aliquam, molestias cum, ducimus voluptatum dolores quisquam quo quas
+                placeat. Earum ex nesciunt sint nostrum id laborum assumenda facilis recusandae aut maiores delectus
+                magni perspiciatis corporis ad qui, minima suscipit saepe commodi ab ullam quisquam a quas officia.
+                Totam quam, magnam nulla nihil rem ad eligendi cumque aspernatur, ipsam ratione tenetur voluptatem
+                perspiciatis laborum eum porro voluptate hic id est quae! Ea accusamus laborum blanditiis fugiat dolor
+                quas corrupti obcaecati! Earum, quis culpa. Aliquid cum numquam ipsa quibusdam inventore qui facere rem
+                nostrum perferendis. Quod iste tempora eveniet consequatur placeat id accusantium qui asperiores, ea
+                eius optio quasi eum officia quos necessitatibus sapiente! Repudiandae numquam nesciunt asperiores modi
+                debitis eos quod labore inventore recusandae natus iste earum libero sunt, sint enim accusamus pariatur
+                dolorum commodi. Reprehenderit neque exercitationem doloremque libero, perferendis, temporibus aliquam,
+                veritatis qui a sunt laudantium quae esse aspernatur debitis accusamus corrupti consequatur dolore
+                expedita ex deserunt distinctio ut. Iure ullam quaerat cupiditate rem, laborum unde deleniti, tempore
+                reiciendis temporibus dolorem quidem. Officiis debitis rem quae? Magnam ad dicta nostrum? Quisquam quo
+                amet esse nesciunt vel sunt praesentium magnam voluptatem!</p>
+        </div>
+    </section>
+    <section id="three">
+        <div class="box">
+            <h1>Service </h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quam corrupti laudantium est quia enim,
+                qui consequuntur voluptatibus aliquam, molestias cum, ducimus voluptatum dolores quisquam quo quas
+                placeat. Earum ex nesciunt sint nostrum id laborum assumenda facilis recusandae aut maiores delectus
+                magni perspiciatis corporis ad qui, minima suscipit saepe commodi ab ullam quisquam a quas officia.
+                Totam quam, magnam nulla nihil rem ad eligendi cumque aspernatur, ipsam ratione tenetur voluptatem
+                perspiciatis laborum eum porro voluptate hic id est quae! Ea accusamus laborum blanditiis fugiat dolor
+                quas corrupti obcaecati! Earum, quis culpa. Aliquid cum numquam ipsa quibusdam inventore qui facere rem
+                nostrum perferendis. Quod iste tempora eveniet consequatur placeat id accusantium qui asperiores, ea
+                eius optio quasi eum officia quos necessitatibus sapiente! Repudiandae numquam nesciunt asperiores modi
+                debitis eos quod labore inventore recusandae natus iste earum libero sunt, sint enim accusamus pariatur
+                dolorum commodi. Reprehenderit neque exercitationem doloremque libero, perferendis, temporibus aliquam,
+                veritatis qui a sunt laudantium quae esse aspernatur debitis accusamus corrupti consequatur dolore
+                expedita ex deserunt distinctio ut. Iure ullam quaerat cupiditate rem, laborum unde deleniti, tempore
+                reiciendis temporibus dolorem quidem. Officiis debitis rem quae? Magnam ad dicta nostrum? Quisquam quo
+                amet esse nesciunt vel sunt praesentium magnam voluptatem!</p>
+        </div>
+    </section>
+    <section id="four">
+        <div class="box">
+            <h1>Gallery </h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quam corrupti laudantium est quia enim,
+                qui consequuntur voluptatibus aliquam, molestias cum, ducimus voluptatum dolores quisquam quo quas
+                placeat. Earum ex nesciunt sint nostrum id laborum assumenda facilis recusandae aut maiores delectus
+                magni perspiciatis corporis ad qui, minima suscipit saepe commodi ab ullam quisquam a quas officia.
+                Totam quam, magnam nulla nihil rem ad eligendi cumque aspernatur, ipsam ratione tenetur voluptatem
+                perspiciatis laborum eum porro voluptate hic id est quae! Ea accusamus laborum blanditiis fugiat dolor
+                quas corrupti obcaecati! Earum, quis culpa. Aliquid cum numquam ipsa quibusdam inventore qui facere rem
+                nostrum perferendis. Quod iste tempora eveniet consequatur placeat id accusantium qui asperiores, ea
+                eius optio quasi eum officia quos necessitatibus sapiente! Repudiandae numquam nesciunt asperiores modi
+                debitis eos quod labore inventore recusandae natus iste earum libero sunt, sint enim accusamus pariatur
+                dolorum commodi. Reprehenderit neque exercitationem doloremque libero, perferendis, temporibus aliquam,
+                veritatis qui a sunt laudantium quae esse aspernatur debitis accusamus corrupti consequatur dolore
+                expedita ex deserunt distinctio ut. Iure ullam quaerat cupiditate rem, laborum unde deleniti, tempore
+                reiciendis temporibus dolorem quidem. Officiis debitis rem quae? Magnam ad dicta nostrum? Quisquam quo
+                amet esse nesciunt vel sunt praesentium magnam voluptatem!</p>
+        </div>
+    </section>
+    <section id="five">
+        <div class="box">
+            <h1>Contact </h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quam corrupti laudantium est quia enim,
+                qui consequuntur voluptatibus aliquam, molestias cum, ducimus voluptatum dolores quisquam quo quas
+                placeat. Earum ex nesciunt sint nostrum id laborum assumenda facilis recusandae aut maiores delectus
+                magni perspiciatis corporis ad qui, minima suscipit saepe commodi ab ullam quisquam a quas officia.
+                Totam quam, magnam nulla nihil rem ad eligendi cumque aspernatur, ipsam ratione tenetur voluptatem
+                perspiciatis laborum eum porro voluptate hic id est quae! Ea accusamus laborum blanditiis fugiat dolor
+                quas corrupti obcaecati! Earum, quis culpa. Aliquid cum numquam ipsa quibusdam inventore qui facere rem
+                nostrum perferendis. Quod iste tempora eveniet consequatur placeat id accusantium qui asperiores, ea
+                eius optio quasi eum officia quos necessitatibus sapiente! Repudiandae numquam nesciunt asperiores modi
+                debitis eos quod labore inventore recusandae natus iste earum libero sunt, sint enim accusamus pariatur
+                dolorum commodi. Reprehenderit neque exercitationem doloremque libero, perferendis, temporibus aliquam,
+                veritatis qui a sunt laudantium quae esse aspernatur debitis accusamus corrupti consequatur dolore
+                expedita ex deserunt distinctio ut. Iure ullam quaerat cupiditate rem, laborum unde deleniti, tempore
+                reiciendis temporibus dolorem quidem. Officiis debitis rem quae? Magnam ad dicta nostrum? Quisquam quo
+                amet esse nesciunt vel sunt praesentium magnam voluptatem!</p>
+        </div>
+    </section>
+    <nav>
+        <a href="#one">Home</a>
+        <a href="#two">About</a>
+        <a href="#three">Service</a>
+        <a href="#four">Gallery</a>
+        <a href="#five">Contact</a>
+    </nav>
+
+    <footer class="footer_sec text-center">
+        <a href="">2019 &copy; copyright Kamal. All rights reserved</a>
+    </footer>
+
+</body>
+
+</html>
