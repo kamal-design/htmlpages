@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Example</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="swiper.min.css" type="text/css">	
+		<link rel="stylesheet" href="style.css" type="text/css">	
+		<style>
+            @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+body
+{
+	margin:0;
+	padding:0;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	min-height:100vh;
+	font-family: 'Poppins', sans-serif;
+	background: #003e46;
+}
+.container
+{
+	width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.box
+{
+	position: relative;
+	width: 300px;
+	height: 400px;
+	background: #000;
+	box-shadow: 0 30px 30px rgba(0,0,0,0.5);
+}
+.box .imgBox
+{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+}
+.box .imgBox img 
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.5s;
+}
+.box:hover .imgBox img 
+{
+	opacity: 0;
+}
+.box .content
+{
+	position: absolute;
+	bottom: 20px;
+	left: 10%;
+	width: 80%;
+	height: 60px;
+	background: #fff;
+	transition: 0.5s;
+	overflow: hidden;	
+	padding: 15px;
+	box-sizing: border-box;
+}
+.box:hover .content
+{
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+}
+.box .content h3
+{
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}	
+.box .content p
+{
+	margin: 10px 0 0;
+	padding: 0;
+	opacity: 0;
+	line-height: 1.2em;
+	transition: 0.5s;
+	text-align: justify;
+}	
+.box:hover .content p
+{	
+	opacity: 1;
+	transition-delay: 0.5s;
+}
+        </style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">
+				<div class="imgBox">
+					<img src="./assets/images/01.jpg">
+				</div>
+				<div class="content">
+					<h3> Website Design</h3>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="imgBox">
+					<img src="./assets/images/02.jpg">
+				</div>
+				<div class="content">
+					<h3> Website Design</h3>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="imgBox">
+					<img src="./assets/images/03.jpg">
+				</div>
+				<div class="content">
+					<h3> Website Design</h3>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

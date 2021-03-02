@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css card Effect</title>
+<style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: tahoma;
+    }
+    .card-sec {
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        min-height: 60vh;
+        background: #000;
+    }
+    .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background: #262626;
+        overflow: hidden;
+    }
+    input, .toggle {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        outline: none;
+        z-index: 10;
+    }
+    input {
+        opacity: 0;
+    }
+    .toggle {
+        pointer-events: none;
+        border-radius: 50%;
+        background: #fff;
+        text-align: center;
+        transition: 0.5s;
+        line-height: 50px;
+        font-size: 36px;
+        box-shadow:  0 0 0  0 #9c27b0;
+    }
+    input:checked ~ .toggle {
+        box-shadow: 0 0 0 500px #9c27b0;
+        transform: rotate(225deg);
+    }
+    .imgbox , .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .imgbox  img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .content {
+        padding: 20px;
+        z-index: 11;
+        pointer-events: none;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    input:checked ~ .content {
+        opacity: 1;
+        transition-delay: 0.5s;
+    }
+    .content h2 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+    .content p {
+        line-height: 28px;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    .gradient {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: 60vh;        
+    }
+    .box {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        margin: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box::before { 
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(25px);
+        transform: translateY(30px) scale(0.9);
+        border-radius: 40px;
+    }
+    .box:nth-child(1),
+    .box:nth-child(1)::before {
+        background: linear-gradient(135deg, #f403d1, #64b5f6);
+    }
+    .box:nth-child(2),
+    .box:nth-child(2)::before {
+        background: linear-gradient(135deg, #ffec61, #f321d7);
+        
+    }
+
+    
+    .box:nth-child(3),
+    .box:nth-child(3)::before {
+        background: linear-gradient(135deg, #24ff72, #2196f3);
+    }
+    .box h2 {
+        position: relative;
+        font-size: 2rem;
+        color: #fff;
+        z-index: 1;
+    }
+</style>
+
+</head>
+<body>
+    
+<section class="card-sec">
+    <div class="card">
+        <input type="checkbox" name="">
+        <div class="toggle">+</div>
+        <div class="imgbox">
+            <img src="./assets/images/01.jpg" alt="">
+        </div>
+        <div class="content">
+            <h2> Card Effects</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum ab assumenda aspernatur? Illo minima velit reprehenderit ut dolorum! Omnis aperiam sunt reprehenderit incidunt commodi illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate totam quaerat accusantium? Odit, saepe error?</p>
+        </div>
+    </div>
+    <div class="card">
+        <input type="checkbox" name="">
+        <div class="toggle">+</div>
+        <div class="imgbox">
+            <img src="./assets/images/02.jpg" alt="">
+        </div>
+        <div class="content">
+            <h2> Card Effects</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum ab assumenda aspernatur? Illo minima velit reprehenderit ut dolorum! Omnis aperiam sunt reprehenderit incidunt commodi illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate totam quaerat accusantium? Odit, saepe error?</p>
+        </div>
+    </div>
+    <div class="card">
+        <input type="checkbox" name="">
+        <div class="toggle">+</div>
+        <div class="imgbox">
+            <img src="./assets/images/03.jpg" alt="">
+        </div>
+        <div class="content">
+            <h2> Card Effects</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum ab assumenda aspernatur? Illo minima velit reprehenderit ut dolorum! Omnis aperiam sunt reprehenderit incidunt commodi illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate totam quaerat accusantium? Odit, saepe error?</p>
+        </div>
+    </div>
+</section>
+    
+
+
+    <section>
+        <div class="gradient">
+            <div class="box"> <h2>Box One</h2></div>
+            <div class="box"> <h2>Box Two</h2></div>
+            <div class="box"> <h2>Box Three</h2></div>
+        </div>        
+    </section>
+
+</body>
+</html>
