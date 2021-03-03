@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #262626;
+            color: #fff;
+        }
+
+        section .content {
+            max-width: 80%;
+        }
+
+        section .content h2 {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            font-size: 3rem;
+            transform-origin: left;
+            transition: 0.5s;
+            transform: SCALEX(0);
+        }
+
+        section .content h2[data-scroll="in"] {
+            transform: SCALEX(1);
+        }
+
+        section .content h2:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #e02bff;
+            transform-origin: right;
+            transition: 0.5s;
+        }
+
+        section .content h2[data-scroll="in"]:before {
+            transform: SCALEX(0);
+            transition-delay: 0.5s;
+        }
+
+
+        section .content h3 {
+            position: relative;
+            margin: 5px 0 0;
+            padding: 0;
+            display: inline-block;
+            font-size: 2rem;
+            transform-origin: right;
+            transition: 0.5s;
+            transform: SCALEX(0);
+        }
+
+        section .content h3[data-scroll="in"] {
+            transform: SCALEX(1);
+            transition-delay: 1s;
+        }
+
+        section .content h3:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffeb3b;
+            transform-origin: left;
+            transition: 0.5s;
+        }
+
+        section .content h3[data-scroll="in"]:before {
+            transform: SCALEX(0);
+            transition-delay: 1.5s;
+        }
+
+
+        section .content p {
+            font-size: 1.2em;
+            transition: 1s;
+            opacity: 0;
+        }
+
+        section .content p[data-scroll="in"] {
+            opacity: 1;
+            transition-delay: 1s;
+        }
+
+        section .content a {
+            position: relative;
+            background: #fff;
+            color: #262626;
+            padding: 15px 30px;
+            font-size: 16px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 1s;
+            transform: translateX(150px);
+            opacity: 0;
+        }
+
+        section .content a[data-scroll="in"] {
+            transform: translateX(0);
+            transition-delay: 1s;
+            opacity: 1;
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="content">
+            <h2> Section One Text Scroll Out Left</h2>
+            <h3> Section One small Text Scroll Out Right</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac dolor tempus velit cursus suscipit.
+                Proin at ligula sollicitudin, scelerisque purus aliquam, semper ipsum. Suspendisse in ligula sed diam
+                condimentum aliquam. In dictum eros erat, accumsan auctor magna rhoncus eu. Phasellus lectus quam,
+                tristique at erat ut, tincidunt ultrices eros. Nam in hendrerit ex. Nullam commodo dolor nunc. Vivamus
+                congue aliquet bibendum. In vitae nulla interdum, sagittis nisl a, suscipit quam. Pellentesque
+                porttitor, leo id ullamcorper accumsan, dui dolor finibus arcu, sed blandit lorem mauris fermentum
+                sapien. Vestibulum vel porta dolor.</p>
+            <p>Etiam lobortis leo quis tellus cursus mollis. Nullam venenatis molestie arcu ut facilisis. Donec suscipit
+                sit amet arcu ac rutrum. Cras hendrerit eget sapien at gravida. Etiam nulla quam, mattis eget auctor
+                eget, viverra in sapien. Quisque ultrices risus arcu, vel maximus libero vulputate vel. Donec fermentum
+                porttitor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt neque vitae
+                tortor porta aliquet. Mauris sit amet dolor consectetur, volutpat dui ut, pretium nisi. Orci varius
+                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p>Morbi viverra fermentum orci sit amet convallis. Sed id lectus vel ipsum ultrices pulvinar. Nullam sit
+                amet ornare mauris. Cras ultrices, urna a posuere ultrices, nibh nisi semper ex, et auctor lacus augue
+                volutpat lorem. Nam fringilla urna eu massa luctus, vitae mollis lectus dictum. Vestibulum feugiat mi
+                orci, et scelerisque enim blandit vel. Cras lacus odio, finibus eget libero sit amet, elementum luctus
+                risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut urna lectus. Suspendisse
+                potenti. Curabitur ut nisl id mi accumsan commodo sed et massa. Praesent malesuada hendrerit aliquet.
+                Mauris nisi diam, feugiat at sollicitudin eget, ultricies sodales arcu.</p>
+            <a href="https://github.com/scroll-out/scroll-out">Read More</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2> Section Two Text Scroll Out Left</h2>
+            <h3> Section Two small Text Scroll Out Right</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac dolor tempus velit cursus suscipit.
+                Proin at ligula sollicitudin, scelerisque purus aliquam, semper ipsum. Suspendisse in ligula sed diam
+                condimentum aliquam. In dictum eros erat, accumsan auctor magna rhoncus eu. Phasellus lectus quam,
+                tristique at erat ut, tincidunt ultrices eros. Nam in hendrerit ex. Nullam commodo dolor nunc. Vivamus
+                congue aliquet bibendum. In vitae nulla interdum, sagittis nisl a, suscipit quam. Pellentesque
+                porttitor, leo id ullamcorper accumsan, dui dolor finibus arcu, sed blandit lorem mauris fermentum
+                sapien. Vestibulum vel porta dolor.</p>
+            <p>Etiam lobortis leo quis tellus cursus mollis. Nullam venenatis molestie arcu ut facilisis. Donec suscipit
+                sit amet arcu ac rutrum. Cras hendrerit eget sapien at gravida. Etiam nulla quam, mattis eget auctor
+                eget, viverra in sapien. Quisque ultrices risus arcu, vel maximus libero vulputate vel. Donec fermentum
+                porttitor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt neque vitae
+                tortor porta aliquet. Mauris sit amet dolor consectetur, volutpat dui ut, pretium nisi. Orci varius
+                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p>Morbi viverra fermentum orci sit amet convallis. Sed id lectus vel ipsum ultrices pulvinar. Nullam sit
+                amet ornare mauris. Cras ultrices, urna a posuere ultrices, nibh nisi semper ex, et auctor lacus augue
+                volutpat lorem. Nam fringilla urna eu massa luctus, vitae mollis lectus dictum. Vestibulum feugiat mi
+                orci, et scelerisque enim blandit vel. Cras lacus odio, finibus eget libero sit amet, elementum luctus
+                risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut urna lectus. Suspendisse
+                potenti. Curabitur ut nisl id mi accumsan commodo sed et massa. Praesent malesuada hendrerit aliquet.
+                Mauris nisi diam, feugiat at sollicitudin eget, ultricies sodales arcu.</p>
+            <a href="https://github.com/scroll-out/scroll-out">Read More</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2> Section Three Text Scroll Out Left</h2>
+            <h3> Section Three small Text Scroll Out Right</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac dolor tempus velit cursus suscipit.
+                Proin at ligula sollicitudin, scelerisque purus aliquam, semper ipsum. Suspendisse in ligula sed diam
+                condimentum aliquam. In dictum eros erat, accumsan auctor magna rhoncus eu. Phasellus lectus quam,
+                tristique at erat ut, tincidunt ultrices eros. Nam in hendrerit ex. Nullam commodo dolor nunc. Vivamus
+                congue aliquet bibendum. In vitae nulla interdum, sagittis nisl a, suscipit quam. Pellentesque
+                porttitor, leo id ullamcorper accumsan, dui dolor finibus arcu, sed blandit lorem mauris fermentum
+                sapien. Vestibulum vel porta dolor.</p>
+            <p>Etiam lobortis leo quis tellus cursus mollis. Nullam venenatis molestie arcu ut facilisis. Donec suscipit
+                sit amet arcu ac rutrum. Cras hendrerit eget sapien at gravida. Etiam nulla quam, mattis eget auctor
+                eget, viverra in sapien. Quisque ultrices risus arcu, vel maximus libero vulputate vel. Donec fermentum
+                porttitor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt neque vitae
+                tortor porta aliquet. Mauris sit amet dolor consectetur, volutpat dui ut, pretium nisi. Orci varius
+                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p>Morbi viverra fermentum orci sit amet convallis. Sed id lectus vel ipsum ultrices pulvinar. Nullam sit
+                amet ornare mauris. Cras ultrices, urna a posuere ultrices, nibh nisi semper ex, et auctor lacus augue
+                volutpat lorem. Nam fringilla urna eu massa luctus, vitae mollis lectus dictum. Vestibulum feugiat mi
+                orci, et scelerisque enim blandit vel. Cras lacus odio, finibus eget libero sit amet, elementum luctus
+                risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut urna lectus. Suspendisse
+                potenti. Curabitur ut nisl id mi accumsan commodo sed et massa. Praesent malesuada hendrerit aliquet.
+                Mauris nisi diam, feugiat at sollicitudin eget, ultricies sodales arcu.</p>
+            <a href="https://github.com/scroll-out/scroll-out">Read More</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2> Section Four Text Scroll Out Left</h2>
+            <h3> Section Four small Text Scroll Out Right</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac dolor tempus velit cursus suscipit.
+                Proin at ligula sollicitudin, scelerisque purus aliquam, semper ipsum. Suspendisse in ligula sed diam
+                condimentum aliquam. In dictum eros erat, accumsan auctor magna rhoncus eu. Phasellus lectus quam,
+                tristique at erat ut, tincidunt ultrices eros. Nam in hendrerit ex. Nullam commodo dolor nunc. Vivamus
+                congue aliquet bibendum. In vitae nulla interdum, sagittis nisl a, suscipit quam. Pellentesque
+                porttitor, leo id ullamcorper accumsan, dui dolor finibus arcu, sed blandit lorem mauris fermentum
+                sapien. Vestibulum vel porta dolor.</p>
+            <p>Etiam lobortis leo quis tellus cursus mollis. Nullam venenatis molestie arcu ut facilisis. Donec suscipit
+                sit amet arcu ac rutrum. Cras hendrerit eget sapien at gravida. Etiam nulla quam, mattis eget auctor
+                eget, viverra in sapien. Quisque ultrices risus arcu, vel maximus libero vulputate vel. Donec fermentum
+                porttitor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt neque vitae
+                tortor porta aliquet. Mauris sit amet dolor consectetur, volutpat dui ut, pretium nisi. Orci varius
+                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p>Morbi viverra fermentum orci sit amet convallis. Sed id lectus vel ipsum ultrices pulvinar. Nullam sit
+                amet ornare mauris. Cras ultrices, urna a posuere ultrices, nibh nisi semper ex, et auctor lacus augue
+                volutpat lorem. Nam fringilla urna eu massa luctus, vitae mollis lectus dictum. Vestibulum feugiat mi
+                orci, et scelerisque enim blandit vel. Cras lacus odio, finibus eget libero sit amet, elementum luctus
+                risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut urna lectus. Suspendisse
+                potenti. Curabitur ut nisl id mi accumsan commodo sed et massa. Praesent malesuada hendrerit aliquet.
+                Mauris nisi diam, feugiat at sollicitudin eget, ultricies sodales arcu.</p>
+            <a href="https://github.com/scroll-out/scroll-out">Read More</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="content">
+            <h2> Section Six Text Scroll Out Left</h2>
+            <h3> Section Six small Text Scroll Out Right</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac dolor tempus velit cursus suscipit.
+                Proin at ligula sollicitudin, scelerisque purus aliquam, semper ipsum. Suspendisse in ligula sed diam
+                condimentum aliquam. In dictum eros erat, accumsan auctor magna rhoncus eu. Phasellus lectus quam,
+                tristique at erat ut, tincidunt ultrices eros. Nam in hendrerit ex. Nullam commodo dolor nunc. Vivamus
+                congue aliquet bibendum. In vitae nulla interdum, sagittis nisl a, suscipit quam. Pellentesque
+                porttitor, leo id ullamcorper accumsan, dui dolor finibus arcu, sed blandit lorem mauris fermentum
+                sapien. Vestibulum vel porta dolor.</p>
+            <p>Etiam lobortis leo quis tellus cursus mollis. Nullam venenatis molestie arcu ut facilisis. Donec suscipit
+                sit amet arcu ac rutrum. Cras hendrerit eget sapien at gravida. Etiam nulla quam, mattis eget auctor
+                eget, viverra in sapien. Quisque ultrices risus arcu, vel maximus libero vulputate vel. Donec fermentum
+                porttitor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt neque vitae
+                tortor porta aliquet. Mauris sit amet dolor consectetur, volutpat dui ut, pretium nisi. Orci varius
+                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p>Morbi viverra fermentum orci sit amet convallis. Sed id lectus vel ipsum ultrices pulvinar. Nullam sit
+                amet ornare mauris. Cras ultrices, urna a posuere ultrices, nibh nisi semper ex, et auctor lacus augue
+                volutpat lorem. Nam fringilla urna eu massa luctus, vitae mollis lectus dictum. Vestibulum feugiat mi
+                orci, et scelerisque enim blandit vel. Cras lacus odio, finibus eget libero sit amet, elementum luctus
+                risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut urna lectus. Suspendisse
+                potenti. Curabitur ut nisl id mi accumsan commodo sed et massa. Praesent malesuada hendrerit aliquet.
+                Mauris nisi diam, feugiat at sollicitudin eget, ultricies sodales arcu.</p>
+            <a href="https://github.com/scroll-out/scroll-out">Read More</a>
+        </div>
+    </section>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/js/scroll-out.min.js"></script>
+    <script>
+        ScrollOut({
+            targets: 'h2,h3,p,a'
+        });
+    </script>
+</body>
+
+</html>

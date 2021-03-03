@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Animated wavy Background</title>
+	<style>
+        body {
+margin: 0;
+padding: 0;
+}
+section {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url(./assets/images/background.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+section .wave {
+	position: absolute;
+	width: 100%;
+	height: 143px;
+	bottom:0;
+	left:0;
+	background: url(./assets/images/wave.png);
+	animation: animate 10s linear infinite;
+}
+section .wave:before {
+	content: "";
+	width:100%;
+	height: 143px;
+	background: url(./assets/images/wave.png);
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.4;
+	animation: animate-reverse 10s liner infinite;
+}
+section .wave:after {
+	content: "";
+	width:100%;
+	height: 143px;
+	background: url(./assets/images/wave.png);
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+	animation: animate-reverse 20s liner infinite;
+}
+@keyframes animate {
+	0%{
+		background-position: 0;
+	}
+	10%{
+		background-position: 0;
+	}
+	100%{
+		background-position: 1360px;
+	}
+}
+@keyframes animate-reverse {
+	0%{
+		background-position: 1360px;
+	}
+	10%{
+		background-position: 1360px;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+    </style>
+	</head>
+		<body>
+			<section>
+				<div class="wave"> </div>
+			</section>
+		</body>
+	</html>
+	

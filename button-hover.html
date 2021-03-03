@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover Effects</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: #262626;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            position: relative;
+            font-size: 20px;
+            line-height: 30px;
+            padding: 10px 30px;
+            margin: 0 20px;
+            color: #fbbb09;
+            border:2px solid  #fbbb09;
+            background: transparent;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.8s all ease-in-out 0s;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #000;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:100%;
+            height: 100%;
+            z-index: -1;
+            background: #fbbb09;
+            transition: 0.4s all ease-in-out 0s;
+        }
+        .btn-1::before {
+            height: 0;
+        }
+        .btn-1:hover::before {
+            top: unset;
+            bottom: 0;
+            height: 100%;
+        }
+
+        .btn-2::before {
+            top: unset;
+            bottom: 0;
+            height: 0;
+        }
+        .btn-2:hover::before {
+            bottom: unset;
+            top: 0;
+            height: 100%;
+        }
+
+        .btn-3::before {
+            top: unset;
+            bottom: 0;
+            width: 0;
+        }
+        .btn-3:hover::before {
+            bottom: unset;
+            top: 0;
+            width: 100%;
+        }
+
+        .btn-4::before {
+            left: unset;
+            right: 0;
+            width: 0;
+        }
+        .btn-4:hover::before {
+            bottom: unset;
+            top: 0;
+            width: 100%;
+        }
+
+        .btn-5::before {
+            left: unset;
+            right: 0;
+            width: 0;
+        }
+        .btn-5:hover::before {
+            right: unset;
+            left: 0;
+            width: 100%;
+        }
+
+        .btn-6::before {
+            right: unset;
+            left: 0;
+            width: 0;
+        }
+        .btn-6:hover::before {
+            left: unset;
+            right: 0;
+            width: 100%;
+        }
+       
+    </style>
+
+</head>
+<body>
+
+    <a href="#" class="btn btn-1"> Hover Me</a>
+    <a href="#" class="btn btn-2"> Hover Me</a>
+    <a href="#" class="btn btn-3"> Hover Me</a>
+    <a href="#" class="btn btn-4"> Hover Me</a>
+    <a href="#" class="btn btn-5"> Hover Me</a>
+    <a href="#" class="btn btn-6"> Hover Me</a>
+    
+</body>
+</html>

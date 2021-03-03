@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Switcher / Toggle Effect</title>
+
+    <style>
+        :root {
+            --dark-gray: #111827;
+            --white: #f8f8f8;
+            --indigo-100: #e0e7ff;
+            --indigo-300: #a5b4fc;
+            --indigo-400: #818cf8;
+            --indigo-600: #4338ca;
+            --indigo-900: #312e81;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            width: 100vw;
+            height: 100%;
+            background-color:  var(--white);
+            overflow-x: hidden;
+        }
+        body.dark {
+            background-color: var(--dark-gray);
+            color: var(--white);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--indigo-100);
+            width: 100%;
+            height: 64px;
+        }
+        body.dark nav {
+            background-color: var(--indigo-600);
+        }
+        .nav-links a {
+            color: var(--indigo-900);
+            font-weight: 500;
+            font-size: 20px;
+            text-decoration: none;
+            cursor: pointer;
+            padding-right: 2.5rem;
+        }
+        body.dark .nav-links a {
+            color: var(--white);
+        }
+
+        strong {
+            color: var(--indigo-900);
+            font-size: 20px;
+        }
+
+        body.dark strong {
+            color: var(--white);
+        }
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        label  {
+            position: relative;
+            width: 56px;
+            height: 18px;
+            padding: 14px;
+            background-color: var(--indigo-900);
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: scale(1.25);
+        }
+        .ball {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            height: 22px;
+            width: 22px;
+            background-color: var(--white);
+            border-radius: 50%;
+            transform: translateX(0px);
+            transition:  transform 0.2s linear;
+        }
+        .checkbox:checked + .label .ball {
+            transform: translateX(28px);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 60vw;
+            margin: 10% auto;            
+        }
+         main h1{ 
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        main p{ 
+            line-height: 1.4;
+            font-size: 22px;
+        }
+        button {
+            background-color: var(--indigo-600);
+            color: var(--white);
+            border: 2px solid var(--indigo-600);
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: capitalize;
+            cursor: pointer;
+            border-radius: 3px;
+            padding: 10px 30px;
+            margin-top: 1rem;
+            transition: all 0.2s linear;
+        }
+
+    </style>
+</head>
+<body>
+    
+<nav>
+    <strong> Navbar Brand</strong>
+    <div class="nav-links">
+        <a href=""> Home</a>
+        <a href=""> About Us</a>
+        <a href=""> Services</a>
+        <a href=""> Gallery</a>
+        <a href=""> Contact Us</a>
+    </div>
+    <div>
+        <input type="checkbox" class="checkbox" id="themeToggle">
+        <label for="themeToggle" class="label"> <span class="ball"></span></label>
+    </div>
+</nav>
+
+<main class="container">
+    <h1> Background Color Toggle / Switcher</h1>
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam magnam hic earum quas, quia eveniet ea? Tenetur dolore, earum necessitatibus repudiandae pariatur asperiores quae? Sunt autem magni voluptate eum vero. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, ipsam optio laboriosam voluptatibus culpa voluptatum quisquam velit dolor nostrum cum libero fuga quia suscipit quod dicta tempora corporis non? Quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, eius veniam. Pariatur deserunt obcaecati optio tempore beatae dolore modi eos, voluptatum, sed officia odit aliquam adipisci debitis molestiae. Vero, architecto.</p>
+
+    <button> Get Started Now</button>
+</main>
+
+    <script>
+        const theme = document.getElementById('themeToggle');
+        theme.addEventListener('change', () => {
+            document.body.classList.toggle('dark');
+        })
+    </script>
+
+</body>
+</html>

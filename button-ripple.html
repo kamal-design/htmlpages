@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: #040d15;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+            padding: 14px 36px;
+            margin: 10px 0;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            border-radius: 40px;
+            background: linear-gradient(90deg, #0162c8, #55e7fc);
+            overflow: hidden;
+        }
+
+        a:nth-child(2) {
+            background: linear-gradient(90deg, #200473, #fb008b);
+        }
+
+        span {
+            position: absolute;
+            background: #fff;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: animate 1s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                width: 0px;
+                height: 0px;
+                opacity: 0.5;
+            }
+
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="content">
+            <h2 align="center" style="color: #fff;"> Button Click Ripples </h2>
+        </div>
+        <a href="#">Button One</a>
+        <a href="#">Button Two</a>
+    </section>
+
+    <script>
+        const buttons = document.querySelectorAll('a');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+
+                let ripples = document.createElement('span');
+                ripples.style.left = x + 'px';
+                ripples.style.top = y + 'px';
+                this.appendChild(ripples);
+                setTimeout(() => {
+                    ripples.remove()
+                }, 1000);
+            })
+        })
+    </script>
+</body>
+
+</html>
