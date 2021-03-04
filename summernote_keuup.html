@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.min.js"></script>
+	 
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.min.css" rel="stylesheet"/>
+
+  
+	
+	
+    <title>Page Preview Design</title>
+	
+  </head>
+  <body>
+		<section>
+			<div class="container">
+				<div class="col-md-offset-2 col-md-8">
+					<form>
+						<div class="form-group">
+							<label>Editor:</label>
+							<div id="summernote" class="form-control"></div>
+						</div>
+						<div class="form-group">
+							<label>Output:</label>
+							<textarea rows="8" id="lawsContent" class="form-control"></textarea>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+						$(document).ready(function(){
+							$("#summernote").summernote(
+								{
+									height: "10em",
+									callbacks: {
+									  onChange: function (contents, $editable) {
+										var code = $(this).summernote("code");
+										$("#lawsContent").val(code);
+									  }
+									}
+								}
+							);
+						});
+					</script>
+					<!-- source code here:- -->
+					<!--https://stackoverflow.com/questions/22136242/textarea-value-change-when-summernote-div-is-changed?noredirect=1-->
+				</div>
+			</div>
+		</section>
+  </body>
+</html>
+

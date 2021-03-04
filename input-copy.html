@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	
+    <title>Input valus copy to next input</title>
+	
+  </head>
+  <body>
+		<section>
+			<div class="container">
+				<div class="col-md-offset-4 col-md-4">
+					<form>
+						<div class="form-group">
+							<label>First Textbox</label>
+							<input type="text" id="text_1" class="form-control" /> 
+						</div>
+						<div class="form-group">
+							<label>Second Textbox</label>
+							<input type="text" id="text_1a" class="form-control" /> 
+						</div>
+						<div class="form-group">
+							<label>Third Textbox</label>
+							<input type="text" id="text_1b" class="form-control" /> 
+						</div>						
+					</form>
+
+			
+				<script type="text/javascript">
+				$("#text_1").change(function() {
+					$("#text_1a").val($("#text_1").val()).change();
+					$("#text_1b").val($("#text_1").val()).change();
+				})
+				
+				</script> 
+				</div>
+				
+				<div class="col-md-offset-4 col-md-4">
+					<form>
+						<div class="form-group">
+							<label>First Textarea</label>
+							<textarea type="text" id="textarea_1" class="form-control"></textarea>
+						</div>
+						<div class="form-group">
+							<label>Second Textarea</label>
+							<textarea type="text" id="textarea_2" class="form-control"></textarea>
+						</div>
+						<div class="form-group">
+							<label>Third Textarea</label>
+							<textarea type="text" id="textarea_3" class="form-control"></textarea>
+						</div>
+						
+					</form>
+
+			
+				<script type="text/javascript">
+				$("#textarea_1").change(function() {
+					$("#textarea_2").val($("#textarea_1").val()).change();
+					$("#textarea_3").val($("#textarea_1").val()).change();
+					//type text copy code
+					$("#textarea_1").select();
+					document.execCommand('copy');
+				});				
+				</script> 
+				</div>
+			</div>
+		</section>
+  </body>
+</html>
+

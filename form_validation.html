@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+   <section class="m-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 border">
+					<form onsubmit="event.preventDefault();onformSumit();" class="p-3"  autocomplete="on">
+						<div class="form-group">
+							<label for="fullName">Full Name </label>
+							<label class="text-danger d-none" id="fullnameValidationError">This Field required Full Name </label>
+							<input type="text" class="form-control" name="fullName" id="fullName" placeholder="Full Name" />
+						</div>
+						<div class="form-group">
+							<label for="emailAddress">Email</label>
+							<input type="text" class="form-control" name="emailAddress" id="emailAddress" placeholder="Email Address" />
+						</div>
+						<div class="form-group">
+							<label for="mobileNo">Mobile </label>
+							<input type="text" class="form-control" name="mobileNo" id="mobileNo" placeholder="Mobile Number" />
+						</div>
+						<div class="form-group">
+							<label for="place">Place </label>
+							<input type="text" class="form-control" name="place" id="place" placeholder="Place" />
+						</div>
+						<button type="submit" name="save" id="save" class="btn btn-primary btn-block"> Save Details</button>
+					</form>
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+					<div class="table-responsive">
+						<table id="emp_details" class="table table-bordered table-striped">
+							<thead>
+								<tr> 
+									<th> Name</th>
+									<th> Email</th>
+									<th> Mobile</th>
+									<th> Place</th>
+									<th> Action</th>
+								</tr>								
+							</thead>
+							<tbody>	
+								<tr>
+									<td> Kamal </td>
+									<td> kamal.microshare@gmail.com </td>
+									<td> 7418823014 </td>
+									<td> Arni</td>
+									<td> 
+										
+									</td>
+								</tr>	
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+	   </div>
+   </section>
+   
+   
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	<script>
+		var selectedRow = null;
+/* function onformSumit(){
+	
+		var formData = readformData();
+		
+		if(selectedRow == null)
+		{		
+			insertNewRecord(formData);
+		}
+		else
+		{
+			updateRecord(formData);
+		}
+		resetForm();
+	
+} */
+function onformSumit(){
+	if(validate()){
+		var formData = readformData();
+		
+		if(selectedRow == null)
+		{		
+			insertNewRecord(formData);
+		}
+		else
+		{
+			updateRecord(formData);
+		}
+		resetForm();
+	}
+}
+function readformData(){
+	var formData = {};
+	formData["fullName"] = document.getElementById("fullName").value;
+	formData["emailAddress"] = document.getElementById("emailAddress").value;
+	formData["mobileNo"] = document.getElementById("mobileNo").value;
+	formData["place"] = document.getElementById("place").value;
+	return formData;
+}
+function insertNewRecord(data){
+	var table = document.getElementById("emp_details").getElementsByTagName('tbody')[0];
+	var newRow = table.insertRow(table.length);
+	cell1 = newRow.insertCell(0);
+	cell1.innerHTML = data.fullName;
+	cell2 = newRow.insertCell(1);
+	cell2.innerHTML = data.emailAddress;
+	cell3 = newRow.insertCell(2);
+	cell3.innerHTML = data.mobileNo;
+	cell4 = newRow.insertCell(3);
+	cell4.innerHTML = data.place;
+	cell4 = newRow.insertCell(4);
+	cell4.innerHTML = '<button class="btn btn-primary btn-sm" onclick="onEdit(this)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button><button class="btn btn-primary btn-sm" onClick="onDelete(this)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>';
+}
+function resetForm(){
+	document.getElementById("fullName").value = "";
+	document.getElementById("emailAddress").value = "";
+	document.getElementById("mobileNo").value = "";
+	document.getElementById("place").value = "";
+    selectedRow = null;
+} 
+function onEdit(td){
+	selectedRow = td.parentElement.parentElement;
+	document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
+	document.getElementById("emailAddress").value = selectedRow.cells[1].innerHTML;
+	document.getElementById("mobileNo").value = selectedRow.cells[2].innerHTML;
+	document.getElementById("place").value = selectedRow.cells[3].innerHTML;
+}
+
+function updateRecord(formData){
+	selectedRow.cells[0].innerHTML = formData.fullName;
+	selectedRow.cells[1].innerHTML = formData.emailAddress;
+	selectedRow.cells[2].innerHTML = formData.mobileNo;
+	selectedRow.cells[3].innerHTML = formData.place;
+}
+
+function onDelete(td){
+	if(confirm('Are you sure to delete this record?'))
+	{
+		row = td.parentElement.parentElement;
+		document.getElementById("emp_details").deleteRow(row.rowIndex);
+		resetForm();
+	}
+}
+
+function validate(){
+	isValid = true;
+	if(document.getElementById("fullName").value == ""){
+		isValid = false;	
+		document.getElementById("fullnameValidationError").classList.remove("d-none");
+	}
+	else {
+		isValid = true;
+		if(!document.getElementById("fullnameValidationError").classList.contains("d-none"))
+			document.getElementById("fullnameValidationError").classList.add("d-none");
+		
+	}
+	return isValid;
+}
+	</script>
+  </body>
+</html>
