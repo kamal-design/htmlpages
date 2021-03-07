@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Text Reveal</title>
+    <style>
+        :root {
+            --animation-delay: 0;
+            --duration: 800ms;
+            --iterations: 1;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #000000;
+            flex-direction: column;
+        }
+
+        .reveal,
+        .reveal::after {
+            animation-delay: 0;
+            animation-delay: var(--animation-delay, 2s);
+            animation-iteration-count: 1;
+            animation-iteration-count: var(--iterations, 1);
+            animation-duration: 800ms;
+            animation-duration: var(--duration, 800ms);
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+        }
+
+        .reveal {
+            position: relative;
+            font-size: 6rem;
+            color: #FFF;
+            white-space: nowrap;
+            text-transform: uppercase;
+            animation-name: text;
+            cursor: default;
+        }
+        .reveal::after {
+            content: "";
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ffe602;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            pointer-events: none;
+            animation-name: revealer;
+        }
+
+
+        /* text animation */
+        @keyframes text {
+            from {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+        /* background animation */
+        @keyframes revealer {
+
+            0%,
+            50% {
+                transform-origin: 0 50%;
+            }
+
+            60%,
+            100% {
+                transform-origin: 100% 50%;
+            }
+
+
+            60% {
+                transform: scaleX(1);
+            }
+
+            100% {
+                transform: scaleX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="reveal"> Text Reveal </h1>
+</body>
+
+</html>

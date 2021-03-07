@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSS BOrder Animation on Hover</title>
+    <script src="https://kit.fontawesome.com/ca45c4f69b.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        button {
+            position: relative;
+            vertical-align: middle;
+            color: #fff;
+            background: none;
+            border: 0;
+            margin: 16px;
+            padding: 16px 32px;
+            box-shadow: inset 0 0 0 2px rgba(255, 220, 62, 0.1);
+            box-sizing: border-box;
+        }
+
+        button::before,
+        button::after {
+            box-sizing: inherit;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .socials {
+            width: 80px;
+            height: 80px;
+            padding: 0;
+        }
+
+        .socials i {
+            font-size: 35px;
+        }
+
+        .socials:hover {
+            color: rgb(255, 220, 62);
+        }
+
+        .socials::before,
+        .socials::after {
+            top: 0;
+            left: 0;
+        }
+
+        .socials::before {
+            border: 2px solid transparent;
+        }
+
+        .socials:hover::before {
+            border-top-color: rgb(255, 220, 62);
+            border-right-color: rgb(255, 220, 62);
+            border-bottom-color: rgb(255, 220, 62);
+            transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
+        }
+
+        .socials::after {
+            border: 0px solid transparent;
+        }
+
+        .socials:hover::after {
+            border-top: 2px solid rgb(255, 220, 62);
+            border-left-width: 2px;
+            border-right-width: 2px;
+            transform: rotate(270deg);
+            transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s;
+        }
+
+        .round {
+            border-radius: 100%;
+            /* box-shadow: none; */
+        }
+
+        .round::before,
+        .round::after {
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <button class="socials round"><i class="fab fa-facebook-f"></i></button>
+        <button class="socials round"><i class="fab fa-twitter"></i></button>
+        <button class="socials round"><i class="fab fa-linkedin-in"></i></button>
+        <button class="socials round"><i class="fab fa-instagram"></i></button>
+        <button class="socials round"><i class="fab fa-pinterest-p"></i></button>
+    </div>
+</body>
+
+</html>
