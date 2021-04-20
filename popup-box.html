@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>POPUP BOX</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <style>
+            
+      :root {
+        --theme-color: #f00;
+        --black: #000;
+        --white: #fff;
+      }
+
+
+
+.popup_overlaysection {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgb(251 255 238);
+  color: var(--black);
+  width: 0;
+  height: 100vh;
+  z-index: 99999;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup_overlaysection .popup-close {
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    background-color: var(--theme-color);
+    color: var(--white);
+    border-radius: 50%;
+    height: 30px;
+    line-height: 28px;
+    cursor: pointer;
+    z-index: 1;
+}
+.popup_overlaysection .popup-close i {
+    height: 12px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.popup_overlaysection .popup-close:hover i {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.show .popup_overlaysection {
+    left: 50%;
+    visibility: visible;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+.subscribeoffer {
+    position: relative;
+    background-color: var(--white);
+    opacity: 0;
+    visibility: hidden;
+    width: 50%;
+    min-height: 400px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    text-align: center;
+    border-radius: 12px;
+    padding: 25px 25px;
+}
+.subscribeoffer h3 {
+    font-size: var(--fs125);
+    line-height: var(--fs15);
+    font-weight: var(--fw600);
+    color: var(--black);
+    margin-bottom: var(--pad_1);
+}
+.subscribeoffer p {
+    font-size: var(--fs14);
+    line-height: var(--fs15);
+    font-weight: var(--fw400);
+    color: var(--black);
+    margin-bottom: var(--pad_1);
+}
+.subscribeoffer .form-group label {
+    font-size: var(--fs12);
+}
+.show .subscribeoffer {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+.subscribe-popup .btn-danger {
+    color: #fff;
+    background-color:var(--theme-color);
+    border-color:var(--theme-color);
+}
+.subscribe-popup .btn-danger:hover{
+    color: #fff;
+    background-color:var(--theme-color);
+    border-color:var(--theme-color);
+}
+
+@media screen and (max-width: 767px) {
+    .subscribeoffer {
+        width: 94%;
+        margin: 25% auto;
+        height: 96vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    .popup_overlaysection .popup-close {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+
+  <section class="py-5 my-5"> 
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <h2>Lorem ipsum dolor sit amet.</h2>
+          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil cupiditate exercitationem porro saepe provident nemo recusandae sequi impedit, temporibus quidem! Dolorem, illo iure. Dolorum, animi. Consequuntur vel quam asperiores quas, porro beatae repellat laborum quae corporis qui aspernatur repellendus provident. Ex labore quia quod quas iste veniam ipsum odio hic, blanditiis quibusdam enim perferendis recusandae debitis iure, quis distinctio tenetur aperiam quo? Culpa ipsam odit illo dicta illum vitae, veritatis necessitatibus ab magnam doloribus quaerat? Quisquam unde consequatur a iste explicabo. Amet quia voluptas, distinctio repellendus vitae aspernatur officia nihil! Dicta dolores eum error voluptatem excepturi labore at ex numquam tempore iste explicabo perspiciatis suscipit quibusdam soluta consequuntur fugit aspernatur nihil repudiandae quia earum mollitia doloremque, accusamus ipsa. Cumque assumenda, fuga repudiandae molestias dolore sed illo ipsum architecto provident odio autem? Unde, quia voluptatibus in quaerat excepturi fuga? Molestiae non repudiandae dolorem optio repellat, asperiores ratione harum accusamus omnis velit!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    
+  <section class="subscribe-popup show">
+    <div class="popup_overlaysection">       
+      <div class="subscribeoffer">           
+            <span class="popup-close"> X </span>
+             <div class="container">
+            <div class="row">
+                  <div class="col-sm-8 m-auto">
+                    <h3> Be The First To Know</h3>
+                    <p> About our newest arrivals, special offers plus 10% off on your first order.</p>
+                    <form class="form-subscribe mb-2" id="SubscribeFrmPop" method="POST">
+                      <div class="form-group text-left">
+                      <label for="inputEmail">Name</label>
+                      <input type="text" name="sub_name" class="form-control sub_name" placeholder="Your name" required="">
+                      </div> 
+                      <div class="form-group text-left">
+                      <label for="inputEmail">Phone</label>
+                      <input type="text" name="sub_phone" class="form-control sub_phone" placeholder="Your Phone" required="">
+                      </div>
+                      <div class="form-group text-left">
+                      <label for="inputEmail">Email address</label>
+                      <input type="email" name="sub_email" class="form-control sub_email" placeholder="Your Email address" required="">
+                      </div>   
+                      <button class="btn btn-danger btn-block" type="submit" id="subBtnPop"> SUBSCRIBE <i class="fa fa-circle-o-notch fa-spin" id="sub-loader-pop" style="display: none;"></i> &nbsp;<i class="fa fa-envelope-o"></i> </button>               
+                    </form>
+                    <small class="text-muted"> By subscribing, you accept the <a href="https://leradar.in/demo/theme05/contact-us"> Terms of Use</a></small>
+                  </div>
+                </div>
+              </div>
+     
+      </div>
+   </div>
+ </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+          $(".popup-close").click(function () {
+              if ($(".subscribe-popup").hasClass('show')) {
+                $(".subscribe-popup").removeClass('show');
+                $("body").removeClass('disable-scroll');                            
+              } else {
+              $(".subscribe-popup").addClass('show');                        
+            }
+          });       
+        });
+        $(window).load(function(){
+            $("body").addClass("disable-scroll");
+                setTimeout(function(){
+                     $(".subscribe-popup").addClass("show");
+                }, 1000);
+        }); 
+        </script>
+
+</body>
+</html>

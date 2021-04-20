@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Dot Menu Hover</title>
+
+    <style>
+        html, body, div, a {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: #0c1828;
+            font-size: 1.5em;
+            overflow: hidden;
+        }
+        .nav {
+            position: relative;
+            width: 580px;
+            margin: 10em auto;            
+            text-align: center;
+            overflow: hidden;
+        }
+        .nav a {
+            display: block;
+            position: relative;
+            float: left;
+            padding: 1rem 0 2em;
+            width: 20%;
+            text-decoration: none;
+            color: white;
+            transition: 0.7s;
+        }
+        .nav a:hover {
+            color: #c6332e;
+        }
+        .effect {
+            position: absolute;
+            left: -10%;
+            transition: 0.7s ease-in-out;
+        }
+        .nav a:nth-child(1):hover ~ .effect {
+            left: 10%;
+        }
+        .nav a:nth-child(2):hover ~ .effect {
+            left: 30%;
+        }
+        .nav a:nth-child(3):hover ~ .effect {
+            left: 50%;
+        }
+        .nav a:nth-child(4):hover ~ .effect {
+            left: 70%;
+        }
+        .nav a:nth-child(5):hover ~ .effect {
+            left: 90%;
+        }
+
+        .dot-nav::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: #c6342e;
+            bottom: 40px;
+        }
+        .dot-nav a:after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            bottom: 38px;
+            left: 50%;
+            margin-left: -2px;
+            background: #c6342e;
+            border-radius: 100%;
+        }
+        .dot-nav .effect {
+            width: 10px;
+            height: 10px;
+            bottom: 36px;
+            margin-left: -5px;
+            background: #c6342e;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dot-nav nav">
+        <a href=""> Home</a>
+        <a href=""> About us</a>
+        <a href=""> Service</a>
+        <a href=""> Gallery</a>
+        <a href=""> Contact</a>
+        <div class="effect"></div>
+    </div>
+    
+</body>
+</html>

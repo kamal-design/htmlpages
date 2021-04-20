@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Fade Out Effect</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(45deg, rgba(34,34,34, 0.8), rgba(34,34,34, 0.8)), url(./images/home-bg.jpg);
+      background-size: cover;
+      background-position: center center;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+    }
+    .logo {
+      font-size: 34px;
+      line-height: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+    }
+    .site-nav {
+      border-bottom:  2px solid rgba(77, 77, 77, 0.5);
+    }
+    ul {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    ul:hover li:not(:hover) a {
+      opacity: 0.4;
+    }
+    ul li {
+      position: relative;
+      padding: 30px 25px 30px 25px;
+      cursor: pointer;
+    }
+    ul li::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #3498db;
+      transform: scaleX(0);
+      transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    ul li:hover::after,
+    ul li.active::after {
+      transform: scaleX(1);
+    }
+
+    ul li a {
+      position: relative;
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      font-family: sans-serif;
+      transition:  0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <a href="" class="logo"> Website Logo</a>
+  <nav class="site-nav">
+      <ul>
+        <li><a href=""> Home</a></li>
+        <li><a href=""> About Us</a></li>
+        <li><a href=""> Services</a></li>
+        <li><a href=""> Gallery</a></li>
+        <li><a href=""> Contact Us</a></li>
+      </ul>
+  </nav>
+</header>
+
+
+
+<li class="preview"><a target="_new" href="font-sizechange.html"> Text first letter size change </a></li>
+<li class="preview"><a target="_new" href="menu-fadeout.html"> Menu Hover Fade Effect </a></li>
+<li class="preview"><a target="_new" href="multicolor-palte.html"> multicolor-palte Change </a></li>
+
+<li class="preview"><a target="_new" href="popup-box.html"> Popup Box animation effect </a></li>
+<li class="preview"><a target="_new" href="rolling-dot-menu.html"> Rolling Dot menu Effect </a></li>
+<li class="preview"><a target="_new" href="rolling-mene-hover.html"> Rolling Menu Effect </a></li>
+<li class="preview"><a target="_new" href="scroll-indicaor.html"> Page Scroll indicator </a></li>
+<li class="preview"><a target="_new" href="svgwave-banner.html"> SVG Wave Banner </a></li>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Rolling Menu Hover</title>
+    <style>
+        html {
+            height: 100%;
+            font-family: sans-serif;
+        }
+        body {
+            min-height: 100%;
+            background-image: -webkit-radial-gradient(top,circle cover, #252225 0%, #252233 80%);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        h1 {
+            font-size: 1.8em;
+            font-weight: 400;
+            text-transform: capitalize;
+            color: white;
+            margin-bottom: 50px;            
+        }
+        ul {
+            background-color: rgba(0,0,0,0.4);
+            border-bottom: 1px solid rgba(254, 255, 255, 0.25);
+            box-shadow: 0 0 8px rgba(0,0,0,0.4) inset;
+            border-radius: 50px;
+            margin: 0;
+            padding: 0 30px;       
+            display: inline-block;
+            text-align: center;
+            height: 50px;
+            overflow: hidden;
+        }
+       
+        ul li {
+            float: left;
+            height: 100%;
+            list-style: none;
+            margin: 0 30px;
+        }
+        ul li *{
+            display: inline-block;
+            font-size: 1.3em;
+            line-height: 50px;
+        }
+        ul li a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            margin-top: -50px;
+            transition: 0.3s cubic-bezier(0.1, 0.1, 0.5,1.4);
+        }
+        ul li a:hover {
+            margin-top: 0;
+            text-decoration: none;
+        }
+        ul li a::before {
+            content: attr(data-text);
+            display: block;
+            color: #cdf745;
+            text-decoration: none;
+        }
+    </style>
+  </head>
+  <body>
+
+    <h1> Rolling Menu Hover</h1>
+    <ul>
+        <li><a href="#" data-text="Home ."> HOME</a> </li>
+        <li><a href="#" data-text="ABOUT ."> ABOUT</a> </li>
+        <li><a href="#" data-text="SERVICE ."> SERVICE</a> </li>
+        <li><a href="#" data-text="GALLERY ."> GALLERY</a> </li>
+        <li><a href="#" data-text="CONTACT ."> CONTACT</a> </li>
+    </ul>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>   
+  </body>
+</html>

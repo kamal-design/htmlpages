@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Random color Generated</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .btn {
+            background: none;
+            color: #111;
+            padding: 15px 60px;
+            font-size: 1rem;
+            margin: 20px auto;
+            max-width: 200px;
+            display: block;
+            outline: none;
+            border: 2px solid #111;
+            text-align: center;
+            font-weight: 600;  
+            cursor: pointer;          
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box {
+            width: 20%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+
+    <button class="btn" onclick="addColor();"> Refesh </button>
+
+    <section class="container"></section>
+    
+    <script>
+        for (let i=1; i <=100; i++){
+            const box = document.createElement('div');
+            box.classList.add('box');
+            document.querySelector('.container').appendChild(box);           
+        }
+        
+        const btn = document.querySelector('.btn');
+        const randomColorBlock = document.querySelectorAll('.box');
+       
+        function RandomHexColorcode(){
+            var chars = "0123456789abcdef";
+            var colorLength = 6;
+            var color = "";
+
+            for (var i=0; i < colorLength; i++){
+                var randomColor = Math.floor(Math.random() * chars.length);
+                color += chars.substring(randomColor, randomColor+1)
+            }
+            return "#"+color;
+           
+        }
+
+       
+        function addColor(){
+            randomColorBlock.forEach(e => {
+                var newColor = RandomHexColorcode();
+                e.style.backgroundColor = newColor; 
+                e.innerHTML = newColor;               
+            });
+        }
+        console.log(addColor());    
+    </script>
+</body>
+</html>
