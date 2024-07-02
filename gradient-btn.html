@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isometric Menu 3D Hover</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100dvh;
+        background:#fff;
+      }
+      .action-btn {
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+        background: linear-gradient(#272727, #272727) padding-box,
+          linear-gradient(45deg, #0ce39a, #69007f, #fc0987) border-box;
+        padding: 12px 40px;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        background-origin: padding-box, border-box;
+        transition: 0.5s;
+        z-index: 10;
+        font-weight: 500;
+        letter-spacing: 0.05rem;
+      }
+
+        .action-btn:active, .action-btn:hover  {
+        background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987)
+            padding-box,
+          linear-gradient(45deg, #0ce39a, #69007f, #fc0987) border-box;
+          opacity: 0.8;
+          transition: 0.5s;
+      }
+
+
+      .form-sec {
+        min-width: 450px;
+        max-width: 450px;
+        height: auto;
+        padding: 40px;
+        border-radius: 16px;
+        background:rgba(255, 255, 255, 0.4);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        transition: 0.5s;
+      }
+
+      .form-input {
+        width: 100%;
+        display: block;
+        margin-bottom: 24px;
+        height: 56px;
+        background: linear-gradient(canvas, canvas) padding-box,
+          linear-gradient(45deg, #0ce39a,   #69007f, #fc0987) border-box;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        outline: none;
+        padding: 0 16px;
+        transition: 0.5s;
+      }
+
+      h1 {
+        font-weight: 300;
+        font-size: 24px;
+        margin-bottom: 40px;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <form class="form-sec">
+          <h1>input, button border gradient </h1>
+        <input type="text" class="form-input" placeholder="Full name" required  autofocus/>
+        <input type="email" class="form-input" placeholder="email address" required />
+        <input type="number"  class="form-input" placeholder="Phone number" required />
+        <button type="button" class="action-btn" onclick="myFunction()">
+          Submit Now
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function myFunction() {
+        console.log("I am an alert box!");
+      }
+    </script>
+  </body>
+</html>
