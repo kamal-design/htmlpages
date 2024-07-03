@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline Scrolling Animation Effect</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100dvh;
+        transition: 0.3s;
+        padding: 40px 0;
+      }
+      h1 {
+        font-weight: 300;
+        font-size: 56px;
+        margin-bottom: 40px;
+        text-transform: capitalize;
+      }
+
+      .card {
+        position: relative;
+        width: 408px;
+        height: 500px;
+        background-color: #62baea;
+        overflow: hidden;
+        padding: 64px 32px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #ffffff;
+        letter-spacing: 0.025rem;
+        line-height: 24px;
+      }
+      .card::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -12px;
+        right: -12px;
+        width: 106%;
+        height: 48px;
+        background: linear-gradient(-135deg, #ffffff 12px, transparent 0%), linear-gradient(135deg, #ffffff 12px, transparent 0%);
+        background-size: 24px;
+        border-bottom: 1px solid #ffffff;
+      }
+      .card::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -12px;
+        right: -12px;
+        width: 106%;
+        height: 48px;
+        background: linear-gradient(-45deg, #ffffff 12px, transparent 0%), linear-gradient(45deg, #ffffff 12px, transparent 0%);
+        background-size: 24px;
+        border-top: 1px solid #ffffff;
+      }
+      .card span {
+        display: block;
+        text-align: end;
+        font-style: oblique;
+        padding-top: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Zig Zag Border</h1>
+    <section class="card">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus illum neque, soluta atque laborum non veritatis excepturi magni ab temporibus est possimus asperiores ratione ad impedit suscipit sit? Consequuntur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, nostrum maxime? Rem laboriosam optio natus repellat fugit quae sunt, voluptatibus temporibus adipisci. Ut laudantium, enim delectus expedita in nisi hic?
+<span>--- Kamal</span>
+    </section>
+
+  </body>
+</html>

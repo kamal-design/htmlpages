@@ -30,13 +30,23 @@
             background-position: center;
             mix-blend-mode: screen;
         }
+
+        /* another method */
+        .image-splash {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background: url(./assets/images/background.jpg), url(./assets/images/splash.jpg);
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: screen;
+        }
+
     </style>
 </head>
 <body>
-    
-    <section>
-
-    </section>
+    <div class="image-splash"></div>
+    <section></section>
 
 </body>
 </html>
