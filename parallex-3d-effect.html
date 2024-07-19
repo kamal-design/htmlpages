@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100dvh;
+      }
+      .container {
+        padding: 100px;
+        perspective: 1000px;
+      }
+      .card {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        background: linear-gradient(45deg, #a5fecb, #20bdff);
+        border-radius: 24px;
+        transform-style: preserve-3d;
+        transition: transform 0.1s ease;
+      }
+      .box {
+        background: linear-gradient(#ffffff27, #ffffff28);
+        position: absolute;
+        box-shadow: -5px 5px 10px #64646f33;
+        border-radius: inherit;
+      }
+      .box:nth-child(1) {
+        inset: 20px;
+        transform: translate3d(0, 0, 40px);
+        transition: transform 0.1s ease;
+      }
+        .box:nth-child(2) {
+        inset: 40px;
+        transform: translate3d(0, 0, 40px);
+        transition: transform 0.15s ease;
+      }
+        .box:nth-child(3) {
+        inset: 60px;
+        transform: translate3d(0, 0, 40px);
+        transition: transform 0.2s ease;
+      }
+        .box:nth-child(4) {
+        inset: 80px;
+        transform: translate3d(0, 0, 40px);
+        transition: transform 0.25s ease;
+      }
+        .box:nth-child(5) {
+        inset: 100px;
+        transform: translate3d(0, 0, 40px);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <script>
+        const container = document.querySelector('.container');
+        const card = document.querySelector('.card');
+
+        container.addEventListener('mousemove', (e)=>{
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX  - rect.left - rect.width/2;
+            const y = e.clientY - rect.top - rect.height/2;
+            const rotateX = (y/rect.height)*40;
+            const rotateY = (x/rect.width)*40;
+            card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`
+
+        })
+
+        container.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateX(0) rotateY(0)`
+        })
+    </script>
+  </body>
+</html>
