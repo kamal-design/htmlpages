@@ -46,8 +46,8 @@
         font-weight: 300;
         letter-spacing: 6px;
         font-size: 0.2em;
-        color: #333; 
-        text-shadow: none;      
+        color: #333;
+        text-shadow: none;
     }
     .countdown {
         display: flex;
@@ -116,7 +116,7 @@
         font-size: 1.5em;
         font-weight: 300;
         color: #999;
-    }    
+    }
     .calendar #dayNumber {
         margin-top: 0;
         line-height: 1em;
@@ -135,11 +135,9 @@
 </style>
 
 </head>
-<body>  
+<body>
 
     <div class="container">
-
-
         <div class="calendar">
             <p id="monthName"></p>
             <p id="dayName"></p>
@@ -148,16 +146,16 @@
         </div>
 
 
-        <h2><span>Countdown to New year</span> 2022</h2>
+        <h2><span>Countdown to New year</span> 2025</h2>
         <div class="countdown">
             <div id="day"> NA</div>
             <div id="hour"> NA</div>
             <div id="minute"> NA</div>
             <div id="second"> NA</div>
-        </div>                
+        </div>
     </div>
 
-    <script>     
+    <script>
         //calendar
         const lang = navigator.language;
         let date = new Date();
@@ -169,10 +167,10 @@
         document.getElementById('monthName').innerHTML = monthName;
         document.getElementById('dayName').innerHTML   = dayName;
         document.getElementById('dayNumber').innerHTML = dayNumber;
-        document.getElementById('year').innerHTML      = year;    
-    
+        document.getElementById('year').innerHTML      = year;
+
         //countdown timer start
-        var countDate = new Date('Jan 1, 2022 00:00:00').getTime();
+        var countDate = new Date('Jan 1, 2025 00:00:00').getTime();
         //alert(countDate);
         function newYear(){
             var now = new Date().getTime();

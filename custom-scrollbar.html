@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Scrollbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+
+      section {
+        block-size: calc(100svh - 8rem);
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+            0deg,
+            hsl(0 100% 50% / 80%),
+            hsl(0 100% 50% / 0%) 35%
+          ),
+          linear-gradient(
+            60deg,
+            hsl(60 100% 50% / 80%),
+            hsl(60 100% 50% / 0%) 35%
+          ),
+          linear-gradient(
+            120deg,
+            hsl(120 100% 50% / 80%),
+            hsl(120 100% 50% / 0%) 35%
+          ),
+          linear-gradient(
+            180deg,
+            hsl(180 100% 50% / 80%),
+            hsl(180 100% 50% / 0%) 35%
+          ),
+          linear-gradient(
+            240deg,
+            hsl(240 100% 50% / 80%),
+            hsl(240 100% 50% / 0%) 35%
+          ),
+          linear-gradient(
+            300deg,
+            hsl(300 100% 50% / 80%),
+            hsl(300 100% 50% / 0%) 35%
+          );
+        padding: 0 40px;
+        margin-bottom: 8rem;
+        /* this border wroking no rounded corner  */
+        border: 4px solid transparent;
+        border-image-source: linear-gradient(to bottom right, lime, orange);
+        border-image-slice: 4;
+        /* border-radius: 16px; */
+      }
+
+      section p {
+        column-count: 2;
+        column-gap: 56px;
+        column-rule: 2px solid black;
+
+        font-size: 1.1em;
+        line-height: 1.6em;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      section h1 {
+        font-size: 1.6em;
+        font-weight: bold;
+        margin-bottom: 24px;
+      }
+
+      body {
+        background: #ccc;
+        @media only screen and (min-width: 992px) {
+          width: max(0px, calc(100% - 40rem));
+          margin: 0 auto;
+          height: 100svh;
+          overflow-y: scroll;
+        }
+      }
+      /* width */
+      body::-webkit-scrollbar {
+        width: 6px;
+      }
+      /* track */
+      body::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px gray;
+        border-radius: 12px;
+      }
+      /* handle */
+      body::-webkit-scrollbar-thumb {
+        background: gray;
+        border-radius: 12px;
+      }
+
+      .container {
+        position: relative;
+        padding: 40px 64px;
+        background: #fff;
+        color: #000;
+      }
+
+      #setTimeHere {
+        position: sticky;
+        top: 20px;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <div class="container">
+          <h1 id="setTimeHere">Show Time</h1>
+          <section>
+            <div>
+              <h1>Title One</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia?
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>Title Two</h1>
+             <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia?
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>Title Three</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia?
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>Title Four</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia?
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>Title Five</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia?
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>Title Six</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae laboriosam explicabo omnis, earum odio officia
+                neque magni ut excepturi praesentium, voluptas dignissimos vero
+                nam illo ad! Saepe, aliquam quia?
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <script>
+      function loadData() {
+        let d = new Date();
+        var now = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+        const dataLoad = (document.getElementById(
+          "setTimeHere"
+        ).innerHTML = `Time: ${now}`);
+      }
+      setInterval(function () {
+        loadData();
+      }, 1000);
+    </script>
+  </body>
+</html>
