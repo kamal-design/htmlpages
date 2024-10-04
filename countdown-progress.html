@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coundown Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .countdown-container {
+        background-image: linear-gradient(
+          to right,
+          transparent 50%,
+          #f2e8f9 50%
+        );
+      }
+
+      .count {
+        transform: translate(-50%, -50%);
+      }
+
+      .zoomout {
+        animation: zoomOut 500ms linear 1;
+      }
+
+      @keyframes zoomOut {
+        0% {
+          font-size: 9rem;
+        }
+        100% {
+          font-size: 6rem;
+        }
+      }
+
+      .upper-piece {
+        border-radius: 0 100% 100% 0/50%;
+        transform-origin: left;
+      }
+
+      .roll {
+        animation: rotateDown 500ms linear 1, rotateUp 500ms linear 500ms 1;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes rotateDown {
+        0% {
+          transform: rotate(0turn);
+        }
+        100% {
+          transform: rotate(0.5turn);
+        }
+      }
+
+      @keyframes rotateUp {
+        0% {
+          transform: rotate(0turn);
+          background-color: #f2e8f9;
+        }
+        100% {
+          transform: rotate(0.5turn);
+          background-color: #f2e8f9;
+        }
+      }
+    </style>
+  </head>
+  <body class="container mx-auto">
+    <div class="mt-4 mb-4 lg:mb-10 lg:mt-16">
+      <div class="flex flex-col items-center justify-center min-h-[50vh] border border-gray-200 max-w-4xl mx-auto py-10 rounded-2xl bg-white shadow-2xl shadow-gray-200">
+        <div
+          class="countdown-container w-48 h-48 rounded-full relative bg-white"
+        >
+          <div
+            class="count zoomout absolute start-1/2 top-1/2 text-8xl font-bold z-10"
+          >
+            60
+          </div>
+          <div
+            class="upper-piece roll block absolute top-0 start-1/2 w-1/2 h-full bg-white"
+          ></div>
+        </div>
+        <div class="py-10 space-y-6 text-center">
+          <h1 class="text-3xl font-bold leading-10 text-grey-800">
+            Coundown Timer Progess
+          </h1>
+
+          <button
+            type="button"
+            class="rounded-full flex-shrink-0 inline-flex flex-row-reverse gap-4 justify-center items-center mb-20 border border-solid border-pink-600 bg-pink-600 text-white px-6 py-2"
+            onclick="alert('hi')"
+          >
+            Open Link
+          </button>
+          <p class="font-mono text-sm font-normal leading-6 text-gray-600 max-w-2xl">
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio dolores ea provident itaque mollitia quisquam dolore voluptatibus libero quia dolorum ad, unde perspiciatis laudantium rem, quaerat voluptatum fugiat enim doloribus.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+        const countDiv = window.document.querySelector(".count");
+        let counter = +countDiv?.innerHTML || 0;
+        const upperPiece = window.document.querySelector(".upper-piece");
+
+        let interval = setInterval(() => {
+            countDiv.classList.remove("zoomout");
+            upperPiece.classList.remove("roll");
+            decrementCounter();
+        }, 1500);
+
+        const decrementCounter = () => {
+            counter--;
+            setTimeout(() => {
+                countDiv.classList.add("zoomout");
+                upperPiece.classList.add("roll");
+            }, 30);
+
+            if (counter > 0) {
+                countDiv.innerHTML = counter.toString();
+            } else {
+                countDiv.innerHTML = String(0);
+                clearInterval(interval);
+            }
+        };
+    </script>
+  </body>
+</html>
