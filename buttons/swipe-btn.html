@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swipe Button</title>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #272433;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .swipe-btn {
+        position: relative;
+        width: 220px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 20px;
+        letter-spacing: 2px;
+        border-top: 0.5px rgba(255, 255, 255, 0.35);
+        border-left: 0.5px rgba(255, 255, 255, 0.35);
+        border-bottom-width: 0;
+        border-right-width: 0;
+        border-radius: 60px;
+        outline: none;
+        cursor: pointer;
+        padding-left: 40px;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .swipe-btn:hover {
+        padding-left: 0;
+        padding-right: 40px;
+        color: rgba(255, 255, 255, 1);
+      }
+
+      .swipe-btn span {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 50px;
+        height: 50px;
+        background: #04fe4d;
+        border-radius: 50%;
+        transition: 0.5s ease-in-out;
+        color: #1a191d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+      }
+      .swipe-btn:hover span {
+        left: calc(100% - 55px);
+      }
+
+      .swipe-btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 80px;
+        height: 100%;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.25);
+        transition: 0.75s ease-in-out;
+        transform: translateX(-180px) skewX(30deg);
+      }
+      .swipe-btn:hover::after {
+        transform: translateX(180px) skewX(30deg);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="swipe-btn">
+      <span><ion-icon name="arrow-forward"></ion-icon></span> Swipe Next
+    </button>
+  </body>
+</html>
