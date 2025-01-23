@@ -81,7 +81,7 @@
         <a href="#section-4"> Section Four</a>
         <a href="#section-5"> Section Five</a>
     </nav>
-    
+
     <section id="section-1">
         <h3> Section One Smooth Scroll</h3>
     </section>
@@ -98,22 +98,87 @@
         <h3> Section Five Smooth Scroll</h3>
     </section>
 
+<!-- refer https://gsap.com/docs/v3/Plugins/ScrollSmoother/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"></script>
+    <script src="./smoothscrolljs/smoothscroll.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/scrolltosmooth/dist/scrolltosmooth.min.js"></script>
+    <!-- belowcode old version disabled -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/scrolltosmooth/dist/scrolltosmooth.min.js"></script> -->
     <script>
-        var smoothScroll = new scrollToSmooth('a', {
-            targetAttribute: 'href',
-            duration: 1000,
-            durationRelative: true,
-            durationMin: false,
-            durationMax: false,
-            easing: 'easeInOutBack',
-            onScrollStart: (data) => { console.log(data); },
-            onScrollUpdate: (data) => { console.log(data); },
-            onScrollEnd: (data) => { console.log(data); },
-            fixedHeader: null
-        });
-        smoothScroll.init();
+        // var smoothScroll = new scrollToSmooth('a', {
+        //     targetAttribute: 'href',
+        //     duration: 1000,
+        //     durationRelative: true,
+        //     durationMin: false,
+        //     durationMax: false,
+        //     easing: 'easeInOutBack',
+        //     onScrollStart: (data) => { console.log(data); },
+        //     onScrollUpdate: (data) => { console.log(data); },
+        //     onScrollEnd: (data) => { console.log(data); },
+        //     fixedHeader: null
+        // });
+        // smoothScroll.init();
+
+		const scrollToSmoothSettings = {
+			// Selectors
+			container: document,
+			targetAttribute: 'href',
+			topOnEmptyHash: true,
+			offset: null,
+			// Speed and duration
+			duration: 800,
+			durationRelative: true,
+			durationMin: 300,
+			durationMax: 5000,
+			easing: easeInOutBack,
+			// Callbacks
+			onScrollStart: null,
+			onScrollUpdate: null,
+			onScrollEnd: null
+    };
+
+		const smoothScroll = new scrollToSmooth('a', scrollToSmoothSettings);
+    smoothScroll.init();
+
+		const gui = new dat.GUI({name: 'ScrollToSmooth Settings'});
+		gui.add(scrollToSmoothSettings, 'duration', 0, 5000);
+		gui.add(scrollToSmoothSettings, 'durationRelative');
+		gui.add(scrollToSmoothSettings, 'durationMin', 0, 5000);
+		gui.add(scrollToSmoothSettings, 'durationMax', 0, 5000);
+		gui.add(scrollToSmoothSettings, 'easing', {
+			linear,
+			easeInQuad,
+			easeOutQuad,
+			easeInOutQuad,
+			easeInCubic,
+			easeOutCubic,
+			easeInOutCubic,
+			easeInQuart,
+			easeOutQuart,
+			easeInOutQuart,
+			easeInQuint,
+			easeOutQuint,
+			easeInOutQuint,
+			easeInSine,
+			easeOutSine,
+			easeInOutSine,
+			easeInExpo,
+			easeOutExpo,
+			easeInOutExpo,
+			easeInCirc,
+			easeOutCirc,
+			easeInOutCirc,
+			easeInElastic,
+			easeOutElastic,
+			easeInOutElastic,
+			easeInBack,
+			easeOutBack,
+			easeInOutBack,
+			easeInBounce,
+			easeOutBounce,
+			easeInOutBounce
+		});
+
     </script>
 </body>
 </html>
