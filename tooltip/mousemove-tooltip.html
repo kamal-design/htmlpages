@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Move Tooltip</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #272433;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+      .container .card {
+        position: relative;
+        width: 220px;
+        height: 300px;
+        cursor: move;
+        background-color: #111;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .container .card img {
+        padding: 12px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        border:0.5px solid #363636;
+      }
+      .tool-tip {
+        position: fixed;
+        display: inline-block;
+        background: #fff;
+        z-index: 999;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        max-width: 220px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      .container .card:hover .tool-tip {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="../assets/images/01.jpg" />
+        <span class="tool-tip"
+          >Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span
+        >
+      </div>
+      <div class="card">
+        <img src="../assets/images/03.jpg" />
+        <span class="tool-tip"
+          >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+          aliquid.</span
+        >
+      </div>
+      <div class="card">
+        <img src="../assets/images/02.jpg" />
+        <span class="tool-tip"
+          >Lorem, ipsum dolor sit amet consectetur adipisicing.</span
+        >
+      </div>
+    </div>
+
+    <script>
+      let tooltips = document.querySelectorAll(".tool-tip");
+      window.onmousemove = function (e) {
+        let x = e.clientX + 20 + `px`;
+        let y = e.clientY + 20 + `px`;
+        for (let index = 0; index < tooltips.length; index++) {
+          tooltips[index].style.top = y;
+          tooltips[index].style.left = x;
+        }
+      };
+    </script>
+  </body>
+</html>
