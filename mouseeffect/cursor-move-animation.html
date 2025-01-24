@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursor move animate</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      span {
+        background: url(../assets/images/love-heart.png) no-repeat;
+        background-size: contain;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: animate 6s linear;
+        pointer-events: none;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: transform(-50%, -50%);
+          opacity: 1;
+          filter: hue-rotate(0);
+        }
+        100% {
+          transform: transform(-50%, -5000%);
+          opacity: 0;
+          filter: hue-rotate(720deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const bodyEL = document.querySelector("body");
+      bodyEL.addEventListener("mousemove", (event) => {
+        const xPosition = event.offsetX;
+        const yPosition = event.offsetY;
+        const spanEL = document.createElement("span");
+        spanEL.style.left = `${xPosition}px`;
+        spanEL.style.top = `${yPosition}px`;
+        const size = Math.random() * 100;
+        spanEL.style.width = `${size}px`;
+        spanEL.style.height = `${size}px`;
+        bodyEL.appendChild(spanEL);
+        setTimeout(() => {
+          spanEL.remove();
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
