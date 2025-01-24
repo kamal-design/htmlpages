@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnet Effect card hover animation</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #363636;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 100px;
+      }
+      .container .card {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 16px;
+        font-size: 5rem;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #111;
+        cursor: pointer;
+        color: var(--clr);
+        transition: 0.25s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" style="--clr: #ff6464">01</div>
+      <div class="card" style="--clr: #64c0ff">02</div>
+      <div class="card" style="--clr: #48e365">03</div>
+      <div class="card" style="--clr: #cb4af7">04</div>
+    </div>
+
+    <script>
+      let cards = document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          let x = e.offsetX;
+          let y = e.offsetY;
+          let cardWidth = card.clientWidth;
+          let cardHeight = card.clientHeight;
+          let transX = x - cardWidth / 2;
+          let transY = y - cardHeight / 2;
+          card.style.transform = `translateX(${transX}px) translateY(${transY}px)`;
+          card.style.boxShadow = `${transX / -1}px ${transY / -1}px 0 #000005`;
+        });
+        card.addEventListener("mouseout", (e) => {
+          card.style.transform = ``;
+          card.style.boxShadow = ``;
+        });
+      });
+    </script>
+  </body>
+</html>
