@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Hover Effect</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #0f0f0f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .btn-effect {
+        position: relative;
+        padding: 16px 24px;
+        background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+        color: #fff;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        outline: none;
+        cursor: pointer;
+        transition: 0.5s;
+        border-radius: 10px;
+        border: 0px solid #222;
+      }
+      .btn-effect span {
+        position: relative;
+        z-index: 1;
+      }
+      .btn-effect::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: #272727;
+        border-radius: 9px;
+        transition: 0.5s;
+      }
+      .btn-effect:hover:before {
+        opacity: 0.7;
+      }
+
+      .btn-effect::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+        border-radius: 9px;
+        transition: 0.5s;
+        opacity: 0;
+        filter: blur(20px);
+      }
+      .btn-effect:hover:after {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-effect">
+      <span>New to you</span>
+    </button>
+  </body>
+</html>

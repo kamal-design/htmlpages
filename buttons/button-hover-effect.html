@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Hover Effect</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .btn-effect {
+        position: relative;
+        padding: 20px 60px;
+        background: rgba(45, 45, 45, 1);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        outline: none;
+        cursor: pointer;
+        transition: 0.5s;
+        border-radius: 50px;
+        border: 1px solid #222;
+        overflow: hidden;
+      }
+      .btn-effect:hover {
+        color: var(--clr);
+        text-shadow: 0 0 16px var(--clr), 0 0 40px var(--clr);
+      }
+      .btn-effect span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn-effect::before {
+        content: "";
+        position: absolute;
+        top: var(--y);
+        left: var(--x);
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(var(--clr), transparent, transparent);
+        transition: 0.5s, top 0s, left 0s;
+        opacity: 0;
+      }
+      .btn-effect:hover::before {
+        opacity: 1;
+      }
+      .btn-effect::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background: rgba(45, 45, 45, 1);
+        border-radius: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-effect" style="--clr: #0f0">
+      <span>Button</span>
+    </button>
+
+    <script>
+      let btn = document.querySelector("button");
+      btn.onmousemove = function (e) {
+        let x = e.pageX - btn.offsetLeft;
+        let y = e.pageY - btn.offsetTop;
+
+        btn.style.setProperty(`--x`, x + "px");
+        btn.style.setProperty(`--y`, y + "px");
+      };
+    </script>
+  </body>
+</html>
