@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prev Next Hover Effect</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #0f0f0f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
+      }
+      .container .box {
+        position: relative;
+        width: 220px;
+        height: 200px;
+        background: #fff;
+        border: 0px solid #0005;
+        transition: 0.5s ease-in-out;
+        transform-origin: bottom center;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+        overflow: hidden;
+      }
+      .container .box img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: top center;
+      }
+      .container .box.prev {
+        margin: 0 -40px;
+        transform: perspective(500px) rotateY(45deg) scale(0.95);
+        filter: drop-shadow(0 0 25px #0005) drop-shadow(0 0 45px #0005);
+      }
+      .container .box.next {
+        margin: 0 -40px;
+        transform: perspective(500px) rotateY(-45deg) scale(0.95);
+        filter: drop-shadow(0 0 25px #0005) drop-shadow(0 0 45px #0005);
+      }
+      .container .box.hovered {
+        transform: perspective(500px) rotateY(0deg) scale(1.5);
+        background: #9cdb28;
+        box-shadow: 0 0 50px rgba(0,0,0,0.25);
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <img src="../assets/images/shopping/slide-01.jpg" alt="" />
+      </div>
+      <div class="box">
+        <img src="../assets/images/shopping/slide-02.jpg" alt="" />
+      </div>
+      <div class="box">
+        <img src="../assets/images/shopping/slide-03.jpg" alt="" />
+      </div>
+      <div class="box">
+        <img src="../assets/images/shopping/slide-04.jpg" alt="" />
+      </div>
+      <div class="box">
+        <img src="../assets/images/shopping/slide-05.jpg" alt="" />
+      </div>
+      <div class="box">
+        <img src="../assets/images/shopping/slide-06.jpg" alt="" />
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".box").forEach((box, index, boxes) => {
+        box.addEventListener("mouseover", () => {
+          boxes.forEach((b, i) => {
+            let className =
+              i < index ? "prev" : i === index ? "hovered" : "next";
+            b.classList.remove("Prev", "next", "hovered");
+            b.classList.add(className);
+          });
+        });
+        box.addEventListener("mouseleave", () => {
+          boxes.forEach((b) => b.classList.remove("prev", "next", "hovered"));
+        });
+      });
+    </script>
+  </body>
+</html>
