@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tags Selection Interaction</title>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      ::view-transition-group(*) {
+        animation-duration: 0.4s;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .tags-selected {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        width: 400px;
+        min-height: 48px;
+        padding: 12px;
+        border: 1px solid #e4e4e7;
+        border-radius: 12px;
+        font-size: 16px;
+      }
+
+      .tags-selected input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        min-width: 100px;
+      }
+
+      .tags-selected button {
+        background-color: #ffffff;
+        border: 1px solid #e4e4e7;
+        padding: 8px 8px 8px 16px;
+        border-radius: 8px;
+        gap: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .tags-selected button span {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f4f4f5;
+        border-radius: 40px;
+        color: #800000;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px;
+        background: white;
+        border-radius: 16px;
+        border: 1px solid #e4e4e7;
+        width: 400px;
+      }
+
+      .tags button {
+        padding: 8px 16px;
+        background: #f4f4f5;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #27272a;
+        cursor: pointer;
+        border: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .tags button span {
+        display: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Search to select tags</h3>
+      <div class="tags-selected">
+        <!-- Selected tags will appear here -->
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search tags..."
+          autocomplete="off"
+        />
+      </div>
+      <div class="tags">
+        <button type="button" class="tag-btn">
+          Html <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Css <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Javascript <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Node <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Graphql <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Vue <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Git <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Aws <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Nginx <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+        <button type="button" class="tag-btn">
+          Cypress <span><ion-icon name="trash"></ion-icon></span>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const tags = document.querySelectorAll(".tag-btn");
+      const tagsSelected = document.querySelector(".tags-selected");
+      const searchInput = document.getElementById("search-input");
+      const tagsContainer = document.querySelector(".tags");
+
+      // Function to create a selected tag button
+      const createSelectedTag = (tag) => {
+        const newTag = tag.cloneNode(true);
+        newTag.querySelector("span").style.display = "flex"; // Show the delete icon
+        newTag.addEventListener("click", () => {
+          tagsContainer.appendChild(tag); // Move tag back to the tags container
+          newTag.remove(); // Remove the selected tag
+          tag.classList.remove("hidden"); // Show the tag again in the tags container
+        });
+        return newTag;
+      };
+
+      // Add tags to the selected container
+      tagsContainer.addEventListener("click", (e) => {
+        const tag = e.target.closest("button");
+        if (tag) {
+          const selectedTag = createSelectedTag(tag);
+          tagsSelected.insertBefore(selectedTag, searchInput); // Add before the input
+          searchInput.value = ""; // Clear the search input
+          tag.classList.add("hidden"); // Hide the tag in the tags container
+        }
+      });
+
+      // Filter tags based on search input
+      searchInput.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim(); // Trim whitespace
+        tags.forEach((tag) => {
+          const tagText = tag.textContent.toLowerCase().trim(); // Trim whitespace
+          if (tagText.includes(searchTerm)) {
+            tag.classList.remove("hidden"); // Show the tag
+          } else {
+            tag.classList.add("hidden"); // Hide the tag
+          }
+        });
+      });
+
+      // Allow removing selected tags
+      tagsSelected.addEventListener("click", (e) => {
+        const span = e.target.closest("span");
+        if (span) {
+          const tag = span.closest("button");
+          tagsContainer.appendChild(tag); // Move tag back to the tags container
+          tag.classList.remove("hidden"); // Show the tag again
+          span.closest(".tags-selected button").remove(); // Remove the selected tag
+        }
+      });
+    </script>
+  </body>
+</html>
