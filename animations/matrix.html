@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrix text effect</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canva"></canvas>
+
+    <script>
+      const c = document.getElementById("canva");
+      const ctx = c.getContext("2d");
+      c.height = window.innerHeight;
+      c.width = window.innerWidth;
+      let matrix = "QWERTYUIOPASDFGHJKLZXCVBNM<!@#$%^&*()1234567890";
+      matrix = matrix.split("");
+      let font_size = 16;
+      let columns = c.width / font_size;
+      let drops = [];
+
+      for (let index = 0; index < columns; index++) drops[index] = 50;
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+        ctx.fillRect(0, 0, c.width, c.height);
+        ctx.fillStyle = "#0F0";
+        ctx.font = font_size + "px arial";
+
+        for (let i = 0; i < drops.length; i++) {
+          let text = matrix[Math.floor(Math.random() * matrix.length)];
+          ctx.fillText(text, i * font_size, drops[i] * font_size);
+          if (drops[i] * font_size > c.height && Math.random() > 0.975)
+            drops[i] = 0;
+          drops[i]++;
+        }
+      }
+      setInterval(draw, 50);
+    </script>
+  </body>
+</html>
