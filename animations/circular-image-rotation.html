@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circular image rotation</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+      }
+      .container:hover .box {
+        animation-play-state: paused;
+      }
+      .box {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        animation: animate 15s linear infinite;
+      }
+      .container:hover .box {
+        animation-play-state: paused;
+      }
+
+      .img {
+        position: relative;
+        left: -50%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .img .imgBox {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        transform: rotate(calc(360deg / 8 * var(--i))); /* totalCount */
+        transform-origin: calc(200px + 40px); /* boxWidth 300/2 */
+        border: 3px solid #ffffff;
+      }
+      .img .imgBox img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        transform: rotate(calc(-360deg / 8 * var(--i)));
+        animation: animateImgbox 15s linear infinite;
+      }
+
+      .container:hover .img .imgBox img {
+        animation-play-state: paused;
+      }
+
+      @keyframes animateImgbox {
+        0% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: -360deg;
+        }
+      }
+
+      @keyframes animate {
+        0% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 360deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="img">
+          <div class="imgBox" style="--i: 1">
+            <img src="../assets/images/1.jpeg" alt="" loading="lazy" />
+          </div>
+          <div class="imgBox" style="--i: 2">
+            <img src="../assets/images/2.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="imgBox" style="--i: 3">
+            <img src="../assets/images/3.jpeg" alt="" loading="lazy" />
+          </div>
+          <div class="imgBox" style="--i: 4">
+            <img src="../assets/images/4.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="imgBox" style="--i: 5">
+            <img src="../assets/images/5.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="imgBox" style="--i: 6">
+            <img src="../assets/images/6.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="imgBox" style="--i: 7">
+            <img src="../assets/images/7.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="imgBox" style="--i: 8">
+            <img src="../assets/images/8.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

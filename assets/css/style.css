@@ -11,7 +11,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background: #f9f9f9;  
+  background: #f9f9f9;
   position: relative;
   margin: 25px auto;
 }
@@ -62,14 +62,20 @@ body {
   cursor: pointer;
 }
 
-
+.heading {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-style: dotted;
+  text-decoration-color: #cccddd;
+  color: red;
+}
 
 .hide, .step{
     display:none;
   }
   .page-next {
     position: fixed;
-    top: 50%;        
+    top: 50%;
   }
   .page-next a.prev {
     position: fixed;

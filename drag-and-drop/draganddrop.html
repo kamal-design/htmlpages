@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prev Next Hover Effect</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #243128;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        padding: 24px;
+        box-shadow: 0 15px 55px rgba(0, 0, 0, 0.15);
+        border-radius: 24px;
+        background: #2f4036;
+      }
+      .container .box {
+        width: 100px;
+        height: 100px;
+        background: #213127;
+        border-radius: 10px;
+      }
+      .glow {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: #00fb70;
+        border-radius: 10px;
+        filter: drop-shadow(0 0 15px #00fb70) drop-shadow(0 0 45px #00fb70);
+        transition: 0.2s;
+      }
+      .heading {
+        display: block;
+        color: #fff;
+        font-weight: 600;
+        font-size: 20px;
+        width: 100%;
+        flex: none;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="heading">Drag to Box</h2>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box">
+        <div class="glow" draggable="true"></div>
+      </div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <script>
+      let boxes = document.querySelectorAll(".box");
+      let glow = document.querySelector(".glow");
+      boxes.forEach((box) => {
+        box.addEventListener("dragover", (e) => {
+          e.preventDefault();
+        });
+        box.addEventListener("drop", () => {
+          box.appendChild(glow);
+        });
+      });
+    </script>
+  </body>
+</html>
