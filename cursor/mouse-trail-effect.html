@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Trail Effect</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #262626;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      span {
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background: #7ef0ff;
+        pointer-events: none;
+        transition: 0.1s;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const spans = [];
+      const numSpans = 20;
+      for (let index = 0; index < numSpans; index++) {
+        const span = document.createElement("span");
+        document.body.appendChild(span);
+        spans.push(span);
+      }
+
+      document.addEventListener("mousemove", (event) => {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        spans.forEach((span, idx) => {
+          const delay = Math.random() * 500;
+          setTimeout(() => {
+            span.style.left = `${mouseX + 30}px`;
+            span.style.top = `${mouseY + idx * 2}px`;
+          }, delay);
+        });
+      });
+    </script>
+  </body>
+</html>
