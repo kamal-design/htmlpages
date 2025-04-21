@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edvoy One app. Many benefits.</title>
+
+    <style>
+      @property --scroll-position {
+        syntax: "<number>";
+        inherits: true;
+        initial-value: 0;
+      }
+      @property --scroll-position-delayed {
+        syntax: "<number>";
+        inherits: true;
+        initial-value: 0;
+      }
+
+      @keyframes adjust-pos {
+        to {
+          --scroll-position: 1;
+          --scroll-position-delayed: 1;
+        }
+      }
+
+      @keyframes slide-up {
+        to {
+          translate: 0 var(--end-pos);
+        }
+      }
+
+      /* scroll start */
+
+      :root {
+        animation: adjust-pos 0.01s linear both;
+        animation-timeline: scroll(root);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+      body {
+        background-color: #ffffff;
+        font-weight: normal;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      main {
+        position: relative;
+      }
+
+      section {
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+      }
+
+      .sec {
+        background: #fee2e2;
+      }
+      .sec:nth-child(2) {
+        background: #ede9fe;
+      }
+      .sec:nth-child(3) {
+        background: #fef3c7;
+      }
+      .sec:nth-child(4) {
+        background: #e0f2fe;
+      }
+      .sec:nth-child(5) {
+        background: #ffedd5;
+      }
+      .sec:nth-child(6) {
+        background: #d8f5dc;
+      }
+      .sec:nth-child(7) {
+        background: #fee2e2;
+      }
+      .sec:nth-child(8) {
+        background: #ede9fe;
+      }
+
+      .scroll-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        min-height: 100vh;
+        place-items: center;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .app-title {
+        color: #4c1d95;
+        text-align: center;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 48px;
+        position: sticky;
+        top: 4rem;
+        width: 100%;
+      }
+
+      .sec-image {
+        height: 540px;
+        width: 400px;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .sec-title {
+        color: #1f2937;
+        text-align: center;
+        font-family: Inter;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 40px;
+      }
+      .sec-content {
+        color: #6b7280;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        padding-left: 1rem;
+      }
+
+      .page-sec {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+      }
+
+      .page-content {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+
+      .page-content p {
+        color: #6b7280;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="page-sec">
+      <div class="page-content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+          fugit hic autem laboriosam culpa esse consectetur adipisci deserunt
+          obcaecati aliquid, suscipit modi quis! Magni et dolore porro
+          consequatur, modi assumenda quia, corrupti nostrum non reprehenderit
+          voluptatum veniam ex sunt temporibus nemo repudiandae! Rerum
+          dignissimos quas tempore adipisci deserunt natus numquam ipsam illum,
+          aut deleniti quidem voluptatibus quae debitis provident officiis
+          consequatur esse, architecto, quia iste illo dicta. Officiis impedit
+          sunt, dicta a ipsam unde culpa repellendus in, ratione perferendis
+          facere rem mollitia iste libero vero laboriosam. Ex voluptate officiis
+          alias autem, eligendi, voluptatum est ipsam qui quaerat quia, non
+          consequuntur delectus deserunt laudantium. Dicta ea vel ducimus
+          excepturi deserunt error quibusdam incidunt, earum itaque harum
+          accusamus ratione, corporis eius eaque similique corrupti modi
+          architecto dolorem molestiae cupiditate expedita commodi nobis.
+          Molestias id nulla, voluptatum, sint odio quidem sunt assumenda
+          accusantium magnam iusto blanditiis repellat saepe quo placeat
+          deleniti aliquid excepturi!
+        </p>
+        <p>
+          Temporibus nostrum magni aspernatur velit nulla, et natus sapiente,
+          possimus, est fugit blanditiis harum voluptatem consequuntur facere
+          numquam reprehenderit unde quod sunt cum optio id praesentium minus
+          vero inventore! Ipsum quaerat provident voluptatum placeat aliquid
+          vero esse vel quam beatae reiciendis iste nihil error dignissimos
+          commodi molestiae ex voluptas reprehenderit nulla iusto nemo suscipit,
+          molestias facilis iure eveniet! Mollitia, eos aliquam? Iusto quae odit
+          voluptatum at similique. Excepturi, eos. Nemo sint, fuga officia ex,
+          deserunt magnam tempora quae provident at, repudiandae officiis harum
+          minus excepturi repellat illum. Excepturi vel amet dolorem, dolor
+          velit rem sed vitae pariatur doloribus harum nemo sunt atque suscipit
+          eaque id sequi assumenda odit magni hic maiores veritatis libero
+          delectus ea aliquid? Doloribus nobis aliquid adipisci voluptates
+          saepe, voluptas voluptatibus. Saepe rem maiores odio laudantium,
+          accusantium omnis ipsa fuga aut deserunt soluta, ut recusandae
+          officiis. Est ab commodi quisquam blanditiis aperiam. Id, iste aut.
+          Rem, molestiae!
+        </p>
+        <p>
+          Odio modi aliquid illum ut? At est ut temporibus quasi, nam nesciunt
+          ab ullam impedit nihil esse excepturi quidem aliquam doloribus
+          voluptatibus saepe quis tempora dolores, quia incidunt eius fugit
+          quaerat similique aspernatur! Corrupti perferendis magnam tenetur
+          odio! Rem, doloribus autem! Neque, similique maiores facere animi
+          temporibus quam quibusdam doloribus, libero dolorum nam odio expedita
+          exercitationem vitae asperiores minus quia a vel. Non assumenda omnis
+          maxime ipsum expedita, qui ratione eos perferendis similique inventore
+          libero sunt atque labore minima voluptatem dolore maiores voluptatum
+          explicabo obcaecati, quod, corporis error? Voluptatibus molestias iste
+          rem id molestiae assumenda tempore earum veniam, sunt dolorem quod ab
+          maxime. Pariatur accusamus, placeat repudiandae officia ut incidunt
+          reiciendis sed, voluptatibus, minima aliquid perferendis perspiciatis?
+          Architecto quis dolores aperiam placeat omnis, repellendus atque
+          molestias illum ipsam? Nihil amet, sapiente distinctio corporis quis
+          ab minima in quos tempora est quaerat omnis totam voluptas maiores
+          nisi beatae facere dolor laudantium.
+        </p>
+      </div>
+    </section>
+    <main>
+      <div class="app-title">
+        One app. <br />
+        Many benefits.
+      </div>
+      <section class="sec">
+        <div class="scroll-section">
+          <div class="sec-image">
+            <img src="../assets/images/edvoy/edvoy-01.webp" class="" alt="" />
+          </div>
+
+          <div class="sec-title">Explore courses from 600+ universities</div>
+
+          <div class="sec-content">
+            Find, filter and shortlist courses from leading institutes and top
+            study destinations, based on your budget & preferences.
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="scroll-section">
+          <div class="sec-image">
+            <img src="../assets/images/edvoy/edvoy-02.webp" class="" alt="" />
+          </div>
+          <div class="sec-title">Find your perfect course with Genie</div>
+          <div class="sec-content">
+            Genie, our free AI-powered system, scans through 1000s of courses to
+            find the best ones that align with your dreams.
+          </div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="scroll-section">
+          <div class="sec-image">
+            <img src="../assets/images/edvoy/edvoy-03.webp" class="" alt="" />
+          </div>
+          <div class="sec-title">
+            Get all your doubts cleared via video call
+          </div>
+          <div class="sec-content">
+            Don’t waste time in traffic! Hop on a free remote counselling
+            session with your dedicated counsellor at your convenience.
+          </div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="scroll-section">
+          <div class="sec-image">
+            <img src="../assets/images/edvoy/edvoy-04.webp" class="" alt="" />
+          </div>
+          <div class="sec-title">Chat for expert advice</div>
+          <div class="sec-content">
+            Don’t like calls? Not a problem! Your friendly, dedicated counsellor
+            is also available on chat for immediate help.
+          </div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="scroll-section">
+          <div class="sec-image">
+            <img src="../assets/images/edvoy/edvoy-05.webp" class="" alt="" />
+          </div>
+          <div class="sec-title">Submit documents in a jiffy</div>
+          <div class="sec-content">
+            No more paperwork. Just open your phone camera, click photos of the
+            documents and upload them in seconds. Our team will then verify the
+            documents making it easy for you to instantly apply to courses.
+          </div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="scroll-section">
+          <div class="sec-image">
+            <img src="../assets/images/edvoy/edvoy-06.webp" class="" alt="" />
+          </div>
+          <div class="sec-title">Apply directly via the app</div>
+          <div class="sec-content">
+            Track multiple applications on your dashboard and apply to top
+            courses with high admission chances via the app.
+          </div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="scroll-section">
+          <div class="sec-image">
+            <img src="../assets/images/edvoy/edvoy-07.webp" class="" alt="" />
+          </div>
+          <div class="sec-title">Get an education loan</div>
+          <div class="sec-content">
+            Worried about funding your studies? Edvoy Funds is here to help! Get
+            an education loan with best interest rates and no service charges,
+            all from the comfort of your home.
+          </div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="scroll-section">
+          <div class="sec-image">
+            <img src="../assets/images/edvoy/edvoy-08.webp" class="" alt="" />
+          </div>
+          <div class="sec-title">Find your new home</div>
+          <div class="sec-content">
+            Edvoy Stays can help you get your perfect new home that’s close to
+            your dream university. A dedicated advisor will assist you in every
+            step of the booking process.
+          </div>
+        </div>
+      </section>
+    </main>
+    <section class="page-sec">
+      <div class="page-content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+          fugit hic autem laboriosam culpa esse consectetur adipisci deserunt
+          obcaecati aliquid, suscipit modi quis! Magni et dolore porro
+          consequatur, modi assumenda quia, corrupti nostrum non reprehenderit
+          voluptatum veniam ex sunt temporibus nemo repudiandae! Rerum
+          dignissimos quas tempore adipisci deserunt natus numquam ipsam illum,
+          aut deleniti quidem voluptatibus quae debitis provident officiis
+          consequatur esse, architecto, quia iste illo dicta. Officiis impedit
+          sunt, dicta a ipsam unde culpa repellendus in, ratione perferendis
+          facere rem mollitia iste libero vero laboriosam. Ex voluptate officiis
+          alias autem, eligendi, voluptatum est ipsam qui quaerat quia, non
+          consequuntur delectus deserunt laudantium. Dicta ea vel ducimus
+          excepturi deserunt error quibusdam incidunt, earum itaque harum
+          accusamus ratione, corporis eius eaque similique corrupti modi
+          architecto dolorem molestiae cupiditate expedita commodi nobis.
+          Molestias id nulla, voluptatum, sint odio quidem sunt assumenda
+          accusantium magnam iusto blanditiis repellat saepe quo placeat
+          deleniti aliquid excepturi!
+        </p>
+        <p>
+          Temporibus nostrum magni aspernatur velit nulla, et natus sapiente,
+          possimus, est fugit blanditiis harum voluptatem consequuntur facere
+          numquam reprehenderit unde quod sunt cum optio id praesentium minus
+          vero inventore! Ipsum quaerat provident voluptatum placeat aliquid
+          vero esse vel quam beatae reiciendis iste nihil error dignissimos
+          commodi molestiae ex voluptas reprehenderit nulla iusto nemo suscipit,
+          molestias facilis iure eveniet! Mollitia, eos aliquam? Iusto quae odit
+          voluptatum at similique. Excepturi, eos. Nemo sint, fuga officia ex,
+          deserunt magnam tempora quae provident at, repudiandae officiis harum
+          minus excepturi repellat illum. Excepturi vel amet dolorem, dolor
+          velit rem sed vitae pariatur doloribus harum nemo sunt atque suscipit
+          eaque id sequi assumenda odit magni hic maiores veritatis libero
+          delectus ea aliquid? Doloribus nobis aliquid adipisci voluptates
+          saepe, voluptas voluptatibus. Saepe rem maiores odio laudantium,
+          accusantium omnis ipsa fuga aut deserunt soluta, ut recusandae
+          officiis. Est ab commodi quisquam blanditiis aperiam. Id, iste aut.
+          Rem, molestiae!
+        </p>
+        <p>
+          Odio modi aliquid illum ut? At est ut temporibus quasi, nam nesciunt
+          ab ullam impedit nihil esse excepturi quidem aliquam doloribus
+          voluptatibus saepe quis tempora dolores, quia incidunt eius fugit
+          quaerat similique aspernatur! Corrupti perferendis magnam tenetur
+          odio! Rem, doloribus autem! Neque, similique maiores facere animi
+          temporibus quam quibusdam doloribus, libero dolorum nam odio expedita
+          exercitationem vitae asperiores minus quia a vel. Non assumenda omnis
+          maxime ipsum expedita, qui ratione eos perferendis similique inventore
+          libero sunt atque labore minima voluptatem dolore maiores voluptatum
+          explicabo obcaecati, quod, corporis error? Voluptatibus molestias iste
+          rem id molestiae assumenda tempore earum veniam, sunt dolorem quod ab
+          maxime. Pariatur accusamus, placeat repudiandae officia ut incidunt
+          reiciendis sed, voluptatibus, minima aliquid perferendis perspiciatis?
+          Architecto quis dolores aperiam placeat omnis, repellendus atque
+          molestias illum ipsam? Nihil amet, sapiente distinctio corporis quis
+          ab minima in quos tempora est quaerat omnis totam voluptas maiores
+          nisi beatae facere dolor laudantium.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
