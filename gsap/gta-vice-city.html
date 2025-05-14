@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GTA VICE CITY</title>
-    <link href="https://cdn.jsdelivr.net/npm/lenis@1.3.2/dist/lenis.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/lenis@1.3.2/dist/lenis.min.css"
+      rel="stylesheet"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
 
@@ -15,7 +18,7 @@
       }
       body {
         width: 100vw;
-        min-height: 100vh;
+        min-height: 100svh;
         font-family: "Poppins", sans-serif;
         background-color: #111117;
         color: #fff;
@@ -28,10 +31,10 @@
       }
       h1 {
         text-transform: uppercase;
-        font-size: 6rem;
+        font-size: 4rem;
         font-weight: 700;
-        letter-spacing: -0.2rem;
-        line-height: 0.8;
+        letter-spacing: -0.1rem;
+        line-height: 1.2;
       }
       p {
         text-transform: uppercase;
@@ -59,11 +62,11 @@
         object-fit: contain;
       }
 
-    /* your png image to adjest width and height */
+      /* your png image to adjest width and height */
       .hero-img-container img:nth-child(3) {
-       object-fit: contain;
-       scale: 0.65;
-       transform: translate(20px, 20px);
+        object-fit: contain;
+        scale: 0.65;
+        transform: translate(20px, 20px);
       }
       .hero-img-logo img {
         position: absolute;
@@ -108,7 +111,7 @@
       }
       .overlay-copy {
         position: absolute;
-        bottom: 25%;
+        bottom: 0%;
         left: 50%;
         transform: translate(-50%, 0);
         z-index: 2;
@@ -124,6 +127,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background-image: linear-gradient(to bottom,transparent, rgba(17, 17, 24, 0.9)), url(./../assets/images/gta/gta-vice-city-skyline.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        clip-path: polygon(100% 0%, 100% 100%, 100% 50%, 100% 100%,0 78%, 100% 0%);
       }
 
       @media (max-width: 900px) {
@@ -143,13 +151,13 @@
   <body>
     <section class="hero">
       <div class="hero-img-container">
-        <!-- layer1 -->
+        <!-- layer1 background image full -->
         <img src=".././assets/images/gta/gta.webp" alt="" />
 
         <div class="hero-img-logo">
           <img src=".././assets/images/gta/gta-text.svg" alt="" />
         </div>
-        <!-- layer2 -->
+        <!-- layer2 character PNG -->
         <img src=".././assets/images/gta/gta-vicecity.png" alt="" />
 
         <div class="hero-img-copy">
@@ -180,8 +188,8 @@
 
       <div class="overlay-copy">
         <h1>
-          Animation <br />
-          Experiment GTA <br />
+         GTA Animation <br />
+          Experiment <br />
           By Kamal
         </h1>
       </div>
@@ -202,33 +210,31 @@
 
       const logoGTAString = `<svg xmlns="http://www.w3.org/2000/svg" width="1073" height="421" viewBox="0 0 1073 421" fill="none">
 <path d="M356.775 1.90909L384.069 95.7486H385.109L412.403 1.90909H453.214L409.284 135H359.895L315.964 1.90909H356.775ZM502.165 1.90909V135H466.033V1.90909H502.165ZM643.541 51.8182H606.889C606.629 48.7855 605.936 46.0344 604.81 43.565C603.727 41.0955 602.21 38.9727 600.261 37.1964C598.355 35.3768 596.037 33.9904 593.307 33.0373C590.578 32.0408 587.48 31.5426 584.014 31.5426C577.949 31.5426 572.815 33.0156 568.613 35.9616C564.454 38.9077 561.291 43.1317 559.125 48.6339C557.002 54.136 555.941 60.7429 555.941 68.4545C555.941 76.5994 557.024 83.4229 559.19 88.9251C561.399 94.3839 564.584 98.4996 568.743 101.272C572.902 104.002 577.906 105.366 583.754 105.366C587.09 105.366 590.08 104.955 592.723 104.132C595.365 103.265 597.661 102.031 599.611 100.428C601.561 98.8246 603.142 96.8967 604.355 94.6438C605.611 92.3477 606.456 89.7699 606.889 86.9105L643.541 87.1705C643.108 92.8026 641.527 98.543 638.797 104.392C636.068 110.197 632.191 115.569 627.165 120.508C622.183 125.404 616.009 129.346 608.644 132.336C601.279 135.325 592.723 136.82 582.975 136.82C570.757 136.82 559.796 134.199 550.092 128.956C540.431 123.714 532.784 116.002 527.152 105.821C521.563 95.6403 518.769 83.1847 518.769 68.4545C518.769 53.6378 521.628 41.1605 527.347 31.0227C533.066 20.8416 540.777 13.1516 550.482 7.95276C560.186 2.71058 571.017 0.0894837 582.975 0.0894837C591.379 0.0894837 599.113 1.23756 606.175 3.53373C613.236 5.8299 619.432 9.1875 624.761 13.6065C630.089 17.9822 634.378 23.3761 637.628 29.788C640.877 36.1999 642.848 43.5433 643.541 51.8182ZM659.934 135V1.90909H755.853V31.0227H696.066V53.8977H750.914V83.0114H696.066V105.886H755.593V135H659.934ZM338.392 193.818H301.741C301.481 190.786 300.787 188.034 299.661 185.565C298.578 183.096 297.062 180.973 295.112 179.196C293.206 177.377 290.888 175.99 288.158 175.037C285.429 174.041 282.331 173.543 278.866 173.543C272.8 173.543 267.666 175.016 263.464 177.962C259.305 180.908 256.142 185.132 253.976 190.634C251.853 196.136 250.792 202.743 250.792 210.455C250.792 218.599 251.875 225.423 254.041 230.925C256.25 236.384 259.435 240.5 263.594 243.272C267.753 246.002 272.757 247.366 278.606 247.366C281.941 247.366 284.931 246.955 287.574 246.132C290.216 245.265 292.513 244.031 294.462 242.428C296.412 240.825 297.993 238.897 299.206 236.644C300.462 234.348 301.307 231.77 301.741 228.911L338.392 229.17C337.959 234.803 336.378 240.543 333.649 246.392C330.919 252.197 327.042 257.569 322.016 262.508C317.034 267.404 310.86 271.346 303.495 274.336C296.13 277.325 287.574 278.82 277.826 278.82C265.608 278.82 254.647 276.199 244.943 270.956C235.282 265.714 227.635 258.002 222.003 247.821C216.414 237.64 213.62 225.185 213.62 210.455C213.62 195.638 216.479 183.161 222.198 173.023C227.917 162.842 235.628 155.152 245.333 149.953C255.037 144.711 265.868 142.089 277.826 142.089C286.231 142.089 293.964 143.238 301.026 145.534C308.087 147.83 314.283 151.187 319.612 155.607C324.94 159.982 329.229 165.376 332.479 171.788C335.728 178.2 337.699 185.543 338.392 193.818ZM483.717 210.455C483.717 225.271 480.836 237.77 475.074 247.951C469.312 258.089 461.535 265.779 451.744 271.021C441.953 276.22 431.035 278.82 418.991 278.82C406.86 278.82 395.9 276.199 386.108 270.956C376.36 265.671 368.605 257.959 362.843 247.821C357.125 237.64 354.265 225.185 354.265 210.455C354.265 195.638 357.125 183.161 362.843 173.023C368.605 162.842 376.36 155.152 386.108 149.953C395.9 144.711 406.86 142.089 418.991 142.089C431.035 142.089 441.953 144.711 451.744 149.953C461.535 155.152 469.312 162.842 475.074 173.023C480.836 183.161 483.717 195.638 483.717 210.455ZM446.545 210.455C446.545 202.483 445.484 195.768 443.361 190.309C441.281 184.807 438.184 180.648 434.068 177.832C429.995 174.972 424.97 173.543 418.991 173.543C413.012 173.543 407.965 174.972 403.849 177.832C399.777 180.648 396.679 184.807 394.556 190.309C392.477 195.768 391.437 202.483 391.437 210.455C391.437 218.426 392.477 225.163 394.556 230.665C396.679 236.124 399.777 240.283 403.849 243.142C407.965 245.958 413.012 247.366 418.991 247.366C424.97 247.366 429.995 245.958 434.068 243.142C438.184 240.283 441.281 236.124 443.361 230.665C445.484 225.163 446.545 218.426 446.545 210.455ZM526.608 277H487.616L531.547 143.909H580.936L624.866 277H585.875L556.761 180.561H555.721L526.608 277ZM519.329 224.491H592.633V251.526H519.329V224.491ZM704.246 185.5C703.9 181.168 702.275 177.788 699.372 175.362C696.513 172.936 692.159 171.723 686.31 171.723C682.584 171.723 679.53 172.178 677.147 173.088C674.808 173.954 673.075 175.146 671.948 176.662C670.822 178.178 670.237 179.911 670.194 181.861C670.107 183.464 670.389 184.915 671.039 186.215C671.732 187.471 672.815 188.619 674.288 189.659C675.761 190.656 677.645 191.565 679.942 192.388C682.238 193.212 684.967 193.948 688.13 194.598L699.047 196.938C706.412 198.497 712.716 200.555 717.958 203.111C723.2 205.667 727.49 208.678 730.825 212.144C734.161 215.567 736.609 219.423 738.169 223.712C739.772 228.001 740.595 232.68 740.638 237.749C740.595 246.5 738.407 253.908 734.075 259.974C729.742 266.039 723.547 270.653 715.489 273.816C707.474 276.978 697.834 278.56 686.57 278.56C675.003 278.56 664.908 276.848 656.287 273.426C647.709 270.003 641.037 264.739 636.271 257.634C631.549 250.486 629.166 241.344 629.123 230.21H663.435C663.652 234.283 664.67 237.705 666.49 240.478C668.309 243.251 670.865 245.352 674.158 246.782C677.494 248.211 681.458 248.926 686.05 248.926C689.906 248.926 693.134 248.45 695.733 247.496C698.333 246.543 700.304 245.222 701.647 243.532C702.99 241.843 703.683 239.915 703.726 237.749C703.683 235.712 703.012 233.936 701.712 232.42C700.455 230.86 698.376 229.474 695.473 228.261C692.57 227.004 688.65 225.835 683.711 224.751L670.454 221.892C658.67 219.336 649.377 215.069 642.575 209.09C635.816 203.068 632.459 194.858 632.502 184.46C632.459 176.012 634.711 168.625 639.26 162.3C643.853 155.931 650.2 150.971 658.301 147.418C666.446 143.866 675.782 142.089 686.31 142.089C697.055 142.089 706.347 143.887 714.189 147.483C722.031 151.079 728.074 156.148 732.32 162.69C736.609 169.189 738.775 176.792 738.819 185.5H704.246ZM750.744 173.023V143.909H866.418V173.023H826.387V277H790.775V173.023H750.744ZM75.6306 327.5C75.284 323.168 73.6593 319.788 70.7566 317.362C67.8972 314.936 63.5432 313.723 57.6945 313.723C53.9686 313.723 50.9143 314.178 48.5315 315.088C46.192 315.954 44.459 317.146 43.3326 318.662C42.2062 320.178 41.6213 321.911 41.578 323.861C41.4913 325.464 41.773 326.915 42.4228 328.215C43.116 329.471 44.1991 330.619 45.6721 331.659C47.1451 332.656 49.0297 333.565 51.3259 334.388C53.622 335.212 56.3514 335.948 59.5141 336.598L70.4317 338.938C77.7967 340.497 84.1004 342.555 89.3426 345.111C94.5847 347.667 98.8738 350.678 102.21 354.144C105.546 357.567 107.993 361.423 109.553 365.712C111.156 370.001 111.979 374.68 112.023 379.749C111.979 388.5 109.791 395.908 105.459 401.974C101.127 408.039 94.9313 412.653 86.8731 415.816C78.8582 418.978 69.2186 420.56 57.9544 420.56C46.3869 420.56 36.2925 418.848 27.671 415.426C19.0929 412.003 12.421 406.739 7.65541 399.634C2.93311 392.486 0.550293 383.344 0.506969 372.21H34.8195C35.0361 376.283 36.0542 379.705 37.8738 382.478C39.6934 385.251 42.2495 387.352 45.5421 388.782C48.8781 390.211 52.8422 390.926 57.4345 390.926C61.2904 390.926 64.518 390.45 67.1174 389.496C69.7168 388.543 71.6881 387.222 73.0311 385.532C74.3742 383.843 75.0673 381.915 75.1107 379.749C75.0673 377.712 74.3958 375.936 73.0961 374.42C71.8397 372.86 69.7602 371.474 66.8575 370.261C63.9548 369.004 60.034 367.835 55.095 366.751L41.8379 363.892C30.0538 361.336 20.7609 357.069 13.959 351.09C7.20051 345.068 3.84291 336.858 3.88623 326.46C3.84291 318.012 6.09575 310.625 10.6448 304.3C15.2371 297.931 21.584 292.971 29.6856 289.418C37.8305 285.866 47.1668 284.089 57.6945 284.089C68.4388 284.089 77.7318 285.887 85.5734 289.483C93.415 293.079 99.4587 298.148 103.704 304.69C107.993 311.189 110.16 318.792 110.203 327.5H75.6306ZM120.308 285.909H160.599L186.594 339.977H187.634L213.628 285.909H253.919L205.05 377.149V419H169.178V377.149L120.308 285.909ZM380.853 285.909V419H350.699L302.61 349.075H301.83V419H265.698V285.909H296.371L343.681 355.574H344.72V285.909H380.853ZM449.153 419H397.944V285.909H448.633C462.323 285.909 474.151 288.574 484.115 293.902C494.123 299.188 501.834 306.813 507.25 316.777C512.709 326.699 515.438 338.591 515.438 352.455C515.438 366.318 512.73 378.232 507.315 388.197C501.899 398.118 494.231 405.743 484.31 411.072C474.389 416.357 462.67 419 449.153 419ZM434.076 388.327H447.853C454.438 388.327 460.049 387.265 464.684 385.142C469.363 383.02 472.916 379.359 475.342 374.16C477.811 368.961 479.046 361.726 479.046 352.455C479.046 343.183 477.79 335.948 475.277 330.749C472.807 325.55 469.168 321.89 464.359 319.767C459.594 317.644 453.745 316.582 446.813 316.582H434.076V388.327ZM568.288 285.909V419H532.156V285.909H568.288ZM709.664 335.818H673.012C672.753 332.786 672.059 330.034 670.933 327.565C669.85 325.096 668.334 322.973 666.384 321.196C664.478 319.377 662.16 317.99 659.43 317.037C656.701 316.041 653.603 315.543 650.137 315.543C644.072 315.543 638.938 317.016 634.736 319.962C630.577 322.908 627.414 327.132 625.248 332.634C623.125 338.136 622.064 344.743 622.064 352.455C622.064 360.599 623.147 367.423 625.313 372.925C627.522 378.384 630.707 382.5 634.866 385.272C639.025 388.002 644.029 389.366 649.878 389.366C653.213 389.366 656.203 388.955 658.846 388.132C661.488 387.265 663.784 386.031 665.734 384.428C667.684 382.825 669.265 380.897 670.478 378.644C671.734 376.348 672.579 373.77 673.012 370.911L709.664 371.17C709.231 376.803 707.65 382.543 704.921 388.392C702.191 394.197 698.314 399.569 693.288 404.508C688.306 409.404 682.132 413.346 674.767 416.336C667.402 419.325 658.846 420.82 649.098 420.82C636.88 420.82 625.919 418.199 616.215 412.956C606.554 407.714 598.907 400.002 593.275 389.821C587.686 379.64 584.892 367.185 584.892 352.455C584.892 337.638 587.751 325.161 593.47 315.023C599.189 304.842 606.9 297.152 616.605 291.953C626.309 286.711 637.14 284.089 649.098 284.089C657.503 284.089 665.236 285.238 672.298 287.534C679.359 289.83 685.555 293.187 690.884 297.607C696.212 301.982 700.501 307.376 703.751 313.788C707 320.2 708.971 327.543 709.664 335.818ZM756.519 419H717.528L761.458 285.909H810.847L854.778 419H815.786L786.673 322.561H785.633L756.519 419ZM749.241 366.491H822.545V393.526H749.241V366.491ZM847.158 315.023V285.909H962.833V315.023H922.802V419H887.189V315.023H847.158ZM976.431 419V285.909H1072.35V315.023H1012.56V337.898H1067.41V367.011H1012.56V389.886H1072.09V419H976.431Z" fill="white"/>
-</svg>`
-
-
+</svg>`;
 
       document.addEventListener("DOMContentLoaded", (event) => {
         gsap.registerPlugin(ScrollTrigger);
-        const lenis = new Lenis();
 
-        lenis.on('scroll', ScrollTrigger.update);
+        const lenis = new Lenis();
+        lenis.on("scroll", ScrollTrigger.update);
 
         gsap.ticker.add((time) => {
-            lenis.raf(time * 1000);
-        })
+          lenis.raf(time * 1000);
+        });
         gsap.ticker.lagSmoothing(0);
 
-        const heroImgContainer = document.querySelector('.hero-img-container');
-        const heroImgLogo = document.querySelector('.hero-img-logo');
-        const heroImgCopy = document.querySelector('.hero-img-copy');
-        const fadeOverlay = document.querySelector('.fade-overlay');
-        const svgOverlay = document.querySelector('.overlay');
-        const overlayCopy = document.querySelector('h1');
+        const heroImgContainer = document.querySelector(".hero-img-container");
+        const heroImgLogo = document.querySelector(".hero-img-logo");
+        const heroImgCopy = document.querySelector(".hero-img-copy");
+        const fadeOverlay = document.querySelector(".fade-overlay");
+        const svgOverlay = document.querySelector(".overlay");
+        const overlayCopy = document.querySelector("h1");
 
         const initialOverlayScale = 360;
-        const logoContainer = document.querySelector('.logo-container');
-        const logoMask = document.getElementById('logoMask');
+        const logoContainer = document.querySelector(".logo-container");
+        const logoMask = document.getElementById("logoMask");
 
-        // logoMask.setAttribute('d', logoGTA)
+        // logoMask.setAttribute('d', logoGTA) // use svg path d values in single file
         // direct html use
         const parser = new DOMParser();
         const svgDoc = parser.parseFromString(logoGTAString, "image/svg+xml");
@@ -236,92 +242,131 @@
         if (pathElementFromSVGString) {
           const pathData = pathElementFromSVGString.getAttribute("d");
           if (pathData) {
-              logoMask.setAttribute("d", pathData);
+            logoMask.setAttribute("d", pathData);
           }
         }
 
         const logoDimentions = logoContainer.getBoundingClientRect();
         const logoBoundingBox = logoMask.getBBox(); //SVGGraphicsElement.getBBox()
 
-        const horizontalScaleRatio = logoDimentions.width / logoBoundingBox.width;
-        const verticalScaleRatio = logoDimentions.height / logoBoundingBox.height;
-        const logoScaleFactor = Math.min(horizontalScaleRatio, verticalScaleRatio);
-        const logoHorizontalPosition = logoDimentions.left + (logoDimentions.width - logoBoundingBox.width * logoScaleFactor) / 2 - logoBoundingBox.x * logoScaleFactor;
+        const horizontalScaleRatio =
+          logoDimentions.width / logoBoundingBox.width;
+        const verticalScaleRatio =
+          logoDimentions.height / logoBoundingBox.height;
+        const logoScaleFactor = Math.min(
+          horizontalScaleRatio,
+          verticalScaleRatio
+        );
 
-        const logoVerticalPosition = logoDimentions.top + (logoDimentions.height - logoBoundingBox.height * logoScaleFactor ) / 2 - logoBoundingBox.y * logoScaleFactor;
+        const logoHorizontalPosition =
+          logoDimentions.left +
+          (logoDimentions.width - logoBoundingBox.width * logoScaleFactor) / 2 -
+          logoBoundingBox.x * logoScaleFactor;
 
-        logoMask.setAttribute("transform", `translate(${logoHorizontalPosition}, ${logoVerticalPosition}) scale(${logoScaleFactor})`);
+        const logoVerticalPosition =
+          logoDimentions.top +
+          (logoDimentions.height - logoBoundingBox.height * logoScaleFactor) /
+            2 -
+          logoBoundingBox.y * logoScaleFactor;
+
+        logoMask.setAttribute(
+          "transform",
+          `translate(${logoHorizontalPosition}, ${logoVerticalPosition}) scale(${logoScaleFactor})`
+        );
 
         ScrollTrigger.create({
-          trigger: '.hero',
+          trigger: ".hero",
           start: "top top",
           end: `${window.innerHeight * 5}px`,
           pin: true,
           pinSpacing: true,
           scrub: 1,
-          onUpdate:(self) => {
+          onUpdate: (self) => {
             const scrollProgress = self.progress;
             const fadeOpacity = 1 - scrollProgress * (1 / 0.15);
 
             if (scrollProgress <= 0.15) {
-                gsap.set([heroImgLogo, heroImgCopy], {
-                  opacity: fadeOpacity,
-                });
+              gsap.set([heroImgLogo, heroImgCopy], {
+                opacity: fadeOpacity,
+              });
             } else {
-               gsap.set([heroImgLogo, heroImgCopy], {
+              gsap.set([heroImgLogo, heroImgCopy], {
                 opacity: 0,
-               })
+              });
             }
 
-            if(scrollProgress <= 0.85){
+            if (scrollProgress <= 0.85) {
               const normalizedProgress = scrollProgress * (1 / 0.85);
               const heroImgContainerScale = 1.5 - 0.5 * normalizedProgress;
-              const overlayScale  = initialOverlayScale * Math.pow(1 / initialOverlayScale, normalizedProgress);
-              let fadeOverlayOpacity  = 0;
+              const overlayScale =
+                initialOverlayScale *
+                Math.pow(1 / initialOverlayScale, normalizedProgress);
+
+              let fadeOverlayOpacity = 0;
 
               gsap.set(heroImgContainer, {
                 scale: heroImgContainerScale,
-              })
-
-              gsap.set(svgOverlay,{
-                scale: overlayScale
               });
 
-              if(scrollProgress >= 0.25){
-                fadeOverlayOpacity = Math.min(1, (scrollProgress - 0.25) * (1 / 0.4));
+              gsap.set(svgOverlay, {
+                scale: overlayScale,
+              });
+
+              if (scrollProgress >= 0.25) {
+                fadeOverlayOpacity = Math.min(
+                  1,
+                  (scrollProgress - 0.25) * (1 / 0.4)
+                );
               }
 
               gsap.set(fadeOverlay, {
-                opacity: fadeOverlayOpacity
-              })
-
-              if(scrollProgress >= 0.6 && scrollProgress <= 0.85){
-                const overlayCopyRevealProgress = (scrollProgress - 0.6) * (1 /0.25);
-                const gradientSpread = 100;
-                const gradientBottomPosition = 240 - overlayCopyRevealProgress * 280;
-                const gradientTopPosition = gradientBottomPosition - gradientSpread;
-                const overlayCopyScale = 1.25 - 0.25 * overlayCopyRevealProgress;
-
-                overlayCopy.style.background = `linear-gradient(to bottom, #111117 0%, #111117 ${gradientTopPosition}%, #e66461 ${gradientBottomPosition}%, #e66461 100%)`;
-
-                overlayCopy.style.backgroundClip = 'text';
-
-                gspa.set(overlayCopy,{
-                  scale: overlayCopyScale,
-                  opacity: overlayCopyRevealProgress,
-                })
-              } else if(scrollProgress < 0.6){
-                gsap.set(overlayCopy, {
-                  opacity:0,
-                })
-              }
-
+                opacity: fadeOverlayOpacity,
+              });
             }
 
-          }
+            if (scrollProgress >= 0.6 && scrollProgress <= 0.85) {
+              const overlayCopyRevealProgress =
+                (scrollProgress - 0.6) * (1 / 0.25);
+              const gradientSpread = 100;
+              const gradientBottomPosition =
+                240 - overlayCopyRevealProgress * 280;
+              const gradientTopPosition =
+                gradientBottomPosition - gradientSpread;
+              const overlayCopyScale = 1.25 - 0.25 * overlayCopyRevealProgress;
+
+              overlayCopy.style.background = `linear-gradient(to bottom, #111117 0%, #111117 ${gradientTopPosition}%, #bb2b73 ${gradientBottomPosition}%, #bb2b73 100%)`;
+              overlayCopy.style.backgroundClip = "text";
+
+              gsap.set(overlayCopy, {
+                scale: overlayCopyScale,
+                opacity: overlayCopyRevealProgress,
+              });
+            } else if (scrollProgress < 0.6) {
+              gsap.set(overlayCopy, {
+                opacity: 0,
+              });
+            }
+          },
         });
 
 
+         gsap.fromTo(
+          ".outro",
+          { y: -100, opacity: 0 },
+          {
+            y: 100,
+            opacity: 1,
+            duration: 1.5,
+            scrollTrigger: {
+              trigger: ".outro",
+              start: "top center", // When top of .blue hits center of viewport
+              end: "bottom top",   // When bottom of .blue hits top of viewport
+              toggleActions: "play none none reverse",
+              markers: false,
+              scrub: true, // Makes animation tied to scroll progress
+            },
+          }
+        );
       });
     </script>
   </body>
