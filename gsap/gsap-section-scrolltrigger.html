@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Section ScrollTrigger</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: calc(100vw / 1920 * 10);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        width: 100vw;
+        min-height: 100svh;
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+
+      h1 {
+        font-size: 10rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      h3 {
+        font-size: 6rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: 1.5rem;
+        color: #565656;
+      }
+
+      .section-change {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .section-change-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100svh;
+        padding: 0 5rem;
+      }
+      .section-col {
+        position: relative;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4rem;
+        width: inherit;
+        height: inherit;
+      }
+
+      .section-col-text {
+        border-left: 4px solid rgb(1, 153, 14);
+        padding-left: 2rem;
+      }
+
+      .section-col-slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .section-col-slider_item {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 60rem;
+        height: auto;
+        border-right: 1px solid #565656;
+        padding: 10rem 4rem;
+      }
+
+      .section-col-slider_item figure {
+        position: relative;
+        width: 24rem;
+        height: 24rem;
+        border-radius: 2rem;
+        overflow: hidden;
+      }
+
+      .section-col-slider_item figure img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+      }
+
+      .section-col-slider_item h2 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 4rem;
+        line-height: 1;
+        font-weight: 600;
+        color: #111117;
+      }
+
+      .section-col-slider_item p {
+        font-size: 2rem;
+        font-weight: 400;
+        font-style: normal;
+        color: #565656;
+      }
+
+      @media screen and (max-width: 768px) {
+        html {
+          font-size: calc(100vw / 768 * 10);
+        }
+        .section-change {
+          height: 100%;
+        }
+        .section-change-wrapper {
+          flex-direction: column;
+          height: 100%;
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+        .section-col:nth-child(2) {
+          border-right: 1px solid #ee009f;
+          padding: 8rem;
+        }
+        .section-col-slider_item {
+          position: relative;
+          margin-bottom: 8rem;
+        }
+      }
+
+      .text-section {
+        max-width: calc(100vw - 10vw);
+        margin: 12rem auto;
+        min-height: 50svh;
+        padding: 10rem 10rem;
+        border: 1px solid #ccc;
+        border-radius: 2rem;
+        background-color: rgba(242, 242, 242, 0.571);
+      }
+      .text-section h2 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 4rem;
+        line-height: 1;
+        font-weight: 600;
+        color: #111117;
+      }
+
+      .text-section p {
+        font-size: 2rem;
+        font-weight: 400;
+        font-style: normal;
+        color: #565656;
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-section">
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+        suscipit et eveniet accusamus quos quia tempora earum maiores ex dolor
+        ad reprehenderit consectetur libero rem voluptatum illum, quidem,
+        temporibus atque.
+      </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sed nulla est, quis quaerat asperiores cumque similique error officiis sequi dicta, dignissimos velit? Sunt sint doloribus enim asperiores? Blanditiis, voluptas.</p>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sed nulla est, quis quaerat asperiores cumque similique error officiis sequi dicta, dignissimos velit? Sunt sint doloribus enim asperiores? Blanditiis, voluptas.</p>
+    </div>
+    <div class="section-change">
+      <div class="section-change-wrapper">
+        <div class="section-col">
+          <div class="section-col-text">
+            <h3>Still Life</h3>
+            <h1>Change the Developer</h1>
+          </div>
+        </div>
+        <div class="section-col">
+          <div class="section-col-slider">
+            <div class="section-col-slider_item">
+              <figure>
+                <img src="./../assets/images/profiles/profile-01.jpg" alt="" />
+              </figure>
+              <h2>Frontend Developer</h2>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                aperiam accusamus odit molestiae dolor molestias magnam
+                laudantium dolores deleniti incidunt, ex nesciunt nihil at quam?
+                Maxime sapiente deleniti sint aperiam!
+              </p>
+            </div>
+            <div class="section-col-slider_item">
+              <figure>
+                <img src="./../assets/images/profiles/profile-02.jpg" alt="" />
+              </figure>
+              <h2>Backend Developer</h2>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                aperiam accusamus odit molestiae dolor molestias magnam
+                laudantium dolores deleniti incidunt, ex nesciunt nihil at quam?
+                Maxime sapiente deleniti sint aperiam!
+              </p>
+            </div>
+            <div class="section-col-slider_item">
+              <figure>
+                <img src="./../assets/images/profiles/profile-03.jpg" alt="" />
+              </figure>
+              <h2>Fullstack Developer</h2>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                aperiam accusamus odit molestiae dolor molestias magnam
+                laudantium dolores deleniti incidunt, ex nesciunt nihil at quam?
+                Maxime sapiente deleniti sint aperiam!
+              </p>
+            </div>
+            <div class="section-col-slider_item">
+              <figure>
+                <img src="./../assets/images/profiles/profile-04.jpg" alt="" />
+              </figure>
+              <h2>Product Head</h2>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                aperiam accusamus odit molestiae dolor molestias magnam
+                laudantium dolores deleniti incidunt, ex nesciunt nihil at quam?
+                Maxime sapiente deleniti sint aperiam!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-section">
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+        suscipit et eveniet accusamus quos quia tempora earum maiores ex dolor
+        ad reprehenderit consectetur libero rem voluptatum illum, quidem,
+        temporibus atque.
+      </p>
+       <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+        suscipit et eveniet accusamus quos quia tempora earum maiores ex dolor
+        ad reprehenderit consectetur libero rem voluptatum illum, quidem,
+        temporibus atque.
+      </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sed nulla est, quis quaerat asperiores cumque similique error officiis sequi dicta, dignissimos velit? Sunt sint doloribus enim asperiores? Blanditiis, voluptas.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.2/dist/lenis.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis();
+        lenis.on("scroll", ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+
+        // sections start
+        const slider = {
+          item: document.querySelectorAll(".section-col-slider_item"),
+          figure: document.querySelectorAll(".section-col-slider_item figure"),
+          title: document.querySelectorAll(".section-col-slider_item h2"),
+          description: document.querySelectorAll(".section-col-slider_item p"),
+        };
+
+        const init = () => {
+          for (let index = 1; index < slider.item.length; index++) {
+            gsap.set(
+              [
+                slider.figure[index],
+                slider.title[index],
+                slider.description[index],
+              ],
+              {
+                xPercent: 120,
+                y: "10rem",
+                rotate: 30,
+                autoAlpha: 0,
+              }
+            );
+          }
+          sliderAnimation();
+        };
+
+        const sliderAnimation = () => {
+          const timeline = gsap.timeline({
+            defaults: { stagger: 0.1, ease: "expo.inOut" },
+            scrollTrigger: {
+              trigger: ".section-change",
+              start: "top top",
+              end: "+=6000 bottom",
+              pin: true,
+              pinSpacing: true,
+              scrub: 3.2,
+            },
+          });
+
+          const settingIn = {
+            xPercent: 0,
+            y: "0rem",
+            rotate: 0,
+            autoAlpha: 1,
+          };
+
+          const settingOut = {
+            xPercent: -120,
+            y: "-10rem",
+            rotate: -30,
+            autoAlpha: 0,
+          };
+
+          for (let index = 0; index < slider.item.length; index++) {
+            if (index === slider.item.length - 1) {
+              //last element animation in only  no out animation
+              timeline.to(
+                [
+                  slider.figure[index],
+                  slider.title[index],
+                  slider.description[index],
+                ],
+                {
+                  ...settingIn,
+                }
+              );
+            } else {
+              // other elements animate in and out
+              timeline
+                .to(
+                  [
+                    slider.figure[index],
+                    slider.title[index],
+                    slider.description[index],
+                  ],
+                  { ...settingIn }
+                )
+                .to(
+                  [
+                    slider.figure[index],
+                    slider.title[index],
+                    slider.description[index],
+                  ],
+                  { ...settingOut }
+                );
+            }
+          }
+        };
+
+        window.addEventListener("DOMContentLoaded", () => {
+          // condition for handling the responsive
+          init();
+          //   if (window.innerWidth > 769) init();
+        });
+      });
+    </script>
+  </body>
+</html>
